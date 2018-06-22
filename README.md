@@ -29,13 +29,13 @@ License: MIT or as noted by original authors.
 
 ##### Search/Replace
 Case sensitive. Replace these placeholders in your project folder, examples given:
-* Project_Name         --> The Bitter Bottle
-* projectName          --> theBitterBottle or the-bitter-bottle
-* ProjectURLBase       --> thebitterbottle
-* ProjectAcronym       --> tbb (used for some css selectors)
-* url-social-mail      --> mailto:thebitterbottle@gmail.com (or link contact form)
-* url-social-facebook  --> https://facebook.com/thebitterbottle
-* url-social-instagram --> https://instagram.com/thebitterbottle
+* Alex Sachel         --> Alex Sachel
+* alex-sachel          --> alex-sachel
+* alexsachel       --> alexsachel
+* as       --> as (used for some css selectors)
+* mailto:acsclosets@gmail.com      --> mailto:acsclosets@gmail.com (or link contact form)
+* https://facebook.com/alexsachel  --> https://facebook.com/alexsachel
+* https://instagram.com/acsclosets --> https://instagram.com/acsclosets
 
 
 ##### Reponsive Images Partials:
