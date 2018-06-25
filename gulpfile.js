@@ -192,7 +192,8 @@ gulp.task('browser-sync', function () {
     port: 3000,
 
     // Use a specific browser or multiple browsers ("google chrome" or multiple ["firefox", "safari technology preview"] ).
-    browser: ["google chrome", "firefox developer edition"]
+    // browser: ["google chrome", "firefox developer edition"]
+    browser: "google chrome"
 
   });
 });
@@ -617,7 +618,7 @@ gulp.task('watch', function(){
   gulp.watch( projectPHPWatchFiles ).on('change', browserSync.reload );
   // Rerun on SCSS file changes (will inject from styles task).
   gulp.watch( styleWatchFiles, function(){
-    runSequence('styles');
+    runSequence('styles', browserSync.reload);
   } );
   // Rerun and Reload on images file changes.
   gulp.watch( imageWatchFiles, function(){

@@ -30,13 +30,13 @@
     <link rel="icon" href="/images/_favicon/favicon-96.png" sizes="96x96">
     <link rel="icon" href="/images/_favicon/favicon-32.png" sizes="32x32">
     <!--[if IE]><link rel="shortcut icon" href="favicon.ico" /><![endif]-->
-    <meta name="msapplication-TileColor" content="#dd2a26">
+    <meta name="msapplication-TileColor" content="#000000">
     <meta name="msapplication-TileImage" content="/images/_favicon/favicon-144.png">
     <meta name="application-name" content="Alex Sachel">
     <meta name="msapplication-tooltip" content="Tooltip">
     <meta name="msapplication-config" content="/ieconfig.xml">
 
-    <link rel='mask-icon' href='/images/_favicon/icon.svg' color='#dd2a26'>
+    <link rel='mask-icon' href='/images/_favicon/icon.svg' color='#000000'>
 
     <!--build:css /assets/css/styles.min.css-->
     <link rel="stylesheet" href="/assets/css/styles.css" type="text/css">
@@ -53,39 +53,26 @@
 {% block splashscreen %}{% endblock %}
 
   <header class="wrapper clearfix">
-    <div class="flex-box menu menu-top">
-      <div class="container-headerLogo">
-        <a href="/index.html">
-          <img class="logo-as" src="/images/header_logo.svg" alt="Alex Sachel Logo" title="Alex Sachel" />
-        </a>
-      </div>
-    </div>
-{% block menusub %}{% endblock %}
+    {# {% include "partials/nav_main.njk" %} #}
   </header>
 
 
-  <div class="flex-box main content {{ content_special_class }} wrapper">
+  <main class="content {{ content_special_class }} wrapper">
 {% block content %}{% endblock %}
-  </div><!-- end content -->
+  <div class="background__logo--sunflowers"></div>
+  </main><!-- end content -->
 
 
   <footer class="wrapper clearfix">
     <div class="container-footerLogo flex-box">
-      <div class="line">
-      </div>
+
       <div class="footerLogo">
         <img class="logo-as" src="/images/footer_logo.svg" alt="Alex Sachel Logo" title="Alex Sachel" />
       </div>
-      <div class="line">
-      </div>
+
     </div>
     <div class="copyright">
       &copy; 2018 Alex Sachel
-    </div>
-    <div class="container-social social">
-      <a class="social-mail" href="mailto:acsclosets@gmail.com">&#xe806;</a>
-      <a class="social-facebook" href="https://facebook.com/alexsachel" target="new">&#xe804;</a>
-      <a class="social-instagram" href="https://instagram.com/acsclosets" target="new">&#xe805;</a>
     </div>
   </footer>
 

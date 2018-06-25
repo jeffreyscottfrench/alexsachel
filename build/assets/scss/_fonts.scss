@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'BanglaMN';
+  src: url('/assets/fonts/BanglaMN/BanglaMN.eot') format('embedded-opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'BanglaMN';
+  src:  url(data:application/x-font-woff;charset=utf-8;base64,) format('woff'), url('/assets/fonts/BanglaMN/BanglaMN.ttf')  format('truetype'), url('/assets/fonts/BanglaMN/BanglaMN.svg#BanglaMN') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

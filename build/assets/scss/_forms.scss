@@ -1,0 +1,97 @@
+form {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: flex-start;
+  align-items: flex-start;
+
+  & div.fieldset {
+    width: 100%;
+    flex: 1 1 auto;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-content: flex-start;
+    align-items: flex-start;
+    padding: 0;
+    margin: 0;
+    border: 0px;
+
+    & > legend,
+    & > p {
+      width: 100%;
+      flex: 1 1 auto;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-content: stretch;
+      align-items: flex-start;
+      padding: 0;
+    }
+
+    & legend {
+      margin-bottom: $space4x;
+    }
+
+    & label {
+      display: block;
+      width: 20%;
+    }
+
+    & input,
+    & textarea {
+      flex: 1 1 auto;
+      display: block;
+      width: auto;
+      max-width: 80%;
+      margin-left: $space2x;
+      border: $border-inputs;
+      &:focus {
+        border: $border-secondary;
+        outline: none;
+      }
+    }
+
+    & p > label,
+    & p > input {
+      align-self: center;
+    }
+
+    & p.form__textarea > label,
+    & p.form__textarea > textarea {
+      align-self: flex-start;
+      margin-top: $space4x;
+    }
+
+    & button {
+      display: block;
+      width: auto;
+      padding: $space $space2x;
+      background-color: $white;
+      border: $border-inputs;
+    }
+  }
+
+  & div.fieldset.form__buttons {
+    flex: 1 0 0%;
+    width: 100%;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    margin-top: $space4x;
+    & button {
+      min-width: 20%;
+      margin: 0 $space2x 0 0;
+    }
+    & button[name="save"] {
+      margin-left: auto;
+      margin-right: 0;
+    }
+  }
+}
+
+
+
+input[aria-invalid="true"], textarea[aria-invalid="true"] {
+  border: 1px solid #f00;
+  box-shadow: 0 0 4px 0 #f00;
+}

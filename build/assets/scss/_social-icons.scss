@@ -58,6 +58,9 @@ $font-icon: 'Entypo-subset', sans-serif; // Icon Font
 }
 .social {
   vertical-align: text-top; // assuming spaced from object above
+  & svg.icon__envelope {
+
+  }
   & a {
     font-family: $font-icon;
     font-size: 20px; // 20px matches facebook like button height

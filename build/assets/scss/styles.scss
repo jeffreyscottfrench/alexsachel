@@ -1,9 +1,12 @@
 /* Import partials from sass directory
 -------------------------------------------------- */
-@import
-  "variables", // define most common variables used
-  "devUtils",
-  "mixins", // self-curated and self-written mixins
-  "social-icons", // custom social icons using entypo icon fonts
-  "custom"
-;
+  @import "./node_modules/normalize.css/normalize.css";
+  @import "fonts";
+  @import "variables"; // define most common variables used
+  @import "devUtils";
+  @import "mixins"; // self-curated and self-written mixins
+  @import "base";
+  @import "forms";
+  @import "typography";
+  @import "social-icons"; // custom social icons using entypo icon fonts
+  @import "custom";

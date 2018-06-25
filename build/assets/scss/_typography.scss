@@ -1,0 +1,79 @@
+footer {
+  font-family: $font-terciary;
+  font-size: $font-size;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  color: $white;
+}
+
+
+span.title__name--logo {
+  font-family: $font-secondary;
+  font-size: $font-size * 1.125;
+  line-height: $line-height * 1.125;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $color-primary;
+  &::before,
+  &::after { // this collapses the extra height in the text
+    content: '';
+    display: block;
+    height: 0;
+    width: 0;
+  }
+  &::before {
+    margin-bottom: 0px;
+  }
+
+  &::after {
+    margin-top: -8px;
+  }
+
+}
+
+section.contact {
+  font-family: $font-secondary;
+  font-size: $font-size * 1.25;
+  line-height: $line-height * 1.25;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: $gray-med;
+}
+
+form {
+
+  & legend {
+    font-size: $font-size * 2;
+    text-align: center;
+  }
+
+  & label {
+    & abbr {
+      text-decoration: none;
+    }
+  }
+
+  & input {
+    height: $line-height * 1.25;
+  }
+
+  & legend,
+  & label {
+    &::before,
+    &::after { // this collapses the extra height in the text
+      content: '';
+      display: block;
+      height: 0;
+      width: 0;
+    }
+    &::before {
+      margin-bottom: 0px;
+    }
+
+    &::after {
+      margin-top: -10px;
+    }
+  }
+
+}
