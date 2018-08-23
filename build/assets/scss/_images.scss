@@ -24,4 +24,13 @@ figure {
     width: 100%;
     padding: $space $space2x;
   }
+
+  & .replacing {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    padding: 10%;
+    background-color: rgba(255, 255, 255, .9);
+    border: 2px dashed $gray-lt;
+    text-align: center;
+  }
 }
