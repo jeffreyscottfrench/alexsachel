@@ -47,23 +47,9 @@
   background-color: $white;
 }
 
-.fullpage.problems {
-  height: auto;
-  min-height: 90vh;
-  padding: $space4x 0;
-  & .title__problem {
-    display: block;
-    flex: 1 0 100%;
-    margin: 0 auto;
-    padding: $space2x 0 0;
-    &:last-of-type {
-      padding-bottom: $space2x;
-    }
-  }
 
-  & .hero {
-    width: 100%;
-  }
+.fullpage.bio {
+  margin-top: 120vh;
 }
 
 .fullpage.about {
@@ -96,6 +82,10 @@
 }
 .fullpage.bottom-edge {
   border-bottom: $space solid $coral;
+
+  &.brand {
+    border-bottom: 1px solid $gray-lt;
+  }
   &::after {
     bottom: 0;
     @include box-shadow-bottom(0, -10px, 40px, 20px, $black, false);
