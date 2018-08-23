@@ -1,0 +1,27 @@
+//images
+figure {
+  position: relative;
+  max-width: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-content: center;
+  align-items: center;
+
+  & picture {
+    flex: 1 1 100%;
+    max-width: 100%;
+
+    & img {
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+
+  & figcaption {
+    align-self: flex-end;
+    width: 100%;
+    padding: $space $space2x;
+  }
+}

@@ -1,5 +1,30 @@
 // custom styles for this project only
-section.fullpage {
+
+.header__site {
+  position: relative;
+  width: 100%;
+
+  & .fullpage {
+    height: 90vh;
+    height: calc(var(--cvh) * 90); // this may be unnecessary to recalculate after innitial set
+    min-height: 0;
+    margin-bottom: -10vh; // accounts for pulling the nav out of the content flow
+    transition: height, 0, linear, 0;
+    @media screen and (min-width: $phone_landscape_and_up) {
+      height: 88vh;
+      height: calc(var(--cvh) * 88);
+      margin-bottom: -13vh; // accounts for pulling the nav out of the content flow
+    }
+    @media screen and (min-width: $tablet_and_up) {
+      height: 92vh;
+      height: calc(var(--cvh) * 92);
+      margin-bottom: 0;
+    }
+
+  }
+}
+
+.fullpage {
   position: relative;
   display: flex;
   flex-flow: row wrap;
@@ -7,40 +32,106 @@ section.fullpage {
   align-content: center;
   align-items: center;
   width: 100vw;
-  height: 102vh;
-  margin-bottom: 150vh;
-  border-top: $border-secondary;
-  border-bottom: $border-secondary;
-  z-index: 1000;
-  // @include devBorder();
-  // & > * {
-    //   @include devBorder(green);
-    //   & > * {
-      //     @include devBorder(red);
-      //   }
-      // }
+  min-height: 100vh;
+  margin-bottom: 120vh;
+
   &:first-of-type {
     border-top: 0px;
   }
   &:last-of-type {
+    border-bottom: 0px;
   }
 }
 
-section.brand {
+.fullpage.brand {
   background-color: $white;
 }
 
-div.branding__main {
+.fullpage.problems {
+  height: auto;
+  min-height: 90vh;
+  padding: $space4x 0;
+  & .title__problem {
+    display: block;
+    flex: 1 0 100%;
+    margin: 0 auto;
+    padding: $space2x 0 0;
+    &:last-of-type {
+      padding-bottom: $space2x;
+    }
+  }
+
+  & .hero {
+    width: 100%;
+  }
+}
+
+.fullpage.about {
+  margin-bottom: 0;
+}
+.fullpage.testimonial {
+  margin-bottom: 0;
+}
+
+.fullpage.top-edge,
+.fullpage.bottom-edge {
+  position: relative;
+  &::before,
+  &::after {
+    display: block;
+    position: absolute;
+    content: '';
+    height: $space4x;
+    left: 0;
+    right: 0;
+    z-index: -1;
+  }
+}
+.fullpage.top-edge {
+  // border-top: 1px solid $black;
+  &::before {
+    top: 0;
+    // @include box-shadow(0, 0, 10px, 5px, $black, false);
+  }
+}
+.fullpage.bottom-edge {
+  border-bottom: $space solid $coral;
+  &::after {
+    bottom: 0;
+    @include box-shadow-bottom(0, -10px, 40px, 20px, $black, false);
+  }
+}
+
+.branding__main {
   position: relative;
   flex: 0 1 0%;
   display: flex;
-  flex-flow: column wrap;
-  justify-content: flex-start;
+  flex-flow: column nowrap;
+  justify-content: center;
   align-content: center;
   align-items: center;
-  width: auto;
+  height: auto;
+  width: 100vw;
   max-width: 100vw;
-  max-height: 80%;
+
+  @media screen and (min-width: $phone_landscape_and_up) {
+    flex: 0 1 auto;
+    max-height: 88vh;
+    width: calc((78vh * .94344) - 30px); // set width as percentage of height minus textname element height
+    padding: 5vh 0;
+  }
+  @media screen and (min-width: $tablet_and_up) {
+    max-height: 92vh;
+    height: 92vh;
+    width: calc((82vh * .94344) - 60px); // set width as percentage of height minus textname element height
+    padding: 5vh 0;
+  }
+  @media screen and (min-width: $desktop_and_up) {
+    max-height: 92vh;
+    height: auto;
+    width: auto;
+    padding: 5vh 0;
+  }
 }
 
 svg.logo__asA {
@@ -49,6 +140,10 @@ svg.logo__asA {
   max-width: 80vw;
   max-height: 95%;
   margin: 0 auto;
+  @media screen and (min-width: $phone_landscape_and_up) {
+    max-width: 100%;
+    max-height: none;
+  }
 }
 
 h1.logo__asA--text {
@@ -59,18 +154,20 @@ h1.logo__asA--text {
   justify-content: space-between;
   align-content: flex-start;
   align-items: flex-end;
-  height: auto;
-  width: 110%;
+  // width: 110%;
   min-width: 100%;
-  padding-top: 8%;
+  max-width: 95vw;
+  height: 40px;
+  width: calc(100% + ((40px * .4717) * 2));
 
-  @media screen and (min-width: 420px) {
-    width: 108%;
-    padding-top: 6%;
+  @media screen and (min-width: $phone_landscape_and_up) {
+    height: 30px;
+    width: calc(100% + ((30px * .4717) * 2));
   }
-  @media screen and (min-width: 625px) {
-    width: 107%;
-    padding: 6%;
+
+  @media screen and (min-width: $tablet_and_up) {
+    height: 60px;
+    width: calc(100% + ((60px * .4717) * 2));
   }
 
   & span {
@@ -78,49 +175,304 @@ h1.logo__asA--text {
   }
 }
 
-div.contact__link {
-  position: absolute;
-  bottom: 3vw;
-  right: 2vw;
-  margin: 0;
-  padding: 0;
-  & svg.icon__envelope {
-    display: block;
-    width: 2vw;
+div.background__logo--sunflowers {
+  position: fixed;
+  top: 0; right: 0; left: 0;
+  min-height: 100vh;
+  padding: 0 $space;
+  opacity: 1;
+  z-index: -1;
+
+  & figure {
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    margin: 0;
+  }
+
+  & picture {
     height: auto;
-    opacity: 0.5;
-    &:hover {
-      cursor: pointer;
-      opacity: 1;
+    width: 100%;
+    flex: 0 1 0%;
+  }
+  & img {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    padding: 0;
+    @media screen and (min-width: $phone_landscape_and_up) {
+      max-height: 75vh;
+      width: auto;
+      margin-top: -10vh;
+    }
+    @media screen and (min-width: $tablet_and_up) {
+      margin-top: 5vh;
     }
   }
 }
 
-section.contact {
-  position: relative;
-  background-color: rgba(255, 255, 255, 0.95);
-  & div.container__contactForm {
-    position: relative;
-    width: 100%;
-    max-width: 800px;
-    padding: $space4x;
-    background-color: rgba(255, 255, 255, 1);
-    border: $border-secondary;
-    border-radius: $space;
+.header__section,
+.footer__section,
+.pullquote__bio,
+.pullquote__about,
+.pullquote__testimonial {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.header__section {
+  padding: $space4x $space;
+  margin-bottom: $space4x;
+  background-color: $coral;
+}
+.footer__section {
+  padding: $space2x $space;
+}
+
+.pullquote__bio {
+  padding: $space4x $space2x;
+}
+
+.pullquote__testimonial {
+  padding: $space2x $space;
+  & h2.pullquote__long {
+
+    & span.pullquote__long {
+      display: block;
+      padding-bottom: $space;
+    }
+
+    @media screen and (min-width: $phone_landscape_and_up) {
+      display: flex;
+      flex-flow: row nowrap;
+      justify-content: space-around;
+      align-content: flex-start;
+      align-items: flex-start;
+      & span.pullquote__long {
+        flex: 1 1 50%;
+        max-width: 400px;
+        padding: 0 $space;
+      }
+    }
   }
 }
 
+// bio section
+section.bio {
+  & .header__section {
+    margin-bottom: 0;
+  }
 
-div.background__logo--sunflowers {
-  position: fixed;
-  top: 0; right: 0; bottom: 0; left: 0;
-  background-image: url('/images/logo_sunflowers.svg');
-  background-attachment: fixed;
-  background-position: center;
-  // background-position-y: top;
-  background-repeat: no-repeat;
-  background-size: auto 90vh;
-  opacity: 0.8;
-  z-index: 0;
-  @include devBorder();
+  & figure.bio {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    & picture,
+    & img {
+      width: 100%;
+    }
+
+    @media screen and (min-width: $phone_landscape_and_up) {
+      width: 50%;
+      align-self: stretch;
+      margin-right: auto;
+      margin-left: 0;
+      &:last-of-type {
+        margin-right: 0;
+        margin-left: auto;
+      }
+
+    }
+  }
+
+  & p:first-of-type {
+    @media screen and (min-width: $phone_landscape_and_up) {
+      flex: 1 1 40%;
+      margin-left: auto;
+      padding-left: $space2x;
+    }
+  }
+
+  & p:nth-last-of-type(2) {
+    @media screen and (min-width: $phone_landscape_and_up) {
+      flex: 1 1 40%;
+      align-self: stretch;
+      margin: 0;
+      margin-right: auto;
+      padding-top: 0;
+      padding-right: $space2x;
+    }
+  }
+
+  & .pullquote__bio {
+    background-color: $gray-dk;
+  }
+}
+
+// about/services
+section.about {
+
+  & .title__sub-service {
+    display: inline;
+  }
+
+  & .pullquote__testimonial {
+    height: 100vh;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  & h2.about__summary {
+    padding: $space2x $space;
+  }
+
+  & .pullquote__about {
+    background-color: $gray-dk;
+  }
+
+  .container-image.before-after {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+    margin-bottom: $space4x;
+
+    & figure {
+      margin: 0;
+      padding: $space 0;
+
+      }
+
+    @media screen and (min-width: $phone_landscape_and_up) {
+      flex-flow: row nowrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      align-items: flex-start;
+      padding: $space4x 0;
+
+      & figure.image__before {
+        flex: .75;
+        padding-left: $space;
+        padding-right: $space;
+      }
+      & figure.image__after {
+        flex: 1.3333333333;
+        padding-left: $space;
+        padding-right: $space;
+      }
+
+      & figcaption {
+        padding: $space 0;
+      }
+
+      & picture {
+        width: 100%;
+      }
+
+      & img {
+        width: 100%;
+      }
+    }
+
+  }
+}
+
+// faq
+section.faq {
+
+  & p.faq__answer {
+
+  }
+  & span.faq__abbreviation {
+    display: none;
+  }
+
+  & .pullquote__testimonial {
+    padding-bottom: $space4x * 2;
+  }
+}
+
+// testimonials
+section.testimonial {
+
+  & article.article__testimonial {
+    padding: 0;
+    display: flex;
+    flex-flow: row wrap;
+
+    & p {
+      padding-left: $space;
+      padding-right: $space;
+    }
+  }
+
+  & ul {
+    margin: 0;
+    padding: 0 $space;
+
+    @media screen and (min-width: $phone_landscape_and_up) {
+      flex: 1 1 40%;
+      margin-right: auto;
+      // align-self: stretch;
+    }
+
+    & li {
+      padding: $space 0 0;
+      list-style-type: none;
+      &:before {
+        content: '-';
+      }
+    }
+  }
+
+  & figure {
+    margin: 0;
+    padding: $space2x 0;
+
+    & picture,
+    & img {
+      width: 100%;
+    }
+  }
+
+  & figure.testimonial__donations {
+    @media screen and (min-width: $phone_landscape_and_up) {
+      flex: 0 1 50%;
+      margin-left: auto;
+    }
+  }
+}
+
+// schedule
+section.schedule {
+  min-height: 0;
+
+  & div.container-iframe {
+    width: 100%;
+    padding: 0 $space;
+  }
+}
+
+// contact
+section.contact {
+  margin-bottom: 0;
+  padding-bottom: $space4x;
+  & div.container__contactForm {
+    width: 100%;
+    padding: 0 $space;
+    background-color: $white;
+    @media screen and (min-width: $tablet_and_up) {
+      max-width: 800px;
+      padding: $space4x;
+      border: $border-secondary;
+      border-radius: $space;
+    }
+  }
 }

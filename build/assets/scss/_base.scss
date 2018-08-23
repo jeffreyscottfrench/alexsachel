@@ -28,11 +28,8 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
-  font-size: $font-size * 0.75;
-  line-height: $line-height * 0.75;
-  font-family: $font-primary;
-  color: $black;
   background-color: $white;
+  z-index: 0;
 
   & > div.wrapper {
     position: relative;
@@ -47,23 +44,43 @@ body {
 header {
   position: relative;
   margin: 0;
+  &.header__site {
+    z-index: 5000;
+  }
 }
 
 main {
   position: relative;
   margin: 0;
   min-height: 100vh;
+  z-index: 1000;
 }
 
 footer {
   position: relative;
   width: 100%;
-  padding: $space $space2x;
   background-color: $black;
+
+  &.footer__site {
+    padding: $space2x $space2x 100px;
+    z-index: 1000;
+    @media screen and (min-width: $tablet_and_up) {
+      padding-bottom: $space2x;
+    }
+  }
 }
 
 section {
   position: relative;
+  // padding-top: $space4x;
+  background-color: $white;
+  @media screen and (min-width: $tablet_and_up) {
+    // padding-top: $space4x * 2;
+  }
+
+  &:first-of-type {
+    padding-top: 0;
+  }
 }
 
 a {
@@ -83,7 +100,9 @@ a {
 h1, h2, h3, h4, h5, h6 {
   font-size: $font-size;
   line-height: $line-height;
+  font-weight: normal;
   margin: 0;
+  padding: 0;
 }
 
 .h1 {
@@ -119,13 +138,24 @@ h1, h2, h3, h4, h5, h6 {
 article,
 .article {
   width: 100%;
-  padding: 0 $space2x;
+  padding: 0 $space;
   margin-bottom: $space4x;
 }
 
 aside,
 .aside {
   text-align: justify;
+}
+
+p {
+  padding: $space;
+  @media screen and (min-width: $tablet_and_up) {
+    padding: 0;
+  }
+
+  article & {
+    padding: 0;
+  }
 }
 
 .flex {
@@ -138,6 +168,21 @@ aside,
 
 .flex > * {
   flex: 0 1 auto;
+}
+
+.hero {
+  min-height: 20vh;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+div.copyright {
+  & .copyright__icon-year {
+    padding: $space2x 0;
+  }
 }
 
 div.container-slideshow {

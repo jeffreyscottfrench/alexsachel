@@ -49,39 +49,37 @@
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 <div class="super-container">
-
-{% block splashscreen %}{% endblock %}
-
-  <header class="wrapper clearfix">
-    {# {% include "partials/nav_main.njk" %} #}
+  <header class="header__site wrapper" id="header-main">
+    {% include "partials/branding_logoName.njk" %}
   </header>
 
+  {% include "partials/nav_main.njk" %}
 
   <main class="content {{ content_special_class }} wrapper">
 {% block content %}{% endblock %}
-  <div class="background__logo--sunflowers"></div>
+  <div class="background__logo--sunflowers">
+    {% include "partials/logo_sunflowers.njk" %}
+  </div>
   </main><!-- end content -->
 
 
-  <footer class="wrapper clearfix">
-    <div class="container-footerLogo flex-box">
-
-      <div class="footerLogo">
-        <img class="logo-as" src="/images/footer_logo.svg" alt="Alex Sachel Logo" title="Alex Sachel" />
-      </div>
-
-    </div>
+  <footer class="footer__site wrapper clearfix">
+    <h3 class="title__section title__name letter-spacing">
+      Alex Sachel
+    </h3>
+    {# secondary nav? #}
     <div class="copyright">
-      &copy; 2018 Alex Sachel
+      <div class="copyright__icon-year letter-spacing">Copyright 2018</div>
     </div>
+
   </footer>
 
 </div> <!-- end super-container -->
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+{# <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="/assets/js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
 
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> #}
 
 <!--build:js(./build) /assets/js/alex-sachel.min.js -->
 <script src="/assets/js/alex-sachel.js"></script>

@@ -1,13 +1,169 @@
-footer {
-  font-family: $font-terciary;
-  font-size: $font-size;
+body {
+  // font-size: $font-size;
+  font-size: $font-size * 0.875;
+  line-height: normal;
+  font-family: $font-primary;
+  color: $black;
+  @media screen and (min-width: $tablet_and_up) {
+    font-size: $font-size * 0.875;
+  }
+}
+
+%font__brand {
+  font-family: $font-secondary;
+  font-weight: 400;
   text-transform: uppercase;
-  text-decoration: none;
-  text-align: center;
-  color: $white;
 }
 
 
+.title__section,
+.title__solution,
+.title__brand-quote,
+.title__service,
+.title__caption,
+.title__calltoaction,
+.faq__abbreviation,
+.copyright__icon-year {
+  font-family: $font-secondary;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+
+.title__section {
+  @include BanglaMN-text-crop;
+  font-size: $font-size * 1.25;
+  &.title__name {
+    @include BanglaMN-text-crop;
+    font-size: $font-size * 1.25;
+  }
+}
+
+.title__solution {
+  @include BanglaMN-text-crop;
+  font-size: $font-size * 2;
+}
+
+.faq__abbreviation {
+  @include BanglaMN-text-crop();
+  font-size: $font-size * 1.25;
+}
+
+.title__brand-quote,
+.title__calltoaction {
+  @include BanglaMN-text-crop($line-height: 1.5);
+  font-size: $font-size;
+}
+
+.title__caption {
+  @include BanglaMN-text-crop($line-height: 1.1);
+  font-size: $font-size * .75;
+}
+
+.copyright__icon-year {
+  @include BanglaMN-text-crop;
+  font-size: $font-size * .75;
+  & span.icon {
+    font-size: $font-size * .625;
+  }
+}
+
+p.about__summary {
+  font-size: $font-size * 0.875;
+  line-height: $line-height;
+}
+
+.letter-spacing {
+  &.title__section {
+    letter-spacing: 1ch;
+    &.title__name {
+      letter-spacing: 1ch;
+    }
+  }
+  &.title__solution {
+    letter-spacing: 0.5ch;
+  }
+  &.title__brand-quote,
+  &.title__caption,
+  &.title__calltoaction,
+  &.copyright__icon-year {
+    letter-spacing: 0.25ch;
+  }
+
+  // applied via letterSpacing.js to all .letter-spacing elements
+  // elimates on last character for alignment purposes;
+  & .last-letter {
+    letter-spacing: 0;
+  }
+}
+
+.footer__site,
+.title__section,
+.title__solution,
+.title__problem,
+.title__testimonial,
+.title__brand-quote,
+.title__calltoaction,
+.about__summary {
+  text-align: center;
+}
+
+.title__testimonial.pullquote__long {
+  text-align: justify;
+  & span.pullquote__credit {
+    white-space: nowrap;
+    text-align: right;
+  }
+  @media screen and (min-width: $phone_landscape_and_up) {
+    text-align: left;
+    & span.pullquote__credit {
+      text-align: inherit;
+    }
+  }
+}
+
+.title__caption {
+  text-align: right;
+
+  .image__before & {
+    text-align: left;
+  }
+}
+
+.title__solution,
+.before-after .title__caption {
+  color: $coral;
+}
+
+.article__testimonial {
+  color: $gray-dk;
+}
+
+.sub-service {
+  color: $gray-med;
+  & .title__sub-service {
+    color: $gray-dk;
+  }
+}
+
+.title__problem,
+.pullquote__credit,
+.faq__answer {
+  color: $gray-med;
+}
+
+.title__brand-quote,
+.title__calltoaction,
+.about__summary {
+  color: $gray-lt;
+}
+
+.footer__site,
+.title__section {
+  color: $white;
+}
+
+// home page branding
 span.title__name--logo {
   font-family: $font-secondary;
   font-size: $font-size * 1.125;
@@ -42,6 +198,10 @@ section.contact {
 }
 
 form {
+
+  & * {
+    font-size: $font-size;
+  }
 
   & legend {
     font-size: $font-size * 2;
