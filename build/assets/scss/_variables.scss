@@ -27,10 +27,11 @@ $border-inputs: 1px solid #cccccc;
 $break-small: 520px;
 $phone_landscape_and_up: 520px;
 $break-mid: 768px;
-$tablet_and_up: 800px;
-$tablet_and_down: 799px;
+$tablet_and_up: 750px;
+$tablet_and_down: 749px;
+$tablet_landscape_and_up: 950px;
 $break-large: 1024px;
-$desktop_and_up: 1024px;
+$desktop_and_up: 1200px;
 
 // $break-xlarge: 1146px; // 1090px content + 5% for margins
 $break-giant: 1500px;  // Excludes most laptops

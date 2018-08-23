@@ -104,38 +104,32 @@
 
 .branding__main {
   position: relative;
-  flex: 0 1 0%;
+  flex: 0 1 auto;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
   align-content: center;
   align-items: center;
   height: auto;
-  width: 100vw;
+  width: auto;
   max-width: 100vw;
 
   @media screen and (min-width: $phone_landscape_and_up) {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
     max-height: 88vh;
-    width: calc((78vh * .94344) - 30px); // set width as percentage of height minus textname element height
-    padding: 5vh 0;
+    width: auto;
+    max-width: calc((88vh * .94344) - 30px); // set max-width as percentage of height minus textname element height
+    padding: 0 5vh;
   }
   @media screen and (min-width: $tablet_and_up) {
     max-height: 92vh;
-    height: 92vh;
-    width: calc((82vh * .94344) - 60px); // set width as percentage of height minus textname element height
-    padding: 5vh 0;
-  }
-  @media screen and (min-width: $desktop_and_up) {
-    max-height: 92vh;
-    height: auto;
-    width: auto;
-    padding: 5vh 0;
+    max-width: calc((82vh * .94344) - 60px); // set max-width as percentage of height minus textname element height
+    padding: 5vh;
   }
 }
 
 svg.logo__asA {
-  width: auto;
+  width: 100%;
   height: auto;
   max-width: 80vw;
   max-height: 95%;
@@ -154,20 +148,18 @@ h1.logo__asA--text {
   justify-content: space-between;
   align-content: flex-start;
   align-items: flex-end;
-  // width: 110%;
-  min-width: 100%;
-  max-width: 95vw;
   height: 40px;
   width: calc(100% + ((40px * .4717) * 2));
-
-  @media screen and (min-width: $phone_landscape_and_up) {
-    height: 30px;
-    width: calc(100% + ((30px * .4717) * 2));
-  }
+  min-width: 100%;
 
   @media screen and (min-width: $tablet_and_up) {
     height: 60px;
     width: calc(100% + ((60px * .4717) * 2));
+  }
+
+  @media screen and (min-width: $break-giant) {
+    height: 80px;
+    width: calc(100% + ((80px * .4717) * 2));
   }
 
   & span {

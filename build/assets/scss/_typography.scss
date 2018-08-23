@@ -23,7 +23,8 @@ body {
 .title__caption,
 .title__calltoaction,
 .faq__abbreviation,
-.copyright__icon-year {
+.copyright__icon-year,
+.title__name--logo {
   font-family: $font-secondary;
   font-weight: 400;
   text-transform: uppercase;
@@ -165,25 +166,17 @@ p.about__summary {
 
 // home page branding
 span.title__name--logo {
-  font-family: $font-secondary;
-  font-size: $font-size * 1.125;
-  line-height: $line-height * 1.125;
-  font-weight: 400;
-  text-transform: uppercase;
   color: $color-primary;
-  &::before,
-  &::after { // this collapses the extra height in the text
-    content: '';
-    display: block;
-    height: 0;
-    width: 0;
-  }
-  &::before {
-    margin-bottom: 0px;
-  }
+  font-size: $font-size * 1.125;
+  @include BanglaMN-text-crop();
 
-  &::after {
-    margin-top: -8px;
+  @media screen and (min-width: $tablet_and_up) {
+    font-size: $font-size * 1.875;
+    @include BanglaMN-text-crop();
+  }
+  @media screen and (min-width: $break-giant) {
+    font-size: $font-size * 2.25;
+    @include BanglaMN-text-crop();
   }
 
 }
