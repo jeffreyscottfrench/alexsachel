@@ -38,6 +38,14 @@ body {
     @include BanglaMN-text-crop;
     font-size: $font-size * 1.25;
   }
+  @media screen and (min-width: $tablet_and_up) {
+    @include BanglaMN-text-crop;
+    font-size: $font-size * 2.5;
+    &.title__name {
+      @include BanglaMN-text-crop;
+      font-size: $font-size * 2.5;
+    }
+  }
 }
 
 .title__solution {
@@ -153,14 +161,14 @@ p.about__summary {
   color: $gray-med;
 }
 
+.title__section,
 .title__brand-quote,
 .title__calltoaction,
 .about__summary {
   color: $gray-lt;
 }
 
-.footer__site,
-.title__section {
+.footer__site {
   color: $white;
 }
 

@@ -9,7 +9,7 @@ $font-secondary: "BanglaMN", sans-serif; // Menus
 $font-terciary: Verdana, Geneva, sans-serif; // Menus
 $font-icon: "Entypo-subset", sans-serif; // Icons
 
-$black: #000000;
+$black: #0F0F0F;
 $gray-dk: #2E2E33;
 $gray-med: #888888;
 $gray-lt: #DDDDDD;
@@ -22,7 +22,7 @@ $color-terciary: $white;
 
 $border-primary: 1px solid $color-primary;
 $border-secondary: 1px solid $color-secondary;
-$border-inputs: 1px solid #cccccc;
+$border-inputs: 1px solid #cccccc; //this should gray-lt
 
 $break-small: 520px;
 $phone_landscape_and_up: 520px;

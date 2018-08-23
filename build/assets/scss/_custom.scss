@@ -95,7 +95,7 @@
   }
 }
 .fullpage.bottom-edge {
-  border-bottom: $space solid $coral;
+  // border-bottom: 1px solid $gray-med;
   &::after {
     bottom: 0;
     @include box-shadow-bottom(0, -10px, 40px, 20px, $black, false);
@@ -220,7 +220,13 @@ div.background__logo--sunflowers {
 .header__section {
   padding: $space4x $space;
   margin-bottom: $space4x;
-  background-color: $coral;
+  background-color: $black;
+  @media screen and (min-width: $tablet_and_up) {
+    padding-top: $space4x * 1.5;
+    padding-bottom: $space4x * 1.5;
+    // border-top: 3px solid $coral;
+    // border-bottom: 3px solid $coral;
+  }
 }
 .footer__section {
   padding: $space2x $space;
