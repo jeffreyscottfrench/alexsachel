@@ -4,9 +4,11 @@ $font-size: 16px; // Default size is 16px
 $line-height: $font-size * 1.25; // Default multiplier is 1.25
 $letter-spacing: 1px; // Default is 1px
 
-$font-primary: Verdana, Geneva, sans-serif; // Body
+// $font-primary: Verdana, Geneva, sans-serif; // Body
+// $font-primary: "Neuton", serif; // Body
+$font-primary: "EB Garamond", serif; // Body
 $font-secondary: "BanglaMN", sans-serif; // Menus
-$font-terciary: Verdana, Geneva, sans-serif; // Menus
+// $font-terciary: Verdana, Geneva, sans-serif; // Menus
 $font-icon: "Entypo-subset", sans-serif; // Icons
 
 $black: #0F0F0F;
@@ -32,13 +34,14 @@ $tablet_and_up: 750px;
 $tablet_and_down: 749px;
 $tablet_landscape_and_up: 950px;
 $break-large: 1024px;
+$desktop_and_down: 1199px;
 $desktop_and_up: 1200px;
 
 // $break-xlarge: 1146px; // 1090px content + 5% for margins
 $break-giant: 1500px;  // Excludes most laptops
 $break-max: 2000px;  // Ultra-large displays
 
-$max_width-content: 1100px;
+$max_width-content: 1200px;
 
 $spacing-base: 10px;  // Use an even number
 

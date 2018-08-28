@@ -358,7 +358,6 @@ section.about {
 
     & article {
       max-width: $max_width-content / 2;
-      // flex: 0 1 calc(50% - 30px);
       flex: 0 1 50%;
       margin-left: auto;
       margin-right: auto;
@@ -376,7 +375,7 @@ section.about {
       max-width: $max_width-content;
       flex: 0 0 100%;
       & p {
-        width: calc(50% - 30px); // mimic one column.
+        // width: calc(50% - 30px); // mimic one column.
       }
     }
 
@@ -402,6 +401,7 @@ section.about {
         flex: 0 1 calc(50% - 30px);
         &:first-of-type {
           order: 0;
+          flex: 0 1 100%;
         }
         &.service__purging {
           order: 2;
@@ -436,7 +436,9 @@ section.about {
 
         & p {
           box-sizing: border-box;
-
+          &:first-of-type {
+            grid-column: 1 / 3;
+          }
           &.service__purging {
             grid-area: left1;
           }
@@ -452,6 +454,13 @@ section.about {
     }
   }
 
+  & .header__service {
+    padding-bottom: $space;
+    border-bottom: 1px solid $gray-lt;
+  }
+
+  & p.service {
+  }
 
   & .title__sub-service {
     display: inline;

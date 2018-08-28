@@ -26,7 +26,7 @@ form {
       justify-content: space-between;
       align-content: stretch;
       align-items: flex-start;
-      padding: 0;
+      padding: $space2x 0;
     }
 
     & legend {
@@ -58,11 +58,13 @@ form {
       align-self: center;
     }
 
+    & p.form__textarea {
+      margin-top: $space4x;
+    }
     & p.form__textarea > label,
     & p.form__textarea > textarea {
       @media screen and (min-width: $tablet_and_up) {
         align-self: flex-start;
-        margin-top: $space4x;
       }
     }
 

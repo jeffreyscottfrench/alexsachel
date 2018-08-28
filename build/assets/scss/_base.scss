@@ -140,6 +140,9 @@ article,
   width: 100%;
   padding: 0 $space;
   margin-bottom: $space4x;
+  @media screen and (min-width: $tablet_and_up) {
+    margin-bottom: $space4x * 2;
+  }
 }
 
 aside,
@@ -148,13 +151,15 @@ aside,
 }
 
 p {
-  padding: $space;
+  padding: $space2x $space;
+  margin-top: 0;
+  margin-bottom: 0;
   @media screen and (min-width: $tablet_and_up) {
     padding: 0;
   }
 
   article & {
-    padding: 0;
+    padding: $space2x 0;
   }
 }
 
