@@ -1,11 +1,12 @@
 body {
   // font-size: $font-size;
-  font-size: $font-size * 0.875;
-  line-height: normal;
+  font-size: $font-size;
+  line-height: 1.6;
   font-family: $font-primary;
   color: $black;
-  @media screen and (min-width: $tablet_and_up) {
-    font-size: $font-size * 0.875;
+  @media screen and (min-width: $phone_landscape_and_up) {
+    font-size: $font-size;
+    line-height: 1.6;
   }
 }
 
@@ -33,10 +34,18 @@ body {
 
 .title__section {
   @include BanglaMN-text-crop;
-  font-size: $font-size * 1.25;
+  font-size: $font-size * 1.75;
   &.title__name {
     @include BanglaMN-text-crop;
-    font-size: $font-size * 1.25;
+    font-size: $font-size * 1.75;
+  }
+  @media screen and (min-width: $phone_landscape_and_up) {
+    @include BanglaMN-text-crop;
+    font-size: $font-size * 1.75;
+    &.title__name {
+      @include BanglaMN-text-crop;
+      font-size: $font-size * 1.75;
+    }
   }
   @media screen and (min-width: $tablet_and_up) {
     @include BanglaMN-text-crop;
@@ -53,6 +62,7 @@ body {
   font-size: $font-size * 2;
 }
 
+.title__service,
 .faq__abbreviation {
   @include BanglaMN-text-crop();
   font-size: $font-size * 1.25;
@@ -84,9 +94,9 @@ p.about__summary {
 
 .letter-spacing {
   &.title__section {
-    letter-spacing: 1ch;
+    letter-spacing: .75ch;
     &.title__name {
-      letter-spacing: 1ch;
+      letter-spacing: .75ch;
     }
   }
   &.title__solution {
@@ -98,12 +108,23 @@ p.about__summary {
   &.copyright__icon-year {
     letter-spacing: 0.25ch;
   }
+}
 
-  // applied via letterSpacing.js to all .letter-spacing elements
-  // elimates on last character for alignment purposes;
+// applied via letterSpacing.js to all .letter-spacing elements
+// elimates on last character for alignment purposes;
+.letter-spacing {
+
   & .last-letter {
     letter-spacing: 0;
   }
+  // only when on one line
+  section.schedule & .last-letter,
+  section.contact & .last-letter {
+    @media screen and (max-width: $phone_landscape_and_down) {
+      letter-spacing: inherit;
+    }
+  }
+
 }
 
 .footer__site,
@@ -115,6 +136,11 @@ p.about__summary {
 .title__calltoaction,
 .about__summary {
   text-align: center;
+}
+
+p {
+  text-align: justify;
+  hyphens: auto;
 }
 
 .title__testimonial.pullquote__long {

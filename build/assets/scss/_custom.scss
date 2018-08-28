@@ -4,12 +4,14 @@
   position: relative;
   width: 100%;
 
-  & .fullpage {
+  & .fullpage.brand {
     height: 90vh;
     height: calc(var(--cvh) * 90); // this may be unnecessary to recalculate after innitial set
     min-height: 0;
     margin-bottom: -10vh; // accounts for pulling the nav out of the content flow
+    background-color: $white;
     transition: height, 0, linear, 0;
+
     @media screen and (min-width: $phone_landscape_and_up) {
       height: 88vh;
       height: calc(var(--cvh) * 88);
@@ -35,18 +37,17 @@
   min-height: 100vh;
   margin-bottom: 120vh;
 
-  &:first-of-type {
-    border-top: 0px;
-  }
-  &:last-of-type {
-    border-bottom: 0px;
-  }
 }
 
-.fullpage.brand {
-  background-color: $white;
-}
+section.fullpage {
 
+  @media screen and (min-width: $phone_landscape_and_up) {
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: stretch;
+  }
+
+}
 
 .fullpage.bio {
   margin-top: 120vh;
@@ -220,6 +221,11 @@ div.background__logo--sunflowers {
 
 .pullquote__bio {
   padding: $space4x $space2x;
+  @media screen and (min-width: $phone_landscape_and_up) {
+    & > * {
+      max-width: 66vw;
+    }
+  }
 }
 
 .pullquote__testimonial {
@@ -248,6 +254,14 @@ div.background__logo--sunflowers {
 
 // bio section
 section.bio {
+  // @include devBorder();
+  // & > * {
+  //   @include devBorder(green);
+  //   & > * {
+  //     @include devBorder(red);
+  //   }
+  // }
+
   & .header__section {
     margin-bottom: 0;
   }
@@ -263,11 +277,16 @@ section.bio {
     }
 
     @media screen and (min-width: $phone_landscape_and_up) {
-      width: 50%;
-      align-self: stretch;
-      margin-right: auto;
-      margin-left: 0;
+      flex: 1 1 50%;
+      width: auto;
+
+      &:first-of-type {
+        & img {
+          display: inline-block;
+        }
+      }
       &:last-of-type {
+        // flex: 1 1 40%;
         margin-right: 0;
         margin-left: auto;
       }
@@ -275,22 +294,36 @@ section.bio {
     }
   }
 
+  & p {
+
+    @media screen and (min-width: $phone_landscape_and_up) {
+      box-sizing: border-box;
+      flex: 0 1 100%;
+      align-self: center;
+      columns: 2;
+      column-gap: $space3x * 2;
+      margin: 0;
+      padding: $space3x * 2 $space3x;
+    }
+  }
+
   & p:first-of-type {
     @media screen and (min-width: $phone_landscape_and_up) {
-      flex: 1 1 40%;
-      margin-left: auto;
-      padding-left: $space2x;
+      flex: 0 1 50%;
+      columns: 1;
+      align-self: flex-end;
+      padding-bottom: 0;
     }
   }
 
   & p:nth-last-of-type(2) {
     @media screen and (min-width: $phone_landscape_and_up) {
-      flex: 1 1 40%;
-      align-self: stretch;
+      flex: 1 1 50%;
+      align-self: flex-start;
       margin: 0;
       margin-right: auto;
+      columns: 1;
       padding-top: 0;
-      padding-right: $space2x;
     }
   }
 
@@ -301,6 +334,96 @@ section.bio {
 
 // about/services
 section.about {
+
+  @media screen and (min-width: $tablet_and_up) {
+
+    & article {
+      flex: 0 1 calc(50% - 30px);
+    }
+
+    & article.service__multi {
+      flex: 0 0 100%;
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      align-items: flex-start;
+
+      & header {
+        flex: 0 1 auto;
+        width: 100%;
+      }
+
+      & p {
+        box-sizing: border-box;
+        flex: 0 1 calc(50% - 30px);
+        &:first-of-type {
+          order: 0;
+        }
+        &.service__purging {
+          order: 2;
+        }
+        &.service__organization {
+          order: 1;
+        }
+        &.service__wardrobing {
+          order: 3;
+        }
+      }
+    }
+  }
+
+  @supports (display: grid) {
+    @media screen and (min-width: $tablet_and_up) {
+      display: grid;
+      grid-gap: 0 $space3x * 2;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+
+      & header.header__section,
+      & article.service__multi,
+      & div.container-image,
+      & div.pullquote__about {
+        grid-column: 1 / 3;
+      }
+
+      & article.service__multi {
+        flex: 0 0 100%;
+        display: grid;
+        grid-gap: 0 $space3x * 2;
+        grid-template-rows: auto;
+        grid-template-areas:
+          "header header"
+          "first empty"
+          "left1 right"
+          "left2 right";
+
+        & header {
+          grid-area: header;
+        }
+
+        & p {
+          box-sizing: border-box;
+
+          &.service__purging {
+            grid-area: left1;
+          }
+          &.service__organization {
+            grid-area: left2;
+          }
+          &.service__wardrobing {
+            grid-area: right;
+          }
+        }
+      }
+
+    }
+
+    @media screen and (min-width: $desktop_and_up) {
+
+    }
+  }
+
 
   & .title__sub-service {
     display: inline;
@@ -370,23 +493,17 @@ section.about {
   }
 }
 
-// faq
-section.faq {
-
-  & p.faq__answer {
-
-  }
-  & span.faq__abbreviation {
-    display: none;
-  }
-
-  & .pullquote__testimonial {
-    padding-bottom: $space4x * 2;
-  }
-}
 
 // testimonials
 section.testimonial {
+
+  @include devBorder();
+  & > * {
+    @include devBorder(green);
+    & > * {
+      @include devBorder(red);
+    }
+  }
 
   & article.article__testimonial {
     padding: 0;
@@ -396,7 +513,26 @@ section.testimonial {
     & p {
       padding-left: $space;
       padding-right: $space;
+      margin-left: auto;
+      margin-right: auto;
     }
+
+  @media screen and (min-width: $tablet_and_up) {
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
+    & p,
+    & ul,
+    & figure {
+      box-sizing: border-box;
+      flex: 0 1 calc(50% - 30px);
+    }
+
+    & figure.testimonial__alex {
+      flex: 0 1 100%;
+    }
+  }
+
   }
 
   & ul {
@@ -406,7 +542,6 @@ section.testimonial {
     @media screen and (min-width: $phone_landscape_and_up) {
       flex: 1 1 40%;
       margin-right: auto;
-      // align-self: stretch;
     }
 
     & li {
@@ -429,10 +564,34 @@ section.testimonial {
   }
 
   & figure.testimonial__donations {
-    @media screen and (min-width: $phone_landscape_and_up) {
-      flex: 0 1 50%;
-      margin-left: auto;
+
+  }
+}
+
+// faq
+section.faq {
+
+  @media screen and (min-width: $tablet_and_up) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-content: flex-start;
+    align-items: flex-start;
+    & article {
+      box-sizing: border-box;
+      flex: 0 1 calc(50% - 30px);
     }
+  }
+
+  & p.faq__answer {
+
+  }
+  & span.faq__abbreviation {
+    display: none;
+  }
+
+  & .pullquote__testimonial {
+    padding-bottom: $space4x * 2;
   }
 }
 
@@ -454,6 +613,8 @@ section.contact {
     width: 100%;
     padding: 0 $space;
     background-color: $white;
+    margin-left: auto;
+    margin-right: auto;
     @media screen and (min-width: $tablet_and_up) {
       max-width: 800px;
       padding: $space4x;
