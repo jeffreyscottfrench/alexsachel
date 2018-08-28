@@ -138,22 +138,28 @@ p.about__summary {
   text-align: center;
 }
 
-p {
+p,
+ul li {
   text-align: justify;
   hyphens: auto;
 }
 
-.title__testimonial.pullquote__long {
+.pullquote__long {
   text-align: justify;
   & span.pullquote__credit {
     white-space: nowrap;
     text-align: right;
   }
+  // @media screen and (min-width: $phone_landscape_and_up) {
+  //   text-align: left;
+  //   & span.pullquote__credit {
+  //     text-align: inherit;
+  //   }
+  // }
+}
+figcaption.pullquote__testimonial .title__testimonial {
   @media screen and (min-width: $phone_landscape_and_up) {
     text-align: left;
-    & span.pullquote__credit {
-      text-align: inherit;
-    }
   }
 }
 
@@ -215,13 +221,24 @@ span.title__name--logo {
 
 }
 
+.article__testimonial {
+  & p {
+    text-indent: 3ch;
+  }
+}
+
 section.contact {
-  font-family: $font-secondary;
-  font-size: $font-size * 1.25;
-  line-height: $line-height * 1.25;
-  font-weight: 400;
-  text-transform: uppercase;
-  color: $gray-med;
+  & form,
+  & label,
+  & button {
+    font-family: $font-secondary;
+    font-size: $font-size * 1.25;
+    line-height: normal;
+    @include BanglaMN-text-crop();
+    font-weight: 400;
+    text-transform: uppercase;
+    color: $gray-med;
+  }
 }
 
 form {
@@ -242,24 +259,12 @@ form {
   }
 
   & input {
-    height: $line-height * 1.25;
+    height: $space4x;
   }
 
-  & legend,
-  & label {
-    &::before,
-    &::after { // this collapses the extra height in the text
-      content: '';
-      display: block;
-      height: 0;
-      width: 0;
-    }
-    &::before {
-      margin-bottom: 0px;
-    }
-
-    &::after {
-      margin-top: -10px;
+  & button {
+    &:hover {
+      color: $coral;
     }
   }
 

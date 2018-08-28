@@ -41,17 +41,15 @@ form {
 
     & input,
     & textarea {
-      flex: 1 1 auto;
       display: block;
-      width: auto;
+      box-sizing: border-box;
+      flex: 1 1 auto;
+      width: 100%;
       max-width: 100%;
       border: $border-inputs;
       &:focus {
         border: $border-secondary;
         outline: none;
-      }
-      @media screen and (min-width: $tablet_and_up) {
-        margin-left: $space2x;
       }
     }
 
@@ -74,6 +72,10 @@ form {
       padding: $space $space2x;
       background-color: $white;
       border: $border-inputs;
+      cursor: pointer;
+      &:hover {
+        border-color: $coral;
+      }
     }
   }
 
