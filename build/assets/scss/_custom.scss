@@ -258,16 +258,6 @@ div.background__logo--sunflowers {
   }
 }
 
-section {
-  @include devBorder();
-  & > * {
-    @include devBorder(green);
-    & > * {
-      @include devBorder(red);
-    }
-  }
-}
-
 // bio section
 section.bio {
 

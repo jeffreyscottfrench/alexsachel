@@ -2,6 +2,7 @@
 build/images/*
 build/assets/img/*
 
+build/assets/css/styles.css
 build/assets/css/*.min.css
 build/assets/css/*.css.map
 
