@@ -11,6 +11,7 @@ $font-secondary: "BanglaMN", sans-serif; // Menus
 // $font-terciary: Verdana, Geneva, sans-serif; // Menus
 $font-icon: "Entypo-subset", sans-serif; // Icons
 
+$transparent: rgba(255, 255, 255, 0);
 $black: #0F0F0F;
 $gray-dk: #2E2E33;
 $gray-med: #888888;
@@ -30,8 +31,9 @@ $break-small: 520px;
 $phone_landscape_and_down: 519px;
 $phone_landscape_and_up: 520px;
 $break-mid: 768px;
-$tablet_and_up: 750px;
 $tablet_and_down: 749px;
+$tablet_and_up: 750px;
+$tablet_landscape_and_down: 949px;
 $tablet_landscape_and_up: 950px;
 $break-large: 1024px;
 $desktop_and_down: 1199px;
@@ -39,7 +41,7 @@ $desktop_and_up: 1200px;
 
 // $break-xlarge: 1146px; // 1090px content + 5% for margins
 $break-giant: 1500px;  // Excludes most laptops
-$break-max: 2000px;  // Ultra-large displays
+$break-max: 1800px;  // Ultra-large displays
 
 $max_width-content: 1200px;
 

@@ -1,9 +1,12 @@
 @font-face {
   font-family: 'BanglaMN';
-  src: url('/assets/fonts/BanglaMN/BanglaMN.eot') format('embedded-opentype'), url('/assets/fonts/BanglaMN/BanglaMN.ttf')  format('truetype'), url('/assets/fonts/BanglaMN/BanglaMN.svg#BanglaMN') format('svg');
+  src: url('/assets/fonts/BanglaMN/BanglaMN.eot') format('embedded-opentype'),
+  url('/assets/fonts/BanglaMN/BanglaMN.ttf') format('truetype'),
+  url('/assets/fonts/BanglaMN/BanglaMN.svg#BanglaMN') format('svg');
   font-weight: normal;
   font-style: normal;
 }
+
 // Neuton
 @import url('https://fonts.googleapis.com/css?family=Neuton:200,300,400,400i,700');
 

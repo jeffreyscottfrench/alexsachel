@@ -32,11 +32,15 @@
   }
   @media screen and (min-width: $tablet_and_up) {
     top: -1px;
-    height: auto;
+    height: 8vh;
+    height: calc(var(--cvh) * 8);
     // min-height: 50px;
     width: 100%;
     max-width: 100%;
     margin: 0;
+  }
+  @media screen and (min-width: $desktop_and_up) {
+    height: 70px;
   }
 
   & a {

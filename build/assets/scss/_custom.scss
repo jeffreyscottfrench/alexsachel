@@ -20,7 +20,10 @@
     @media screen and (min-width: $tablet_and_up) {
       height: 92vh;
       height: calc(var(--cvh) * 92);
-      margin-bottom: 0;
+      margin-bottom: -1px; // ensures overlap and continuous white
+    }
+    @media screen and (min-width: $desktop_and_up) {
+      height: calc(100vh - 70px);
     }
 
   }
@@ -35,8 +38,6 @@
   align-items: center;
   width: 100vw;
   min-height: 100vh;
-  margin-bottom: 120vh;
-
 }
 
 section.fullpage {
@@ -53,16 +54,12 @@ section.fullpage {
   margin-top: 120vh;
 }
 
-.fullpage.about {
-  margin-bottom: 0;
-}
 .fullpage.testimonial {
   margin-bottom: 0;
 }
 
-.fullpage.top-edge,
-.fullpage.bottom-edge {
-  position: relative;
+.top-edge,
+.bottom-edge {
   &::before,
   &::after {
     display: block;
@@ -74,127 +71,51 @@ section.fullpage {
     z-index: -1;
   }
 }
-.fullpage.top-edge {
+.top-edge {
   // border-top: 1px solid $black;
   &::before {
     top: 0;
-    // @include box-shadow(0, 0, 10px, 5px, $black, false);
+    // @include box-shadow(0, 5px, 10px, 5px, $gray-med, false);
   }
 }
-.fullpage.bottom-edge {
+.bottom-edge {
   // border-bottom: 1px solid $gray-med;
   &::after {
     bottom: 0;
     @include box-shadow-bottom(0, -10px, 40px, 20px, $black, false);
   }
 }
-
-.branding__main {
-  position: relative;
-  flex: 0 1 auto;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  height: auto;
-  width: auto;
-  max-width: 100vw;
-
-  @media screen and (min-width: $phone_landscape_and_up) {
-    flex: 1 1 auto;
-    max-height: 88vh;
-    width: auto;
-    max-width: calc((88vh * .94344) - 30px); // set max-width as percentage of height minus textname element height
-    padding: 0 5vh;
+.fullpage.bottom-edge {
+  margin-bottom: 120vh;
+}
+.nav__site.top-edge {
+  @media screen and (max-width: $tablet_and_down) {
+    &::before {
+      bottom: 0;
+      height: auto;
+      @include box-shadow(0, 5px, 10px, 5px, $gray-med, false);
+    }
   }
   @media screen and (min-width: $tablet_and_up) {
-    max-height: 92vh;
-    max-width: calc((82vh * .94344) - 60px); // set max-width as percentage of height minus textname element height
-    padding: 5vh;
+    &::before {
+      display: none;
+    }
   }
 }
-
-svg.logo__asA {
-  width: 100%;
-  height: auto;
-  max-width: 80vw;
-  max-height: 95%;
-  margin: 0 auto;
-  @media screen and (min-width: $phone_landscape_and_up) {
-    max-width: 100%;
-    max-height: none;
-  }
-}
-
-h1.logo__asA--text {
-  position: relative;
-  flex: 1 1 0%;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
-  align-content: flex-start;
-  align-items: flex-end;
-  height: 40px;
-  width: calc(100% + ((40px * .4717) * 2));
-  min-width: 100%;
-
+.nav__site.bottom-edge {
   @media screen and (min-width: $tablet_and_up) {
-    height: 60px;
-    width: calc(100% + ((60px * .4717) * 2));
+    z-index: 4900;
+    border-bottom: 1px solid $white;
+    @include box-shadow-bottom(0, -10px, 10px, 10px, $black, false);
   }
-
-  @media screen and (min-width: $break-giant) {
-    height: 80px;
-    width: calc(100% + ((80px * .4717) * 2));
-  }
-
-  & span {
-    // @include spotlight;
-  }
-}
-
-div.background__logo--sunflowers {
-  position: fixed;
-  top: 0; right: 0; left: 0;
-  min-height: 100vh;
-  padding: 0 $space;
-  opacity: 1;
-  z-index: -1;
-
-  & figure {
-    justify-content: center;
-    height: 100vh;
-    width: 100%;
-    margin: 0;
-  }
-
-  & picture {
-    height: auto;
-    width: 100%;
-    flex: 0 1 0%;
-  }
-  & img {
-    width: 100%;
-    height: auto;
-    margin: auto;
-    padding: 0;
-    @media screen and (min-width: $phone_landscape_and_up) {
-      max-height: 75vh;
-      width: auto;
-      margin-top: -10vh;
-    }
-    @media screen and (min-width: $tablet_and_up) {
-      margin-top: 5vh;
-      max-width: 100%;
-    }
+  &::after {
+    display: none;
   }
 }
 
 .header__section,
 .footer__section,
-.pullquote__bio,
-.pullquote__about,
+.pullquote__brand,
 .pullquote__testimonial {
   width: 100%;
   display: flex;
@@ -217,45 +138,84 @@ div.background__logo--sunflowers {
 }
 .footer__section {
   padding: $space2x $space;
+  background-color: $gray-lt;
+  @media screen and (min-width: $tablet_and_up) {
+    padding-top: $space4x * 1.5;
+    padding-bottom: $space4x * 1.5;
+  }
 }
 
-.pullquote__bio {
+.pullquote__brand {
   padding: $space4x $space2x;
-  @media screen and (min-width: $phone_landscape_and_up) {
-    & > * {
-      max-width: 66vw;
-    }
+  background-color: $gray-dk;
+  & > * {
+    max-width: $max_width-content * .75;
   }
 }
 
-.pullquote__testimonial {
-  padding: $space2x $space;
 
-  & h2 {
+div.pullquote__testimonial.pullquote__long {
+  max-width: $max_width-content;
+  margin-left: auto;
+  margin-right: auto;
+  padding: $space4x $space;
+  color: $gray-dk;
+
+  & .title__testimonial {
+    display: inline-block;
+
+    // 700px for large phones landscape
+    // @media screen and (max-width: $tablet_landscape_and_down) {
+    //   max-width: $max_width-content * .5;
+    // }
     @media screen and (min-width: $tablet_and_up) {
-      max-width: $max_width-content / 2;
-    }
-  }
-
-  & h2.pullquote__long {
-    @media screen and (min-width: $tablet_and_up) {
-      max-width: $max_width-content;
-    }
-
-    & span.pullquote__long {
-      display: block;
-      padding-bottom: $space;
-
-      @media screen and (min-width: $phone_landscape_and_up) {
-        columns: 2;
-        column-gap: $space3x;
-      }
-      @media screen and (min-width: $phone_landscape_and_up) {
-        column-gap: $space3x * 2;
+      columns: 2;
+      column-gap: $space3x * 2;
+      & .pullquote__ending {
+        display: inline-block;
       }
     }
 
+    @media screen and (min-width: $tablet_and_up) and (max-width: $tablet_landscape_and_down) {
+      & .pullquote__credit {
+        // display: block;
+        // margin-left: auto;
+      }
+    }
   }
+
+  // & .pullquote__piece {
+
+  //   @media screen and (max-width: $desktop_and_down) {
+  //     display: inline;
+  //     padding-bottom: 0;
+  //     &::before {
+  //       display: block;
+  //       content: ' ';
+  //       white-space: pre;
+  //     }
+  //     &:first-child::before {
+  //       display: none;
+  //     }
+  //   }
+  //   @media screen and (min-width: $desktop_and_up) {
+  //     display: block;
+  //     &::before {
+  //       display: block;
+  //       content: ' ';
+  //       white-space: pre;
+  //     }
+  //     &:first-child::before {
+  //       display: none;
+  //     }
+  //   }
+  // }
+
+}
+
+
+section {
+
 }
 
 // bio section
@@ -341,13 +301,6 @@ section.bio {
     }
   }
 
-
-  & .pullquote__bio {
-    background-color: $gray-dk;
-    & h2 {
-      max-width: $max_width-content / 2;
-    }
-  }
 }
 
 // about/services
@@ -466,23 +419,27 @@ section.about {
     display: inline;
   }
 
-  & .pullquote__testimonial {
-    height: 100vh;
-    padding-top: 0;
-    padding-bottom: 0;
+  & figure.about__shopping,
+  & figure.about__assisting {
+    flex: 0 1 100%;
+    margin: 0 0 $space4x;
+    & picture,
+    & img {
+      width: 100%;
+    }
   }
 
-  & h2.about__summary {
-    padding: $space2x $space;
-  }
-
-  & .pullquote__about {
-    background-color: $gray-dk;
+  & figure.about__assisting {
+    margin: 0;
+    & picture {
+      flex: 1 1 auto;
+    }
     @media screen and (min-width: $tablet_and_up) {
-      & h2 {
-        max-width: $max_width-content;
+      & figcaption.pullquote__about {
+        // background: linear-gradient(rgba(171, 169, 166, .8) 0%, rgba(130, 128, 137, 1) 80%, rgba(95, 95, 108, 1) 100%);
       }
     }
+
   }
 
   .container-image.before-after {
@@ -533,16 +490,157 @@ section.about {
     }
 
   }
+
 }
 
 
 // testimonials
 section.testimonial {
+  & header.header__section {
+    margin-bottom: 0;
+  }
+
+  & figure {
+    flex: 1 1 100%;
+    margin: 0;
+    padding: $space2x 0;
+
+    & picture {
+      flex: 1 1 auto;
+      width: 100%;
+    }
+    & img {
+      width: 100%;
+    }
+  }
+
+  & figure.testimonial__alex {
+    padding: 0;
+
+    & figcaption.pullquote__testimonial {
+
+      @media screen and (min-width: $phone_landscape_and_up) {
+        display: block;
+        box-sizing: border-box;
+        position: absolute;
+        left: 0;
+        bottom: 0; // or match bottom padding;
+        width: 40%;
+        padding: $space2x $space * 1.5;
+        justify-content: flex-start;
+        align-items: flex-end;
+        background: linear-gradient(90deg, $black 20%, transparent 100%);
+
+        // option 1
+        // border-image-source: linear-gradient(90deg, $coral 20%, rgba(0,0,0,0) 100%);
+        // border-image-slice: 10%;
+        // border-width: 3px;
+        // border-right-width: 0;
+
+        // option 2
+        border-left: $space2x solid $coral;
+
+        // option 3
+        // border-left: $space2x solid $coral;
+        // &:before {
+        //   display: block;
+        //   position: absolute;
+        //   top: 0;
+        //   left: 0;
+        //   content: ' ';
+        //   border-left: 2px solid $gray-lt;
+        //   height: 100%;
+        // }
+
+
+        & .title__testimonial {
+          width: 14ch;
+          margin-left: 0;
+          color: $gray-lt;
+        }
+
+        & .pullquote__credit {
+          display: block;
+          text-align: right;
+        }
+      }
+
+      @media screen and (min-width: $tablet_and_up) {
+        padding: $space3x;
+        & .title__testimonial {
+          width: 28ch;
+        }
+        & .pullquote__credit {
+          display: inline;
+          text-align: inherit;
+        }
+      }
+    }
+  }
+
+  & figure.testimonial__shopping {
+    padding-bottom: 0;
+
+    & figcaption.pullquote__testimonial {
+      & .title__testimonial {
+        text-align: justify;
+
+        & .pullquote__ending {
+          display: block;
+          padding-top: $space2x;
+          text-align: center;
+        }
+      }
+
+      @media screen and (min-width: $tablet_and_up) {
+        position: absolute;
+        bottom: 80%;
+        width: 100%;
+        border-left: $space solid $coral;
+        border-right: $space solid $transparent;
+        background: linear-gradient(rgb(255, 255, 255), rgb(243, 239, 237) 35%, rgba(243, 239, 237, .75) 70%, rgba(243, 239, 237, .5) 80%, rgba(243, 239, 237, .2) 95%, rgba(243, 239, 237, 0));
+        & .title__testimonial {
+          align-self: flex-start;
+          max-width: $max_width-content;
+        }
+      }
+      @media screen and (min-width: $tablet_landscape_and_up) {
+        top: 0;
+        bottom: auto;
+
+        & .title__testimonial {
+          align-self: flex-start;
+          columns: 2;
+          column-gap: $space3x * 2;
+          text-align: justify;
+
+          // pullquote__beginning?
+          & .pullquote__ending {
+            // position: absolute;
+            // box-sizing: border-box;
+            // bottom: 0;
+            // right: 0;
+            // width: 50%;
+            // padding: 0 0 $space2x $space3x - 5;
+            // margin: 0;
+            // text-align: right;
+          }
+        }
+      }
+    }
+  }
 
   & article.article__testimonial {
-    padding: 0;
+    padding: $space4x 0 0;
     display: flex;
     flex-flow: row wrap;
+    @include devBorder();
+    & > * {
+      @include devBorder(green);
+      & > * {
+        @include devBorder(red);
+      }
+    }
 
     & p {
       padding-left: $space;
@@ -567,83 +665,15 @@ section.testimonial {
       }
     }
 
-    & figure {
-      flex: 1 1 100%;
-      margin: 0;
-      padding: $space2x 0;
 
-      & picture,
-      & img {
-        width: 100%;
-      }
-
-      & figcaption.pullquote__testimonial {
-        @media screen and (min-width: $phone_landscape_and_up) {
-          display: block;
-          box-sizing: border-box;
-          position: absolute;
-          left: 0;
-          bottom: $space2x; // match bottom padding;
-          width: 40%;
-          padding: $space2x $space + $space-half;
-          justify-content: flex-start;
-          align-items: flex-end;
-          background: linear-gradient(90deg, $black 20%, transparent 100%);
-
-          // option 1
-          // border-image-source: linear-gradient(90deg, $coral 20%, rgba(0,0,0,0) 100%);
-          // border-image-slice: 10%;
-          // border-width: 3px;
-          // border-right-width: 0;
-
-          // option 2
-          border-left: $space2x solid $coral;
-
-          // option 3
-          // border-left: $space2x solid $coral;
-          // &:before {
-          //   display: block;
-          //   position: absolute;
-          //   top: 0;
-          //   left: 0;
-          //   content: ' ';
-          //   border-left: 2px solid $gray-lt;
-          //   height: 100%;
-          // }
-
-
-          & h2 {
-            width: 14ch;
-            margin-left: 0;
-            color: $gray-lt;
-          }
-
-          & .pullquote__credit {
-            display: block;
-            text-align: right;
-          }
-        }
-
-        @media screen and (min-width: $tablet_and_up) {
-          padding: $space3x;
-          & h2 {
-            width: 28ch;
-          }
-          & .pullquote__credit {
-            display: inline;
-            text-align: inherit;
-          }
-        }
-      }
-    }
 
     @media screen and (min-width: $phone_landscape_and_up) {
       justify-content: space-between;
       & ul,
-      & figure.testimonial__donations {
+      & figure.testimonial__shopping--half {
         flex: 0 1 calc(50% - 20px);
       }
-      & figure.testimonial__donations {
+      & figure.testimonial__shopping--half {
         padding: 0;
       }
     }
@@ -678,6 +708,10 @@ section.testimonial {
           margin-right: auto;
         }
 
+        &.paragraph__lead {
+          max-width: $max_width-content * .75;
+        }
+
         &.width__half--left {
           margin-top: 0;
           margin-right: 0;
@@ -702,7 +736,7 @@ section.testimonial {
         flex: 0 1 100%;
       }
 
-      & figure.testimonial__donations {
+      & figure.testimonial__shopping--half {
         flex: 0 1 50%;
         max-width: $max_width-content / 2;
         margin: 0 auto 0 0;
@@ -714,6 +748,7 @@ section.testimonial {
 
 // faq
 section.faq {
+  min-height: 0;
 
   @media screen and (min-width: $tablet_and_up) {
     justify-content: center;
@@ -741,8 +776,8 @@ section.faq {
     display: none;
   }
 
-  & .pullquote__testimonial {
-    padding-bottom: $space4x * 2;
+  & .title__calltoaction {
+    max-width: $max_width-content * .5;
   }
 }
 
@@ -754,23 +789,27 @@ section.schedule {
     width: 100%;
     padding: 0 $space;
   }
+
 }
 
 // contact
 section.contact {
   margin-bottom: 0;
   padding-bottom: $space4x;
+
   & div.container__contactForm {
     width: 100%;
     padding: 0 $space;
     background-color: $white;
     margin-left: auto;
     margin-right: auto;
-    @media screen and (min-width: $tablet_and_up) {
+    @media screen and (min-width: $tablet_landscape_and_up) {
       max-width: $max_width-content;
-      padding: $space4x;
-      border: $border-secondary;
-      border-radius: $space;
+      & form {
+        padding: $space4x;
+        border: $border-secondary;
+        border-radius: $space;
+      }
     }
   }
 }

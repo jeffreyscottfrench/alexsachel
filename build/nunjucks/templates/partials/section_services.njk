@@ -1,4 +1,4 @@
-<section class="fullpage about top-edge" id="section-about">
+<section class="fullpage about bottom-edge" id="section-about">
   <header class="header__section">
     <h3 class="title__section letter-spacing">
       Services
@@ -40,35 +40,6 @@
     </p>
   </article>
 
-  <div class="container-image before-after">
-    <figure class="about image__before">
-      <div class="replacing">This image will be swapped out</div>
-      <picture>
-        {% set image_path %}/images/Closet-Organization-Alex-Sachel-Style-Consultant{% endset %}
-        <img
-          alt="An image of a messy, disorganized closet before hiring Alex Sachel, a Style Consultant based out of Chattanooga, TN."
-          {% include "partials/ri-med-width.njk" %}
-          >
-      </picture>
-      <figcaption class="title__caption letter-spacing">
-        before
-      </figcaption>
-    </figure>
-    <figure class="about image__after">
-      <div class="replacing">This image will be swapped out</div>
-      <picture>
-        {% set image_path %}/images/Closet-Organization-Alex-Sachel-Style-Consultant-2{% endset %}
-        <img
-          alt="An image of a clean, organized closet after hiring Alex Sachel, a Style Consultant based out of Chattanooga, TN."
-          {% include "partials/ri-med-width.njk" %}
-          >
-      </picture>
-      <figcaption class="title__caption letter-spacing">
-        after
-      </figcaption>
-    </figure>
-  </div>
-
   <article class="about__service">
     <header class="header__service">
       <h4 class="title__service letter-spacing">
@@ -79,6 +50,15 @@
     <p class="service">
       If we determine that you need some new pieces to fill in the holes in your wardrobe, then shopping is the next step! This can be done with or without you, and we can shop locally, out of town, or online. These specifics can be established in your consultation, and will be tailored to suit both your style, as well as your lifestyle goals. After shopping we will have a fitting to decide what works, what doesn’t, what needs to be tailored, and what will work best into your current wardrobe.
     </p>
+    <figure class="about__shopping">
+      <picture>
+        {% set image_path %}/images/Shopping-Alex-Sachel-Style-Consultant-2{% endset %}
+        <img
+          alt="An image of Alex Sachel, a Style Consultant based out of Chattanooga, TN as she does some personal shopping for a client at a local boutique."
+          {% include "partials/ri-med-width.njk" %}
+          >
+      </picture>
+    </figure>
   </article>
 
   <article class="about__service">
@@ -115,10 +95,19 @@
       I currently offer trips to Atlanta, Nashville, and New York, with a couple of new exciting locations coming in 2019! Depending on your budget and desires, we can put together a day trip to Atlanta or a fully curated long weekend in New York.
     </p>
   </article>
-  <div class="pullquote__about">
-    <h2 class="about__summary title__brand-quote letter-spacing">
-      I look forward to assisting you, so please feel free to use the form below to contact me to set up a consultation.<br><br>
-      Thank you!
-    </h2>
-  </div>
+  <figure class="about__assisting">
+    <picture>
+      {% set image_path %}/images/Shopping-Alex-Sachel-Style-Consultant-4_32{% endset %}
+      <img
+        alt="An image of Alex Sachel, a Style Consultant based out of Chattanooga, TN as she does some personal shopping for a client at a local boutique."
+        {% include "partials/ri-full-width.njk" %}
+        >
+    </picture>
+    <figcaption class="pullquote__about pullquote__brand">
+      <h2 class="about__summary title__brand-quote letter-spacing">
+        I look forward to assisting you, so please feel free to use the form below to contact me, or the scheduler to set up a Style Consultation.<br><br>
+        Thank you!
+      </h2>
+    </figcaption>
+  </figure>
 </section>

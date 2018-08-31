@@ -1,5 +1,4 @@
 body {
-  // font-size: $font-size;
   font-size: $font-size;
   line-height: 1.6;
   font-family: $font-primary;
@@ -12,11 +11,9 @@ body {
   }
   @media screen and (min-width: $tablet_and_up) {
     font-size: $font-size * 1.625;
-    line-height: 1.4;
   }
   @media screen and (min-width: $desktop_and_up) {
     font-size: $font-size * 1.875;
-    line-height: 1.4;
   }
 }
 
@@ -76,8 +73,12 @@ body {
 
 .title__brand-quote,
 .title__calltoaction {
-  @include BanglaMN-text-crop($line-height: 1.5);
+  @include BanglaMN-text-crop;
   font-size: $font-size;
+  @media screen and (min-width: $tablet_and_up) {
+    @include BanglaMN-text-crop;
+    font-size: $font-size * 1.75;
+  }
 }
 
 .title__caption {
@@ -99,13 +100,14 @@ body {
   line-height: normal;
   @media screen and (min-width: $tablet_and_up) {
     font-size: $font-size * 1.625;
-    line-height: normal;
+  }
+  @media screen and (min-width: $desktop_and_up) {
+    font-size: $font-size * 2.125;
   }
 }
 
-p.about__summary {
-  font-size: $font-size * 0.875;
-  line-height: $line-height;
+.paragraph__lead {
+
 }
 
 .letter-spacing {
@@ -126,6 +128,13 @@ p.about__summary {
     letter-spacing: 0.25ch;
     @media screen and (min-width: $tablet_and_up) {
       letter-spacing: 0.125ch;
+    }
+  }
+
+  &.title__calltoaction,
+  &.title__brand-quote {
+    @media screen and (min-width: $tablet_and_up) {
+      letter-spacing: 0.25ch;
     }
   }
 }
@@ -159,11 +168,12 @@ section.bio {
       line-height: $font-size * 1.25;
       display: inline-block;
       margin-right: -$space * .25;
-      margin-left: -$space4x;
+      margin-left: -$space * 1.5;
 
       @media screen and (min-width: $phone_landscape_and_up) {
         font-size: $font-size * 2.25;
         margin-right: -$space * .125;
+        margin-left: -$space4x;
       }
       @media screen and (min-width: $tablet_and_up) {
         font-size: $font-size * 4;
@@ -195,10 +205,18 @@ section.bio,
 .title__solution,
 .title__problem,
 .title__testimonial,
-.title__brand-quote,
-.title__calltoaction,
-.about__summary {
+.title__calltoaction {
   text-align: center;
+}
+
+.title__brand-quote {
+  text-align: left;
+  @media screen and (min-width: $phone_landscape_and_up) {
+    text-align: justify;
+  }
+  @media screen and (min-width: $tablet_and_up) {
+    text-align: center;
+  }
 }
 
 p,
@@ -208,10 +226,12 @@ ul li {
 }
 
 .pullquote__long {
-  text-align: justify;
-  & span.pullquote__credit {
-    white-space: nowrap;
-    text-align: right;
+  & .title__testimonial {
+    text-align: justify;
+    & span.pullquote__credit {
+      white-space: nowrap;
+      text-align: right;
+    }
   }
   // @media screen and (min-width: $phone_landscape_and_up) {
   //   text-align: left;
@@ -239,6 +259,7 @@ figcaption.pullquote__testimonial .title__testimonial {
   color: $coral;
 }
 
+.title__calltoaction,
 .article__testimonial {
   color: $gray-dk;
 }
@@ -257,9 +278,7 @@ figcaption.pullquote__testimonial .title__testimonial {
 }
 
 .title__section,
-.title__brand-quote,
-.title__calltoaction,
-.about__summary {
+.title__brand-quote {
   color: $gray-lt;
 }
 
