@@ -161,6 +161,11 @@ p {
   article & {
     padding: $space2x 0;
   }
+
+  & span.fake__break {
+    display: block;
+    text-indent: 3ch;
+  }
 }
 
 .flex {

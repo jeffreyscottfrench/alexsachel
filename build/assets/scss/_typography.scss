@@ -15,6 +15,11 @@ body {
   @media screen and (min-width: $desktop_and_up) {
     font-size: $font-size * 1.875;
   }
+
+  // TODO put all inside here
+  // scope $font-size to body
+  // increase $font-size declaration in body media queries only
+  // all others will scale up;
 }
 
 %font__brand {
@@ -37,7 +42,6 @@ body {
   font-weight: 400;
   text-transform: uppercase;
 }
-
 
 .title__section {
   @include BanglaMN-text-crop;
@@ -107,7 +111,9 @@ body {
 }
 
 .paragraph__lead {
-
+  font-size: $font-size * 1.5;
+  font-weight: 600;
+  text-indent: 0;
 }
 
 .letter-spacing {
@@ -191,32 +197,40 @@ section.bio {
 }
 
 section.bio,
-.article__testimonial {
+section.testimonial {
   & p {
-    text-indent: $space;
-    @media screen and (min-width: $phone_landscape_and_up) {
-      text-indent: $space3x;
+    text-indent: 3ch;
+    & span.fake__break {
+      text-indent: 3ch;
     }
   }
+}
+
+p.paragraph__lead {
+  font-size: $font-size * 1.75;
+  font-weight: 600;
+  text-indent: 0 !important;
+}
+p.paragraph__accent {
+  font-weight: 500;
 }
 
 .footer__site,
 .title__section,
 .title__solution,
 .title__problem,
-.title__testimonial,
 .title__calltoaction {
   text-align: center;
 }
 
 .title__brand-quote {
-  text-align: left;
-  @media screen and (min-width: $phone_landscape_and_up) {
-    text-align: justify;
-  }
-  @media screen and (min-width: $tablet_and_up) {
-    text-align: center;
-  }
+  text-align: center;
+  // @media screen and (min-width: $phone_landscape_and_up) {
+  //   text-align: justify;
+  // }
+  // @media screen and (min-width: $tablet_and_up) {
+  //   text-align: center;
+  // }
 }
 
 p,
@@ -225,20 +239,26 @@ ul li {
   hyphens: auto;
 }
 
-.pullquote__long {
+.pullquote__testimonial {
   & .title__testimonial {
     text-align: justify;
+    text-align-last: center;
+    & span.pullquote__ending {
+      text-align: center;
+    }
     & span.pullquote__credit {
       white-space: nowrap;
-      text-align: right;
+      text-align: center;
     }
   }
-  // @media screen and (min-width: $phone_landscape_and_up) {
-  //   text-align: left;
-  //   & span.pullquote__credit {
-  //     text-align: inherit;
-  //   }
-  // }
+}
+
+div.pullquote__testimonial {
+  & .title__testimonial {
+    font-size: $font-size * 1.75;
+    font-weight: 400;
+    color: $gray-dk;
+  }
 }
 figcaption.pullquote__testimonial .title__testimonial {
   @media screen and (min-width: $phone_landscape_and_up) {
@@ -271,6 +291,7 @@ figcaption.pullquote__testimonial .title__testimonial {
   }
 }
 
+.title__pricing,
 .title__problem,
 .pullquote__credit,
 .faq__answer {
@@ -287,7 +308,8 @@ figcaption.pullquote__testimonial .title__testimonial {
 }
 
 // home page branding
-span.title__name--logo {
+
+h1 span.title__name--logo {
   color: $color-primary;
   font-size: $font-size * 1.125;
   @include BanglaMN-text-crop();
@@ -300,7 +322,6 @@ span.title__name--logo {
     font-size: $font-size * 2.25;
     @include BanglaMN-text-crop();
   }
-
 }
 
 section.contact {

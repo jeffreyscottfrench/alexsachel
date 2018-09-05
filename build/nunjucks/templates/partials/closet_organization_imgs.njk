@@ -1,0 +1,28 @@
+<div class="container-image before-after">
+    <figure class="about image__before">
+      <div class="replacing">This image will be swapped out</div>
+      <picture>
+        {% set image_path %}/images/Closet-Organization-Alex-Sachel-Style-Consultant{% endset %}
+        <img
+          alt="An image of a messy, disorganized closet before hiring Alex Sachel, a Style Consultant based out of Chattanooga, TN."
+          {% include "partials/ri-med-width.njk" %}
+          >
+      </picture>
+      <figcaption class="title__caption letter-spacing">
+        before
+      </figcaption>
+    </figure>
+    <figure class="about image__after">
+      <div class="replacing">This image will be swapped out</div>
+      <picture>
+        {% set image_path %}/images/Closet-Organization-Alex-Sachel-Style-Consultant-2{% endset %}
+        <img
+          alt="An image of a clean, organized closet after hiring Alex Sachel, a Style Consultant based out of Chattanooga, TN."
+          {% include "partials/ri-med-width.njk" %}
+          >
+      </picture>
+      <figcaption class="title__caption letter-spacing">
+        after
+      </figcaption>
+    </figure>
+  </div>
