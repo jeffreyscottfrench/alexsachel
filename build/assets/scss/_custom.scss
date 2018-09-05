@@ -129,6 +129,10 @@ section.fullpage {
   padding: $space4x $space;
   margin-bottom: $space4x;
   background-color: $black;
+  color: $gray-lt;
+  @media screen and (min-width: $phone_landscape_and_up) {
+    // padding: $space4x $space;
+  }
   @media screen and (min-width: $tablet_and_up) {
     padding-top: $space4x * 1.5;
     padding-bottom: $space4x * 1.5;
@@ -163,6 +167,7 @@ section.fullpage {
 div.pullquote__testimonial {
   padding: $space4x $space2x;
   background-color: $gray-lt;
+  color: $gray-dk;
 
   & > * {
     max-width: $max_width-content * .5;
@@ -178,8 +183,6 @@ div.pullquote__testimonial {
 
   & span.no__break {
     white-space: nowrap;
-    // display: block;
-    // text-indent: 3ch;
   }
 
   & span.pullquote__ending {
@@ -215,6 +218,10 @@ section {
 // bio section
 section.bio {
 
+  & .header__section {
+    margin-bottom: 0;
+  }
+
   .container__bio-first,
   .container__bio-second {
     position: relative;
@@ -240,11 +247,6 @@ section.bio {
       align-content: stretch;
       align-items: flex-start;
     }
-  }
-
-  & .header__section {
-    margin-bottom: 0;
-    // grid-area: header;
   }
 
   & figure.bio {
@@ -714,12 +716,15 @@ section.testimonial {
 
       @media screen and (min-width: $tablet_and_up) {
         padding: $space3x;
+        & .title__testimonial {
+          width: 18ch;
+        }
         & .pullquote__credit {
           display: inline;
           text-align: inherit;
         }
       }
-      @media screen and (min-width: $desktop_and_up) {
+      @media screen and (min-width: $tablet_landscape_and_up) {
         & .title__testimonial {
           width: 23ch;
         }
@@ -824,20 +829,20 @@ section.testimonial {
     & p.paragraph__lead,
     & p.paragraph__accent {
       padding-bottom: $space2x;
-      @media screen and (min-width: $tablet_and_up) {
-        padding-bottom: $space4x;
-      }
     }
+
     & p.paragraph__lead {
       @media screen and (min-width: $tablet_and_up) {
-        max-width: 60%;
+        padding-top: $space4x;
       }
       @media screen and (min-width: $desktop_and_up) {
-        max-width: $max_width-content * .5;
+        padding: $space4x 0 $space4x $space;
       }
     }
+
     & p.paragraph__accent {
-      @media screen and (min-width: $desktop_and_up) {
+      @media screen and (min-width: $tablet_and_up) {
+        padding-bottom: $space4x;
       }
     }
 
@@ -977,6 +982,9 @@ section.faq {
 
   & .title__calltoaction {
     max-width: $max_width-content * .5;
+    @media screen and (min-width: $desktop_and_up) {
+      max-width: $max_width-content * .75;
+    }
   }
 }
 

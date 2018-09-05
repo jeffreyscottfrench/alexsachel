@@ -62,10 +62,10 @@ footer {
   background-color: $black;
 
   &.footer__site {
-    padding: $space2x $space2x 100px;
+    padding: $space4x $space2x 100px;
     z-index: 1000;
     @media screen and (min-width: $tablet_and_up) {
-      padding-bottom: $space2x;
+      padding: $space4x $space2x $space2x;
     }
   }
 }
@@ -166,6 +166,10 @@ p {
     display: block;
     text-indent: 3ch;
   }
+}
+
+span.no__break {
+  white-space: nowrap;
 }
 
 .flex {

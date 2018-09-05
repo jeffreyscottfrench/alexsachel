@@ -43,16 +43,29 @@ body {
   text-transform: uppercase;
 }
 
-.title__section {
-  @include BanglaMN-text-crop;
-  font-size: $font-size * 2;
-  @media screen and (min-width: $tablet_and_up) {
-    @include BanglaMN-text-crop;
+.title__section,
+.title__section span.letter-spacing {
+  @include BanglaMN-text-crop($line-height: 1.3);
+  font-size: $font-size * 1.875;
+  @media screen and (min-width: 375px) {
+    @include BanglaMN-text-crop($line-height: 1.3);
+    font-size: $font-size * 2.125;
+  }
+  @media screen and (min-width: 410px) {
+    @include BanglaMN-text-crop($line-height: 1.3);
+    font-size: $font-size * 2.25;
+  }
+  @media screen and (min-width: $phone_landscape_and_up) {
+    @include BanglaMN-text-crop($line-height: 1.3);
     font-size: $font-size * 2.5;
   }
+  @media screen and (min-width: $tablet_and_up) {
+    @include BanglaMN-text-crop($line-height: 1.3);
+    font-size: $font-size * 3;
+  }
   @media screen and (min-width: $desktop_and_up) {
-    @include BanglaMN-text-crop;
-    font-size: $font-size * 3.5;
+    @include BanglaMN-text-crop($line-height: 1.3);
+    font-size: $font-size * 4;
   }
 }
 
@@ -83,6 +96,10 @@ body {
     @include BanglaMN-text-crop;
     font-size: $font-size * 1.75;
   }
+  @media screen and (min-width: $desktop_and_up) {
+    @include BanglaMN-text-crop;
+    font-size: $font-size * 2.125;
+  }
 }
 
 .title__caption {
@@ -100,25 +117,32 @@ body {
 
 .title__question,
 .title__testimonial {
-  font-size: $font-size * 1.5;
+  font-size: $font-size * 1.625;
   line-height: normal;
   @media screen and (min-width: $tablet_and_up) {
-    font-size: $font-size * 1.625;
+    font-size: $font-size * 2.125;
   }
   @media screen and (min-width: $desktop_and_up) {
+    font-size: $font-size * 2.5;
+  }
+}
+
+figcaption .title__testimonial {
+  @media screen and (min-width: $tablet_and_up) {
+    font-size: $font-size * 1.875;
+  }
+  @media screen and (min-width: $tablet_landscape_and_up) {
     font-size: $font-size * 2.125;
   }
 }
 
-.paragraph__lead {
-  font-size: $font-size * 1.5;
-  font-weight: 600;
-  text-indent: 0;
-}
-
 .letter-spacing {
-  &.title__section {
-    letter-spacing: .75ch;
+  &.title__section,
+  .title__section & {
+    letter-spacing: .66ch;
+    @media screen and (min-width: $phone_landscape_and_up) {
+      letter-spacing: .75ch;
+    }
     @media screen and (min-width: $tablet_and_up) {
       letter-spacing: $space * 1.5;
     }
@@ -163,8 +187,87 @@ body {
       letter-spacing: inherit;
     }
   }
-
 }
+
+.header__section,
+.footer__site {
+  & .title__section {
+    & span.letter-spacing {
+      display: block;
+      padding-bottom: $space2x;
+      &:last-of-type {
+        padding-bottom: 0;
+      }
+    }
+  }
+}
+
+
+.footer__site,
+section.bio {
+  & .title__section {
+    @media screen and (min-width: $phone_landscape_and_up) {
+      & span.letter-spacing {
+        display: inline-block;
+        padding: 0;
+      }
+      & span.letter-spacing:nth-last-child(1n+2) {
+        & .last-letter {
+          letter-spacing: inherit;
+        }
+      }
+    }
+  }
+}
+
+section.schedule {
+  & .title__section {
+    @media screen and (min-width: $tablet_and_up) {
+      & span.letter-spacing {
+        display: inline-block;
+        padding: 0;
+        white-space: pre;
+      }
+      & span.letter-spacing:nth-last-child(1n+2) {
+        & .last-letter {
+          letter-spacing: inherit;
+        }
+      }
+    }
+  }
+}
+section.contact {
+  & .title__section {
+    @media screen and (min-width: $tablet_and_up) {
+      & span.letter-spacing:nth-last-child(-n+2) {
+        display: inline-block;
+        padding: 0;
+      }
+      & span.letter-spacing:nth-last-child(1) {
+        white-space: pre;
+      }
+      & span.letter-spacing:nth-last-child(2) {
+        & .last-letter {
+          letter-spacing: inherit;
+        }
+      }
+    }
+    @media screen and (min-width: 1180px) {
+      & span.letter-spacing {
+        display: inline-block;
+        padding: 0;
+        white-space: pre;
+      }
+      & span.letter-spacing:nth-last-child(1n+2) {
+        & .last-letter {
+          letter-spacing: inherit;
+        }
+      }
+    }
+  }
+}
+
+
 
 section.bio {
   & p {
@@ -199,9 +302,15 @@ section.bio {
 section.bio,
 section.testimonial {
   & p {
-    text-indent: 3ch;
+    text-indent: $space2x;
     & span.fake__break {
-      text-indent: 3ch;
+      text-indent: $space2x;
+    }
+    @media screen and (min-width: $tablet_and_up) {
+      text-indent: $space4x;
+      & span.fake__break {
+        text-indent: $space4x;
+      }
     }
   }
 }
@@ -209,7 +318,12 @@ section.testimonial {
 p.paragraph__lead {
   font-size: $font-size * 1.75;
   font-weight: 600;
-  text-indent: 0 !important;
+  @media screen and (min-width: $tablet_and_up) {
+    font-size: $font-size * 2.25;
+  }
+  @media screen and (min-width: $desktop_and_up) {
+    font-size: $font-size * 3.5;
+  }
 }
 p.paragraph__accent {
   font-weight: 500;
@@ -229,7 +343,7 @@ p.paragraph__accent {
   //   text-align: justify;
   // }
   // @media screen and (min-width: $tablet_and_up) {
-  //   text-align: center;
+  //   text-align: justify;
   // }
 }
 
@@ -242,7 +356,7 @@ ul li {
 .pullquote__testimonial {
   & .title__testimonial {
     text-align: justify;
-    text-align-last: center;
+
     & span.pullquote__ending {
       text-align: center;
     }
@@ -255,14 +369,15 @@ ul li {
 
 div.pullquote__testimonial {
   & .title__testimonial {
-    font-size: $font-size * 1.75;
     font-weight: 400;
-    color: $gray-dk;
   }
 }
-figcaption.pullquote__testimonial .title__testimonial {
-  @media screen and (min-width: $phone_landscape_and_up) {
-    text-align: left;
+figcaption.pullquote__testimonial {
+  & .title__testimonial,
+  & .pullquote__credit {
+    @media screen and (min-width: $phone_landscape_and_up) {
+      text-align: left;
+    }
   }
 }
 
