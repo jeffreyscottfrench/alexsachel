@@ -87,7 +87,7 @@ a {
   &:link,
   &:visited,
   &:active {
-    color: $color-primary;
+    color: inherit;
     text-decoration: none;
   }
 

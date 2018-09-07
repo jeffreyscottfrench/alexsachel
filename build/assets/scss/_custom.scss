@@ -1010,18 +1010,31 @@ section.contact {
     background-color: $white;
     margin-left: auto;
     margin-right: auto;
+
+    & form {
+      & div.fieldset {
+        & input,
+        & textarea,
+        & button {
+          border-radius: 0;
+        }
+      }
+    }
+
     @media screen and (min-width: $tablet_landscape_and_up) {
       max-width: $max_width-content;
       & form {
         padding: $space4x;
         border: $border-secondary;
         border-radius: $space;
-      }
 
-      & input,
-      & textarea,
-      & button {
-        border-radius: $space;
+        & div.fieldset {
+          & input,
+          & textarea,
+          & button {
+            border-radius: $space;
+          }
+        }
       }
     }
   }
