@@ -432,6 +432,24 @@ section.about {
         margin-left: 0;
         padding-left: $space3x + $space; // half column plus original
       }
+      &#service-packing {
+        &:last-of-type {
+          flex: 0 1 100%;
+          max-width: $max_width-content;
+          // margin-left: 0;
+          // margin-right: 0;
+          padding-right: $space;
+          padding-left: $space;
+
+          & p.service {
+            columns: 2;
+            column-gap: $space4x * 2;
+            & span.fake__break {
+              text-indent: inherit;
+            }
+          }
+        }
+      }
     }
     @media screen and (min-width: $desktop_and_up) {
       // half of remaing after max-content with buffer
@@ -439,6 +457,10 @@ section.about {
       margin-right: calc((100vw - 1210px) * .5);
       &:nth-of-type(2n+3) { // odd from 3rd
         margin-right: 0;
+        &:last-of-type {
+          margin-right: auto;
+          padding-right: $space;
+        }
       }
       &:nth-of-type(2n+2) { // even from 2nd
         margin-left: 0;
@@ -446,13 +468,10 @@ section.about {
     }
   }
 
-  & article:first-of-type {
+  & article#service-consultation {
     @media screen and (min-width: $tablet_and_up) {
       max-width: $max_width-content;
       flex: 0 0 100%;
-      & p {
-        // width: calc(50% - 30px); // mimic one column.
-      }
     }
   }
 
@@ -547,7 +566,7 @@ section.about {
   & p.service {
     & span.fake__break {
       display: block;
-      text-indent: 3ch;
+      text-indent: $space3x;
     }
   }
 

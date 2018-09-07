@@ -45,16 +45,9 @@ $break-max: 1800px;  // Ultra-large displays
 
 $max_width-content: 1200px;
 
-$highDPI: only screen and (-webkit-min-device-pixel-ratio: 1.25),
-          only screen and ( min--moz-device-pixel-ratio: 1.25),
-          only screen and ( -o-min-device-pixel-ratio: 1.25/1),
-          only screen and ( min-device-pixel-ratio: 1.25),
-          only screen and ( min-resolution: 200dpi),
-          only screen and ( min-resolution: 1.25dppx);
-
 $spacing-base: 10px;  // Use an even number
 
-// to-do: Clean this up as map or move to mixin that uses it.
+// todo: Clean this up as map or move to mixin that uses it.
 $space: $spacing-base;
 $space-half: $space / 2;
 $space2x: $space * 2;
