@@ -3,9 +3,9 @@
 .nav__site {
   position: sticky;
   top: 90vh;
-  top: calc(var(--cvh) * 90);
+  top: calc(var(--ncvh) * 90);
   height: 10vh;
-  height: calc(var(--cvh) * 10);
+  height: calc(var(--ncvh) * 10);
   width: auto;
   max-width: 100vw;
   // overflow the box using padding+margin to cover empty space from pulling the nav out of the content flow
@@ -26,14 +26,14 @@
 
   @media screen and (min-width: $phone_landscape_and_up) {
     top: 88vh;
-    top: calc(var(--cvh) * 88);
+    top: calc(var(--ncvh) * 88);
     height: 12vh;
-    height: calc(var(--cvh) * 12);
+    height: calc(var(--ncvh) * 12);
   }
   @media screen and (min-width: $tablet_and_up) {
     top: -1px;
     height: 8vh;
-    height: calc(var(--cvh) * 8);
+    height: calc(var(--ncvh) * 8);
     // min-height: 50px;
     width: 100%;
     max-width: 100%;
