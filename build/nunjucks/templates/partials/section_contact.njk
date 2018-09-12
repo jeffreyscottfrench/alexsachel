@@ -5,15 +5,15 @@
     </h3>
   </header>
   <div class="container__contactForm">
-    <form action="#" method="post">
+    <form action="/secure_scripts/contact-phpmailer.php" method="post" id="form-contact">
       <div class="fieldset">
 
         <p>
-          <label class="form__label" for="author">Name
+          <label class="form__label" for="name">Name
           </label>
-          <input aria-required="true" id="author" name="author" pattern="^([- \w\d\u00c0-\u024f]+)$"
+          <input aria-required="true" id="author" name="name" pattern="^([- \w\d\u00c0-\u024f]+)$"
             required="required" size="20" spellcheck="false" title="Your name (no special characters, diacritics are okay)"
-            type="text" value="">
+            type="text" value="" autocomplete="name" />
         </p>
 
         <p>
@@ -21,27 +21,27 @@
           </label>
           <input aria-required="true" id="email" name="email" pattern="^(([-\w\d]+)(\.[-\w\d]+)*@([-\w\d]+)(\.[-\w\d]+)*(\.([a-zA-Z]{2,5}|[\d]{1,3})){1,2})$"
             required="required" size="30" spellcheck="false" title="Your email address"
-            type="email" value="">
+            type="email" value="" autocomplete="email" />
         </p>
 
         <p>
-          <label class="form__label" for="phone">Phone
+          <label class="form__label" for="main_phone">Phone
           </label>
-          <input aria-required="true" id="phone" name="phone" pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
-            size="30" spellcheck="false" title="Your phone number" type="tel" value="">
+          <input aria-required="true" id="phone" name="main_phone" pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+            size="30" spellcheck="false" title="Your phone number" type="tel" value="" autocomplete="tel"/>
+          <input style="display:none;" name="info" type="text" placeholder="hp-safety" value=""/>
         </p>
-
         <p class="form__textarea">
-          <label class="form__label" for="text">Comment
+          <label class="form__label" for="comments">Comment
           </label>
-          <textarea aria-required="true" cols="40" id="text" name="text" required="required"
+          <textarea aria-required="false" cols="40" id="text" name="comments"
             rows="10" spellcheck="true" title="Your comment"></textarea>
         </p>
 
       </div>
       <div class="fieldset form__buttons">
 
-        <button name="reset" type="reset">Reset</button>
+        <button name="reset" type="reset" id="reset">Reset</button>
         <button name="save" type="submit">Send</button>
 
       </div>

@@ -82,6 +82,10 @@ form {
       &:hover {
         border-color: $coral;
       }
+      &:focus {
+        border: 1px solid $coral;
+        outline: none;
+      }
     }
   }
 
@@ -107,4 +111,14 @@ form {
 input[aria-invalid="true"], textarea[aria-invalid="true"] {
   border: 1px solid $coral;
   box-shadow: 0 0 4px 0 $coral;
+}
+
+span.form__input--error {
+  display: block;
+  width: 100%;
+  margin: $space 0;
+  padding: 5px $space;
+  color: $coral;
+  border: 1px solid $coral;
+  background: rgba(235, 32, 5, 0.1);
 }

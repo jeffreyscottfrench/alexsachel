@@ -203,3 +203,37 @@ div.container-slideshow {
   position: relative;
   width: 100%;
 }
+
+.alert {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0; right: $space; left: $space;
+  height: 100vh;
+  background-color: $white;
+  color: $gray-dk;
+  z-index: 9000;
+
+  @media screen and (min-width: $tablet_and_up) {
+    height: auto;
+    bottom: 0;
+  }
+
+  &.alert__success {
+
+  }
+  &.alert__failure {
+    border-color: $coral !important;
+    color: $coral;
+  }
+  & h3 {
+    display: block;
+    position: relative;
+    max-width: $max_width-content * .5;
+    max-width: 30ch; // tailored to message
+    text-align: center;
+  }
+}

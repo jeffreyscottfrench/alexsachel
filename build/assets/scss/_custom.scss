@@ -1024,6 +1024,7 @@ section.contact {
   padding-bottom: $space4x;
 
   & div.container__contactForm {
+    position: relative;
     width: 100%;
     padding: 0 $space;
     background-color: $white;
@@ -1034,7 +1035,8 @@ section.contact {
       & div.fieldset {
         & input,
         & textarea,
-        & button {
+        & button,
+        & span.form__input--error {
           border-radius: 0;
         }
       }
@@ -1042,15 +1044,17 @@ section.contact {
 
     @media screen and (min-width: $tablet_landscape_and_up) {
       max-width: $max_width-content;
-      & form {
+      & form,
+      & .alert {
         padding: $space4x;
-        border: $border-secondary;
         border-radius: $space;
+        border: $border-secondary;
 
         & div.fieldset {
           & input,
           & textarea,
-          & button {
+          & button,
+          & span.form__input--error {
             border-radius: $space-half;
           }
         }

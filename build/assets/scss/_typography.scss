@@ -91,7 +91,8 @@ body {
 .title__service,
 .faq__abbreviation,
 .title__brand-quote,
-.title__calltoaction {
+.title__calltoaction,
+.title__alert {
   @include BanglaMN-text-crop;
   font-size: $font-size * 1.125;
   @media screen and (min-width: 375px) {
@@ -460,6 +461,11 @@ section.contact {
   & button {
     text-align: center;
   }
+  & span.form__input--error {
+    font-family: $font-primary;
+    font-size: $font-size * 1.5;
+    text-transform: none;
+  }
 }
 
 form {
@@ -484,6 +490,7 @@ form {
   }
 
   & button {
+    &:focus,
     &:hover {
       color: $coral;
     }
