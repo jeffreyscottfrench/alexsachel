@@ -16,8 +16,13 @@ const customViewHeight = function() {
       document.documentElement.style.setProperty('--ncvh', ncvh);
     }
 
-    // run this in a loop until the user scrolls so the first repositioning stays smooth.
-    afreq_init = requestAnimationFrame(customViewHeightNav);
+    // run this in a loop on mobile until the user scrolls so the first repositioning stays smooth.
+    if (window.matchMedia("(min-width: 749px)").matches) {
+      return;
+    } else {
+      console.log("looping");
+      afreq_init = requestAnimationFrame(customViewHeightNav);
+    }
   }
 
   const customViewHeightNavAnimate = function() {
