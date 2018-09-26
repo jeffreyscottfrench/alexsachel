@@ -10,6 +10,7 @@ const hideNavDuringFormInput = function() {
   const showNav = function() {
     if (nav.classList.contains('hidden')) {
       nav.classList.remove('hidden');
+      customViewHeight();
     }
   }
 
