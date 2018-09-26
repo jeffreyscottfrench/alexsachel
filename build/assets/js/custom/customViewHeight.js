@@ -20,7 +20,6 @@ const customViewHeight = function() {
     if (window.matchMedia("(min-width: 749px)").matches) {
       return;
     } else {
-      console.log("looping");
       afreq_init = requestAnimationFrame(customViewHeightNav);
     }
   }

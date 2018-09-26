@@ -172,6 +172,10 @@ span.no__break {
   white-space: nowrap;
 }
 
+.hidden {
+  display: none !important;
+}
+
 .flex {
   display: flex;
   flex-flow: row wrap;
