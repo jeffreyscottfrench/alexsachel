@@ -489,11 +489,4 @@ form {
     height: $space4x;
   }
 
-  & button {
-    &:focus,
-    &:hover {
-      color: $coral;
-    }
-  }
-
 }

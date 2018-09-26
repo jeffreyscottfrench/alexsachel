@@ -87,6 +87,28 @@ form {
         outline: none;
       }
     }
+    & button {
+      color: $gray-med;
+      &:focus,
+      &:hover {
+        color: $coral;
+      }
+    }
+
+    & .button--disabled {
+      opacity: .3;
+      &:hover {
+        cursor: default;
+        cursor: not-allowed;
+        color: $gray-med;
+        border: $border-inputs;
+      }
+      &:focus {
+        color: $gray-med;
+        border: $border-inputs;
+        outline: none;
+      }
+    }
   }
 
   & div.fieldset.form__buttons {

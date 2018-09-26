@@ -6,9 +6,26 @@ const formCheck = function(){
   let name = document.getElementsByName('name')[0];
   let email = document.getElementsByName('email')[0];
   let phone = document.getElementsByName('main_phone')[0];
+  let submit = document.getElementById('submit');
+  let reset = document.getElementById('reset');
+
+  let nameContent = false;
+  let emailContent = false;
+  let phoneContent = false;
 
   let errorMessage;
   let errElName;
+
+  // disable submit without required content
+  const enableSubmit = function() {
+    if (nameContent && emailContent && phoneContent) {
+      submit.classList.remove('button--disabled');
+      submit.setAttribute('type', 'submit');
+    } else {
+      submit.setAttribute('type', 'disabled');
+      submit.classList.add('button--disabled');
+    }
+  }
 
   // check inputs against regexp tests
   const checkName = function() {
@@ -20,6 +37,10 @@ const formCheck = function(){
       errorMessage = 'Looks like you forgot your name!';
       errElName = 'name-error';
       displayMessage(name, errElName, errorMessage);
+      nameContent = false;
+    } else {
+      nameContent = true;
+      enableSubmit;
     }
   }
   const checkEmail = function() {
@@ -33,6 +54,10 @@ const formCheck = function(){
       errorMessage = 'Email address is not in a valid format. Please try again.';
       errElName = 'email-error';
       displayMessage(email, errElName, errorMessage);
+      emailContent = false;
+    } else {
+      emailContent = true;
+      enableSubmit();
     }
   }
   const checkPhone = function() {
@@ -45,6 +70,10 @@ const formCheck = function(){
       errorMessage = 'A phone number with area code is required, but you can let me know to only contact you via email below.';
       errElName = 'phone-error';
       displayMessage(phone, errElName, errorMessage);
+      phoneContent = false;
+    } else {
+      phoneContent = true;
+      enableSubmit();
     }
   }
 
@@ -57,10 +86,20 @@ const formCheck = function(){
     inputName.parentNode.insertBefore(msgEl, inputName.nextSibling);
   }
 
-  // listen for unfocus on form inputs
+  // listen for changes/unfocus on form inputs
   name.addEventListener('blur', checkName);
+  name.addEventListener('change', checkName);
   email.addEventListener('blur', checkEmail);
+  email.addEventListener('change', checkEmail);
   phone.addEventListener('blur', checkPhone);
+  phone.addEventListener('change', checkPhone);
 
+  reset.addEventListener('click', function() {
+    nameContent = false;
+    emailContent = false;
+    phoneContent = false;
+    enableSubmit();
+  })
+  enableSubmit();
 };
 formCheck();
