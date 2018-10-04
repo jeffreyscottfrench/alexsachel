@@ -9,6 +9,11 @@ require '/home/users/web/b2074/pow.lsfrock/PHPMailer/src/PHPMailer.php';
 require '/home/users/web/b2074/pow.lsfrock/PHPMailer/src/SMTP.php';
 require '/home/users/web/b2074/pow.lsfrock/secure_scripts/alexsachel_credentials-phpmailer.php';
 
+// validate its from the form
+if ($_POST['info'] !== "") {
+  header('Location: http://alexsachel.com/#section-contact?contact-failure');
+  die();
+}
 
 // get values from form
 $name = $_POST['name'];
