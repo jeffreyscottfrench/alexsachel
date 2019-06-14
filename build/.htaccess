@@ -1,13 +1,26 @@
 Options +FollowSymLinks
 RewriteEngine On
 
+#### Force non-www Domain ####
+RewriteCond %{HTTP_HOST} ^www\.alexsachel\.com [NC]
+RewriteRule ^(.*)$ https://alexsachel.com/ [L,NE,R=301]
+
+#### Force non-www Domain ####
+RewriteCond %{HTTP_HOST} ^www\.acsstyleconsulting\.com [NC]
+RewriteRule ^(.*)$ https://acsstyleconsulting.com/ [L,NE,R=301]
+
+#### Force HTTPS ####
+RewriteCond %{HTTPS} off
+RewriteCond %{SERVER_PORT} 80
+RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 #### Rule for Error Page ####
-ErrorDocument 404 http://website.com/404.html
-ErrorDocument 500 http://website.com/500.html
+# ErrorDocument 404 http://alexsachel.com/404.html
+# ErrorDocument 500 http://alexsachel.com/500.html
 
 #### RedirectMatch old content to new content ####
-RedirectMatch 301 /page.html http://website.com/newpage.html
-RedirectMatch 301 /folder/(.*) http://website.com/newpage.html
+# RedirectMatch 301 /page.html http://alexsachel.com/newpage.html
+# RedirectMatch 301 /folder/(.*) http://alexsachel.com/newpage.html
 
 
 AddType video/mp4 .mp4 .m4v
