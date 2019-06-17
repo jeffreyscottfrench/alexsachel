@@ -18,6 +18,11 @@ RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 # ErrorDocument 404 http://alexsachel.com/404.html
 # ErrorDocument 500 http://alexsachel.com/500.html
 
+
+#### Alias a non-existent folder to content to make nicer links ####
+# RewriteRule ^portfolio$ http://website.com/dir/portfolio.html [R=301,L]
+
+
 #### RedirectMatch old content to new content ####
 # RedirectMatch 301 /page.html http://alexsachel.com/newpage.html
 # RedirectMatch 301 /folder/(.*) http://alexsachel.com/newpage.html

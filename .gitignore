@@ -1,12 +1,14 @@
 *.log
+build/favicon.ico
 build/images/*
 build/assets/img/*
 
-build/assets/css/styles.css
+build/assets/css/*.css
 build/assets/css/*.min.css
 build/assets/css/*.css.map
 
 build/assets/js/*.js
+build/assets/js/*.min.js
 build/assets/js/*.js.map
 
 # exclude generated html in build folder

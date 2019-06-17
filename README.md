@@ -1,7 +1,7 @@
 README
 
 
-## Jumpstart - V1.1.0
+## Jumpstart - V1.3.1
 
 Developed by Jeffrey Scott French with modified assets from:
 * Gulp for Wordpress - gulp workflow by Ahmad Awais
@@ -21,6 +21,7 @@ License: MIT or as noted by original authors.
 * create new repo on github for this project (same name as above)
 * git remote set-url origin <new-repo-on-github>
 * optional: set jumpstart as the upstream to be able to get updates using directions here: https://help.github.com/articles/configuring-a-remote-for-a-fork/
+* optional: fetch improvements/updates from jumpstart to use in this project: https://help.github.com/articles/syncing-a-fork/
 
 
 ##### Install Node Modules:
