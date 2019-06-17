@@ -431,18 +431,33 @@ figcaption.pullquote__testimonial {
 
 // home page branding
 
-h1 span.title__name--logo {
-  color: $color-primary;
-  font-size: $font-size * 1.125;
-  @include BanglaMN-text-crop();
+h1 {
+  & span.title__name--logo {
+    color: $color-primary;
+    font-size: $font-size * 1.125;
+    @include BanglaMN-text-crop();
 
-  @media screen and (min-width: $tablet_and_up) {
-    font-size: $font-size * 1.875;
-    @include BanglaMN-text-crop();
+    @media screen and (min-width: $tablet_and_up) {
+      font-size: $font-size * 1.875;
+      @include BanglaMN-text-crop();
+    }
+    @media screen and (min-width: $break-giant) {
+      font-size: $font-size * 2.25;
+      @include BanglaMN-text-crop();
+    }
+
   }
-  @media screen and (min-width: $break-giant) {
-    font-size: $font-size * 2.25;
-    @include BanglaMN-text-crop();
+  &#logo__ACSStyleConsulting {
+    & span.title__name--logo {
+      font-size: $font-size * .75;
+
+      @media screen and (min-width: $tablet_and_up) {
+        font-size: $font-size * 1.125;
+      }
+      @media screen and (min-width: $break-giant) {
+        font-size: $font-size * 1.25;
+      }
+    }
   }
 }
 

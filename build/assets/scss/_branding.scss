@@ -46,6 +46,11 @@ h1.logo__asA--text {
   justify-content: space-between;
   align-content: flex-start;
   align-items: flex-end;
+
+  &#logo__ACSStyleConsulting {
+    align-items: flex-start;
+    padding-top: $space2x;
+  }
 }
 
 h1.logo__asA--text {
