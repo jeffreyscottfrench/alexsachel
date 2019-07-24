@@ -9,7 +9,6 @@ $letter-spacing: 1px; // Default is 1px
 $font-primary: "EB Garamond", serif; // Body
 $font-secondary: "BanglaMN", sans-serif; // Menus
 // $font-terciary: Verdana, Geneva, sans-serif; // Menus
-$font-icon: "Entypo-subset", sans-serif; // Icons
 
 $transparent: rgba(255, 255, 255, 0);
 $black: #0F0F0F;
@@ -22,6 +21,7 @@ $coral: #EB2005;
 $color-primary: $black;
 $color-secondary: $gray-med;
 $color-terciary: $white;
+$color-background: $white;
 
 $border-primary: 1px solid $color-primary;
 $border-secondary: 1px solid $color-secondary;

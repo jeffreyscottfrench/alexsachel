@@ -1021,7 +1021,6 @@ section.schedule {
 // contact
 section.contact {
   margin-bottom: 0;
-  padding-bottom: $space4x;
 
   & div.container__contactForm {
     position: relative;
@@ -1060,5 +1059,41 @@ section.contact {
         }
       }
     }
+  }
+
+  & footer.footer__section {
+    align-items: flex-start;
+    padding: $space4x $space;
+    margin-top: $space4x * 1.5;
+    @media screen and (min-width: $tablet_and_up) {
+      padding-top: $space4x * 1.5;
+      padding-bottom: $space4x * 1.5;
+    }
+
+    & .article__contact {
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      @media screen and (min-width: $tablet_landscape_and_up) {
+        max-width: $max_width-content / 2;
+        margin-bottom: $space4x * 2;
+      }
+      @media screen and (min-width: $desktop_and_up) {
+        margin-bottom: 0;
+      }
+
+      & header {
+        text-align: center;
+      }
+
+      &#Contact-Social {
+        @media screen and (min-width: $desktop_and_up) {
+          flex-grow: 1;
+          align-self: stretch;
+        }
+      }
+    }
+
   }
 }

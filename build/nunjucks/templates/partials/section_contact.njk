@@ -47,4 +47,23 @@
       </div>
     </form>
   </div>
+
+  <footer class="footer__section" id="Contact-Footer">
+    <article class="article__contact" id="Contact-MailChimp">
+      <header class="header__form">
+        <h4 class="title__article">Subscribe To The Newsletter</h4>
+      </header>
+      {% include "partials/mailChimp_signup.njk" %}
+    </article>
+    <article class="article__contact" id="Contact-Social">
+      <header class="header__social">
+        <h4 class="title__article">Follow Us</h4>
+      </header>
+      {% include "partials/social_links.njk" %}
+    </article>
+  </footer>
 </section>
+
+{% block scripts %}
+  <script type="text/javascript" src="//downloads.mailchimp.com/js/signup-forms/popup/unique-methods/embed.js" data-dojo-config="usePlainJson: true, isDebug: false"></script><script type="text/javascript">window.dojoRequire(["mojo/signup-forms/Loader"], function(L) { L.start({"baseUrl":"mc.us19.list-manage.com","uuid":"3ede874ee48fc9474e4e8cebc","lid":"4af150efa6","uniqueMethods":true}) })</script>
+{% endblock %}

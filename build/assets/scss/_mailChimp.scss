@@ -1,0 +1,35 @@
+#mc_embed_signup {
+  background-color: inherit;
+
+  & form {
+    margin-top: $space4x;
+    @media (min-width: $tablet_landscape_and_up) {
+      margin-top: $space2x;
+    }
+  }
+
+  & .mc-field-group {
+    width: 100%;
+    margin-bottom: $space2x;
+  }
+
+  & .mc-subscribe-button {
+    width: auto;
+    margin: $space2x auto 0;
+
+    @media (min-width: $phone_landscape_and_up) {
+      width: auto;
+      margin: $space2x 0 0 auto;
+    }
+
+    @media (min-width: $tablet_landscape_and_up) {
+      width: 50%;
+      margin: $space2x auto 0;
+    }
+
+    & input[type="submit"] {
+      width: 100%;
+      padding-top: 11px;
+    }
+  }
+}

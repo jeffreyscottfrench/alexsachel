@@ -72,7 +72,8 @@ form {
       }
     }
 
-    & button {
+    & button,
+    & .button {
       display: block;
       width: auto;
       padding: $space $space2x;
@@ -87,7 +88,8 @@ form {
         outline: none;
       }
     }
-    & button {
+    & button,
+    & .button {
       color: $gray-med;
       &:focus,
       &:hover {
