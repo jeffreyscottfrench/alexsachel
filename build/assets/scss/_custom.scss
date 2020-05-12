@@ -279,7 +279,7 @@ section.bio {
       }
 
       @media screen and (min-width: $tablet_landscape_and_up) {
-        flex: .8;
+        flex: 1;
         align-self: flex-end;
         float: none;
         margin: 0;
@@ -344,7 +344,7 @@ section.bio {
         padding-right: $space3x;
       }
       @media screen and (min-width: $tablet_landscape_and_up) {
-        flex: 1.2;
+        flex: 1;
         margin: 0;
         order: 0;
         align-self: center;
