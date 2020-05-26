@@ -956,57 +956,6 @@ section.testimonial {
   }
 }
 
-// faq
-section.faq {
-  min-height: 0;
-
-  @media screen and (min-width: $tablet_and_up) {
-    justify-content: center;
-  }
-
-  & article {
-    @media screen and (min-width: $tablet_and_up) {
-      max-width: $max_width-content / 2;
-      flex: 0 1 50%;
-      margin-left: auto;
-      margin-right: auto;
-      &:nth-of-type(2n+1) { // odd from 1st
-        margin-right: 0;
-        padding-right: $space3x + $space; // half column plus original
-      }
-      &:nth-of-type(2n+2) { // even from 2nd
-        margin-left: 0;
-        padding-left: $space3x + $space; // half column plus original
-      }
-    }
-    @media screen and (min-width: $desktop_and_up) {
-      // half of remaing after max-content with buffer
-      margin-left: calc((100vw - 1210px) * .5);
-      margin-right: calc((100vw - 1210px) * .5);
-      &:nth-of-type(2n+3) { // odd from 3rd
-        margin-right: 0;
-      }
-      &:nth-of-type(2n+2) { // even from 2nd
-        margin-left: 0;
-      }
-    }
-  }
-
-  & p.faq__answer {
-
-  }
-  & span.faq__abbreviation {
-    display: none;
-  }
-
-  & .title__calltoaction {
-    max-width: $max_width-content * .5;
-    @media screen and (min-width: $desktop_and_up) {
-      max-width: $max_width-content * .75;
-    }
-  }
-}
-
 // schedule
 section.schedule {
   min-height: 0;

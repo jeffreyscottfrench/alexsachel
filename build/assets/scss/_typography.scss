@@ -50,7 +50,6 @@ body {
 .title__service,
 .title__caption,
 .title__calltoaction,
-.faq__abbreviation,
 .copyright__icon-year,
 .title__name--logo {
   font-family: $font-secondary;
@@ -91,7 +90,6 @@ body {
 
 .title__service,
 .title__article,
-.faq__abbreviation,
 .title__brand-quote,
 .title__calltoaction,
 .title__alert {
@@ -417,8 +415,7 @@ figcaption.pullquote__testimonial {
 
 .title__pricing,
 .title__problem,
-.pullquote__credit,
-.faq__answer {
+.pullquote__credit {
   color: $gray-med;
 }
 
