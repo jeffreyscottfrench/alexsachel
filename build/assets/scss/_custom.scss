@@ -165,7 +165,7 @@ section.fullpage {
 
 
 div.pullquote__testimonial {
-  padding: $space4x $space2x;
+  padding: $space4x $space3x;
   background-color: $gray-lt;
   color: $gray-dk;
 
@@ -310,6 +310,7 @@ section.bio {
   }
 
   & p {
+    padding: $space3x;
 
     @media screen and (max-width: $phone_landscape_and_down) {
       & .fake__break {
@@ -318,7 +319,6 @@ section.bio {
     }
     @media screen and (min-width: $phone_landscape_and_up) {
       box-sizing: border-box;
-      padding: $space;
     }
 
     &.paragraph__first {
@@ -438,8 +438,8 @@ section.about {
           max-width: $max_width-content;
           // margin-left: 0;
           // margin-right: 0;
-          padding-right: $space;
-          padding-left: $space;
+          padding-right: $space3x;
+          padding-left: $space3x;
 
           & p.service {
             columns: 2;
@@ -480,7 +480,7 @@ section.about {
       max-width: $max_width-content;
       margin-left: auto;
       margin-right: auto;
-      padding: 0 $space;
+      padding: 0 $space3x;
       flex: 0 0 100%;
       display: flex;
       flex-flow: row wrap;
@@ -687,6 +687,7 @@ section.testimonial {
     margin-bottom: $space4x;
 
     & figcaption.pullquote__testimonial {
+      padding: $space $space3x;
 
       @media screen and (min-width: $phone_landscape_and_up) {
         display: block;
@@ -757,8 +758,7 @@ section.testimonial {
 
     & figcaption.pullquote__testimonial {
       position: relative;
-      padding-top: $space2x;
-      padding-bottom: $space2x;
+      padding: $space2x $space3x;
       margin-bottom: 0;
       width: 100%;
       background-color: rgba(243, 239, 237, .4);
@@ -837,7 +837,7 @@ section.testimonial {
     padding: 0;
 
     & p {
-      padding: 0 $space $space;
+      padding: 0 $space3x $space;
       margin-left: auto;
       margin-right: auto;
       &:last-child {
@@ -876,7 +876,7 @@ section.testimonial {
     }
     & ul {
       margin: 0;
-      padding: 0 $space $space;
+      padding: 0 $space3x $space;
 
       @media screen and (min-width: $tablet_landscape_and_up) {
         max-width: $max_width-content * .60;
@@ -1025,7 +1025,7 @@ section.contact {
   & div.container__contactForm {
     position: relative;
     width: 100%;
-    padding: 0 $space;
+    padding: 0 $space3x;
     background-color: $white;
     margin-left: auto;
     margin-right: auto;
@@ -1063,7 +1063,7 @@ section.contact {
 
   & footer.footer__section {
     align-items: flex-start;
-    padding: $space4x $space;
+    padding: $space4x 0;
     margin-top: $space4x * 1.5;
     @media screen and (min-width: $tablet_and_up) {
       padding-top: $space4x * 1.5;

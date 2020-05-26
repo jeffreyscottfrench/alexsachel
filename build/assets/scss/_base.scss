@@ -138,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
 article,
 .article {
   width: 100%;
-  padding: 0 $space;
+  padding: 0 $space3x;
   margin-bottom: $space4x;
   @media screen and (min-width: $tablet_and_up) {
     margin-bottom: $space4x * 2;
