@@ -184,11 +184,6 @@ figcaption .title__testimonial {
     letter-spacing: 0;
   }
   // only when on one line
-  section.schedule .title__section.last-letter {
-    @media screen and (max-width: $phone_landscape_and_down) {
-      letter-spacing: inherit;
-    }
-  }
   section.contact .title__section.last-letter {
     @media screen and (max-width: $desktop_and_down) {
       letter-spacing: inherit;
@@ -227,22 +222,6 @@ section.bio {
   }
 }
 
-section.schedule {
-  & .title__section {
-    @media screen and (min-width: $tablet_and_up) {
-      & span.letter-spacing {
-        display: inline-block;
-        padding: 0;
-        white-space: pre;
-      }
-      & span.letter-spacing:nth-last-child(1n+2) {
-        & .last-letter {
-          letter-spacing: inherit;
-        }
-      }
-    }
-  }
-}
 section.contact {
   & .title__section {
     @media screen and (min-width: $tablet_and_up) {
