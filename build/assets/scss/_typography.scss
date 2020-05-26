@@ -349,19 +349,12 @@ p.paragraph__accent {
 .title__section,
 .title__solution,
 .title__problem,
+.title__brand-quote,
+.title__service,
 .title__calltoaction {
   text-align: center;
 }
 
-.title__brand-quote {
-  text-align: center;
-  // @media screen and (min-width: $phone_landscape_and_up) {
-  //   text-align: justify;
-  // }
-  // @media screen and (min-width: $tablet_and_up) {
-  //   text-align: justify;
-  // }
-}
 
 p,
 ul li {
