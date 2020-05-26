@@ -4,11 +4,14 @@ clipboard-copy.js__copyToClipBoard {
     outline: none !important;
   }
   &:hover {
-    cursor: pointer;
     & a {
       text-decoration: none;
     }
   }
+  & svg:hover {
+    cursor: pointer;
+  }
+
   & .js__copyToClipBoard--confirm {
     position: fixed;
     right: 0;
@@ -41,11 +44,14 @@ clipboard-copy.js__copyToClipBoard {
         flex: 0 1 auto;
         width: 100%;
         height: auto;
-        margin: 0;
-        padding: $space2x 0;
+        margin: $space2x 0;
+        padding: 0;
         text-align: center;
       }
 
+      & span:hover {
+        cursor: pointer;
+      }
     }
   }
 }

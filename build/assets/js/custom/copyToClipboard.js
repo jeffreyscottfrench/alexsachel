@@ -38,9 +38,7 @@ const copyToClipboard = function() {
       tempEl.select();
   }
 
-  console.log(tempEl);
   document.execCommand("copy", false);
-  // document.body.removeChild(tempEl);
 
   let emailPattern = /^(([-\w\d]+)(\.[-\w\d]+)*@([-\w\d]+)(\.[-\w\d]+)*(\.([a-zA-Z]{2,5}|[\d]{1,3})){1,2})$/;
   let isEmailAddress = RegExp(emailPattern).test(copyItem);

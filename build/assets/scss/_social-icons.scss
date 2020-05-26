@@ -38,10 +38,10 @@
   & a.social-mail {
 
     & svg.icon__envelope {
-      height: 27px;
+      height: 25px;
 
       @media (min-width: $tablet_landscape_and_up) {
-        height: 32px;
+        height: 30px;
       }
 
       & rect {
