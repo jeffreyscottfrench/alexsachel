@@ -446,14 +446,6 @@ section.about {
 
   & article.service__multi {
 
-    & span.pricing__amount {
-      display: inline;
-      padding: 0 $space-half;
-      @media screen and (min-width: $tablet_and_up) {
-        display: inline;
-      }
-    }
-
     @media screen and (min-width: $tablet_and_up) {
       max-width: $max_width-content;
       margin-left: auto;
@@ -466,14 +458,9 @@ section.about {
       align-content: flex-start;
       align-items: flex-start;
 
-      & header,
-      & div.title__pricing {
+      & header {
         flex: 0 1 auto;
         width: 100%;
-      }
-
-      & div.title__pricing {
-        padding-bottom: 20px; // matches p element padding
       }
 
       & p {
@@ -496,7 +483,6 @@ section.about {
         grid-template-rows: auto;
         grid-template-areas:
           "header header"
-          "pricing pricing"
           "first empty"
           "left1 right1"
           "left2 right2"
@@ -504,9 +490,6 @@ section.about {
 
         & header {
           grid-area: header;
-        }
-        & div.title__pricing {
-          grid-area: pricing;
         }
 
         & p {

@@ -308,13 +308,6 @@ section.testimonial {
   }
 }
 
-section.about {
-  & .pricing__amount {
-    font-size: inherit;
-    font-weight: inherit;
-    line-height: inherit;
-  }
-}
 
 p.paragraph__lead {
   font-size: $font-size * 1.75;
@@ -336,7 +329,6 @@ p.paragraph__accent {
 .title__problem,
 .title__brand-quote,
 .title__service,
-.title__pricing,
 .title__calltoaction {
   text-align: center;
 }
@@ -389,7 +381,6 @@ figcaption.pullquote__testimonial {
   color: $coral;
 }
 
-.pricing__amount--primary,
 .title__calltoaction,
 .article__testimonial {
   color: $gray-dk;
@@ -402,7 +393,6 @@ figcaption.pullquote__testimonial {
   }
 }
 
-.title__pricing,
 .title__problem,
 .pullquote__credit {
   color: $gray-med;
