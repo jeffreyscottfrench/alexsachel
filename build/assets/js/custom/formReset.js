@@ -5,8 +5,10 @@ const formReset = function() {
     inputs.forEach((input) => {
       input.value = '';
     })
-    let textarea = document.getElementsByName('comments')[0];
-    textarea.textContent = '';
+    let textareas = Array.from(document.getElementsByTagName('textarea'));
+    textareas.forEach((textarea) => {
+      textarea.textContent = '';
+    })
 
     if (document.getElementsByClassName('form__input--error')) {
       let errors = Array.from(document.getElementsByClassName('form__input--error'));
