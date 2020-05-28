@@ -1,15 +1,14 @@
 const formCheck = function(){
 
-  // get all the form inputs
+  // get all the form inputs we're going to check against
 
-  let formWrapper = document.getElementsByName('formWrapper')[0];
-  let name = document.getElementsByName('name')[0];
   let email = document.getElementsByName('email')[0];
   let phone = document.getElementsByName('main_phone')[0];
+  let required = document.querySelectorAll('[required="true"]');
   let submit = document.getElementById('submit');
   let reset = document.getElementById('reset');
 
-  let nameContent = false;
+  let requiredContent = false;
   let emailContent = false;
   let phoneContent = false;
 
@@ -18,7 +17,7 @@ const formCheck = function(){
 
   // disable submit without required content
   const enableSubmit = function() {
-    if (nameContent && emailContent && phoneContent) {
+    if (requiredContent && emailContent && phoneContent) {
       submit.classList.remove('button--disabled');
       submit.setAttribute('type', 'submit');
     } else {
@@ -28,18 +27,20 @@ const formCheck = function(){
   }
 
   // check inputs against regexp tests
-  const checkName = function() {
-    if (document.getElementsByName('name-error')[0]) {
-      this.parentNode.removeChild(document.getElementsByName('name-error')[0]);
+  const checkRequired = function( e ) {
+    let reqEl = e.target;
+    errElName = reqEl.name + '-required-error';
+    errorMessage = 'This information is required!';
+
+    if (document.getElementsByName(errElName)[0]) {
+      this.parentNode.removeChild(document.getElementsByName(errElName)[0]);
     }
 
-    if (!name.value) {
-      errorMessage = 'Looks like you forgot your name!';
-      errElName = 'name-error';
-      displayMessage(name, errElName, errorMessage);
-      nameContent = false;
+    if (!reqEl.value) {
+      displayMessage(reqEl, errElName, errorMessage);
+      requiredContent = false;
     } else {
-      nameContent = true;
+      requiredContent = true;
       enableSubmit;
     }
   }
@@ -67,7 +68,7 @@ const formCheck = function(){
 
     let re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
     if (!phone.value.match(re)) {
-      errorMessage = 'A phone number with area code is required, but you can let me know to only contact you via email below.';
+      errorMessage = 'A phone number with area code is required, but you can let me know to only contact you via email in the last field below.';
       errElName = 'phone-error';
       displayMessage(phone, errElName, errorMessage);
       phoneContent = false;
@@ -87,15 +88,15 @@ const formCheck = function(){
   }
 
   // listen for changes/unfocus on form inputs
-  name.addEventListener('blur', checkName);
-  name.addEventListener('change', checkName);
+  required.forEach(req => req.addEventListener('blur', checkRequired))
+  required.forEach(req => req.addEventListener('change', checkRequired))
   email.addEventListener('blur', checkEmail);
   email.addEventListener('change', checkEmail);
   phone.addEventListener('blur', checkPhone);
   phone.addEventListener('change', checkPhone);
 
   reset.addEventListener('click', function() {
-    nameContent = false;
+    requiredContent = false;
     emailContent = false;
     phoneContent = false;
     enableSubmit();
