@@ -114,6 +114,7 @@ section.fullpage {
 }
 
 .header__section,
+.main__section,
 .footer__section,
 .pullquote__brand,
 .pullquote__testimonial {
@@ -923,17 +924,46 @@ section.testimonial {
 section.contact {
   margin-bottom: 0;
 
-  & div.container__contactForm {
-    position: relative;
-    width: 100%;
-    padding: 0 $space3x;
-    background-color: $white;
-    margin-left: auto;
-    margin-right: auto;
+  & .header__section {
+    margin-bottom: 0;
+  }
+
+  & .main__section {
+    height: auto;
+    min-height: auto;
+    padding: $space3x 0;
+
+    & article {
+      padding: $space3x;
+      margin-bottom: 0;
+    }
+  }
+
+  & .article__contact {
+
+    @media screen and (min-width: $tablet_landscape_and_up) {
+      max-width: $max_width-content / 2;
+    }
+
+    & header {
+      text-align: center;
+    }
+  }
+
+  & .article__form {
 
     & .header__form {
       padding: $space3x 0;
     }
+
+  }
+
+  & div.container__contactForm {
+    position: relative;
+    width: 100%;
+    background-color: $white;
+    margin-left: auto;
+    margin-right: auto;
 
     & form {
       & div.fieldset {
@@ -971,7 +1001,7 @@ section.contact {
   & footer.footer__section {
     align-items: flex-start;
     padding: $space4x 0;
-    margin-top: $space4x * 1.5;
+    margin-top: 0;
     @media screen and (min-width: $tablet_and_up) {
       padding-top: $space4x * 1.5;
       padding-bottom: $space4x * 1.5;
@@ -981,26 +1011,20 @@ section.contact {
       &:last-child {
         margin-bottom: 0;
       }
-
       @media screen and (min-width: $tablet_landscape_and_up) {
-        max-width: $max_width-content / 2;
         margin-bottom: $space4x * 2;
       }
       @media screen and (min-width: $desktop_and_up) {
         margin-bottom: 0;
       }
-
-      & header {
-        text-align: center;
-      }
-
-      &#Contact-Social {
-        @media screen and (min-width: $desktop_and_up) {
-          flex-grow: 1;
-          align-self: stretch;
-        }
-      }
     }
 
+    &#Contact-Social {
+      @media screen and (min-width: $desktop_and_up) {
+        flex-grow: 1;
+        align-self: stretch;
+      }
+    }
   }
+
 }
