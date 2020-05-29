@@ -17,6 +17,13 @@ form {
     margin: 0;
     border: 0px;
 
+    @media screen and (min-width: $tablet_landscape_and_up) {
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-content: flex-start;
+      align-items: flex-start;
+    }
+
     & > legend,
     & > p {
       width: 100%;
@@ -27,6 +34,18 @@ form {
       align-content: stretch;
       align-items: flex-start;
       padding: $space2x 0;
+    }
+
+    @media screen and (min-width: $tablet_landscape_and_up) {
+      & > p.form__field--half {
+        width: auto;
+        flex: 0 1 45%;
+      }
+    }
+
+    & > p.form__field--new-line {
+      width: 100%;
+      height: 0;
     }
 
     & legend {
