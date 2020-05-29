@@ -948,6 +948,9 @@ section.contact {
 
     @media screen and (min-width: $tablet_landscape_and_up) {
       max-width: $max_width-content;
+      & form {
+        padding: $space4x;
+      }
       & form,
       & .alert {
         border-radius: $space;
