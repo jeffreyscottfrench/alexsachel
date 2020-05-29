@@ -213,17 +213,19 @@ div.container-slideshow {
   flex-flow: row nowrap;
   justify-content: center;
   align-content: center;
-  align-items: center;
+  align-items: flex-start;
   position: absolute;
-  top: 0; right: $space; left: $space;
-  height: 100vh;
+  top: 0; right: $space; left: $space; bottom: 0;
+  min-height: 100vh;
+  height: auto;
+  padding: 30vh $space2x $space4x;
   background-color: $white;
   color: $gray-dk;
   z-index: 9000;
 
   @media screen and (min-width: $tablet_and_up) {
-    height: auto;
-    bottom: 0;
+    min-height: none;
+    padding-top: 45vh;
   }
 
   &.alert__success {
