@@ -931,6 +931,10 @@ section.contact {
     margin-left: auto;
     margin-right: auto;
 
+    & .header__form {
+      padding: $space3x 0;
+    }
+
     & form {
       & div.fieldset {
         & input,

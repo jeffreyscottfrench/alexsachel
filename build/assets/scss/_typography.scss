@@ -333,6 +333,11 @@ p.paragraph__accent {
   text-align: center;
 }
 
+.title__article {
+  .header__form & {
+    text-align: center;
+  }
+}
 
 p,
 ul li {

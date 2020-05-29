@@ -1,0 +1,334 @@
+
+  <div class="container__contactForm">
+    <header class="header__form">
+      <h4 class="title__article">We Can Start Right Here</h4>
+    </header>
+    <form id="form-newClient" action="/secure_scripts/contact-phpmailer.php" method="post">
+      <div class="fieldset">
+
+        {# first name #}
+        <p class="form__field form__field--half">
+          <label class="form__label" for="fname">First Name
+          </label>
+          <input
+              id="author-first"
+              name="fname"
+              type="text"
+              title="Your first name (no special characters, diacritics are okay)"
+              required="true"
+              pattern="^([- \w\d\u00c0-\u024f]+)$"
+              size="30"
+              spellcheck="false"
+              value=""
+              autocomplete="given-name"
+          >
+        </p>
+
+        {# last name #}
+        <p class="form__field form__field--half">
+          <label class="form__label" for="lname">Last Name
+          </label>
+          <input
+              id="author-last"
+              name="lname"
+              type="text"
+              title="Your last name (no special characters, diacritics are okay)"
+              required="true"
+              value=""
+              pattern="^([- \w\d\u00c0-\u024f]+)$"
+              size="30"
+              spellcheck="false"
+              autocomplete="family-name"
+          >
+        </p>
+
+        {# email #}
+        <p class="form__field form__field--half">
+          <label class="form__label" for="email">Email
+          </label>
+          <input
+              id="email"
+              name="email"
+              type="email"
+              title="Your email address"
+              required="true"
+              pattern="^(([-\w\d]+)(\.[-\w\d]+)*@([-\w\d]+)(\.[-\w\d]+)*(\.([a-zA-Z]{2,5}|[\d]{1,3})){1,2})$"
+              size="30"
+              spellcheck="false"
+              value=""
+              autocomplete="email"
+          >
+        </p>
+
+        {# phone #}
+        <p class="form__field form__field--half">
+          <label class="form__label" for="main_phone">Phone
+          </label>
+          <input
+              id="phone"
+              name="main_phone"
+              type="tel"
+              title="Your phone number"
+              required="true"
+              pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+              size="30"
+              spellcheck="false"
+              value=""
+              autocomplete="tel"
+          >
+          <input
+              name="info"
+              type="text"
+              style="display:none;"
+              placeholder="hp-safety"
+              value=""
+          >
+        </p>
+
+        {# street #}
+        <p class="form__field">
+          <label class="form__label" for="street">Street
+          </label>
+          <input
+              id="input-street"
+              name="street"
+              type="text"
+              title="Your street address"
+              required="true"
+              size="30"
+              spellcheck="false"
+              value=""
+              autocomplete="street-address"
+          >
+        </p>
+
+        {# city #}
+        <p class="form__field form__field--half">
+          <label class="form__label" for="city">City
+          </label>
+          <input
+              id="input-city"
+              name="city"
+              type="text"
+              title="Your city"
+              required="true"
+              size="30"
+              spellcheck="false"
+              value=""
+              autocomplete="address-level2"
+          >
+        </p>
+
+        {# state #}
+        <p class="form__field form__field--half">
+          <label class="form__label" for="state">State
+          </label>
+          <input
+              id="input-state"
+              name="state"
+              type="text"
+              title="Your state"
+              required="true"
+              size="30"
+              spellcheck="false"
+              value=""
+              autocomplete="address-level1"
+              list="usa-states"
+          >
+          <datalist id="usa-states">
+            <option value="Alabama">
+            </option><option value="Alaska">
+            </option><option value="Arizona">
+            </option><option value="Arkansas">
+            </option><option value="California">
+            </option><option value="Colorado">
+            </option><option value="Connecticut">
+            </option><option value="Delaware">
+            </option><option value="District Of Columbia">
+            </option><option value="Florida">
+            </option><option value="Georgia">
+            </option><option value="Hawaii">
+            </option><option value="Idaho">
+            </option><option value="Illinois">
+            </option><option value="Indiana">
+            </option><option value="Iowa">
+            </option><option value="Kansas">
+            </option><option value="Kentucky">
+            </option><option value="Louisiana">
+            </option><option value="Maine">
+            </option><option value="Maryland">
+            </option><option value="Massachusetts">
+            </option><option value="Michigan">
+            </option><option value="Minnesota">
+            </option><option value="Mississippi">
+            </option><option value="Missouri">
+            </option><option value="Montana">
+            </option><option value="Nebraska">
+            </option><option value="Nevada">
+            </option><option value="New Hampshire">
+            </option><option value="New Jersey">
+            </option><option value="New Mexico">
+            </option><option value="New York">
+            </option><option value="North Carolina">
+            </option><option value="North Dakota">
+            </option><option value="Ohio">
+            </option><option value="Oklahoma">
+            </option><option value="Oregon">
+            </option><option value="Pennsylvania">
+            </option><option value="Rhode Island">
+            </option><option value="South Carolina">
+            </option><option value="South Dakota">
+            </option><option value="Tennessee">
+            </option><option value="Texas">
+            </option><option value="Utah">
+            </option><option value="Vermont">
+            </option><option value="Virginia">
+            </option><option value="Washington">
+            </option><option value="West Virginia">
+            </option><option value="Wisconsin">
+            </option><option value="Wyoming">
+          </option></datalist>
+        </p>
+
+        {# zip #}
+        <p class="form__field form__field--half">
+          <label class="form__label" for="zipcode">Zipcode
+          </label>
+          <input
+              id="input-zipcode"
+              name="zipcode"
+              type="text"
+              title="Your 5 digit zipcode"
+              required="true"
+              pattern="^[0-9]{5}$"
+              size="30"
+              spellcheck="false"
+              value=""
+              autocomplete="postal-code"
+          >
+        </p>
+
+        <p class="form__field form__field--new-line"></p>
+
+        {# birth date #}
+        <p class="form__field form__field--half form__field--new-line">
+          <label class="form__label" for="birthdate">Birth Date
+          </label>
+          <input
+              id="input-birthdate"
+              name="birthdate"
+              type="date"
+              title="Date of birth in MM / DD / YYYY"
+              required="false"
+              size="30"
+              autocomplete="bday"
+              value
+          >
+        </p>
+
+        {# Occupation #}
+        <p class="form__field form__field--half">
+          <label class="form__label" for="occupation">Occupation
+          </label>
+          <input
+              id="input-occupation"
+              name="occupation"
+              type="text"
+              title="Your occupation"
+              required="false"
+              pattern="^([- \w\d\u00c0-\u024f]+)$"
+              size="30"
+              spellcheck="true"
+              value
+          >
+        </p>
+
+        <p class="form__field form__field--new-line"></p>
+
+        {# Problems #}
+        <p class="form__field form__textarea">
+          <label class="form__label" for="problems">What kind of problems are you looking for help with?
+          </label>
+          <textarea
+              id="input-problems"
+              name="problems"
+              title="I'm looking for help with..."
+              required="false"
+              cols="40"
+              rows="10"
+              spellcheck="true"
+          ></textarea>
+        </p>
+
+        {# When #}
+        {# Budget #}
+
+        {# Style #}
+        <p class="form__field form__textarea">
+          <label class="form__label" for="style">Describe your style as best as you can
+          </label>
+          <textarea
+              id="input-style"
+              name="style"
+              title="Your style"
+              required="false"
+              cols="40"
+              rows="10"
+              spellcheck="true"
+          ></textarea>
+        </p>
+
+        {# Favorites #}
+        <p class="form__field form__textarea">
+          <label class="form__label" for="favorites">Tell us some of your favorite stores, labels and/or designers
+          </label>
+          <textarea
+              id="input-favorites"
+              name="favorites"
+              title="Your favorites"
+              required="false"
+              cols="40"
+              rows="10"
+              spellcheck="true"
+          ></textarea>
+        </p>
+
+        {# how hear #}
+        <p class="form__field form__textarea">
+          <label class="form__label" for="referredby">How did you hear about ACS Style Consulting?
+          </label>
+          <textarea
+              id="input-referredby"
+              name="referredby"
+              title="How you heard about ACS"
+              required="false"
+              cols="40"
+              rows="10"
+              spellcheck="true"
+          ></textarea>
+        </p>
+
+        {# Anything else #}
+        <p class="form__field form__textarea">
+          <label class="form__label" for="comments">Tell us anything else you'd like us to know
+          </label>
+          <textarea
+              id="input-comments"
+              name="comments"
+              title="Your comment"
+              required="false"
+              cols="40"
+              rows="10"
+              spellcheck="true"
+          ></textarea>
+        </p>
+
+      </div>
+      <div class="fieldset form__buttons">
+
+        <button id="reset" name="reset" type="reset">Reset</button>
+        <button id="submit" name="save" type="submit">Send</button>
+
+      </div>
+    </form>
+  </div>
