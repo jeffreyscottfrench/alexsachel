@@ -6,7 +6,6 @@ const formSaveLoadEntries = function() {
     let textareas = Array.from(document.getElementsByTagName('textarea'));
 
     let entries = inputs.concat(textareas);
-    console.log('entries: ', entries);
 
     entries.forEach(elt => {
       elt.value = localStorage.getItem(elt.name);
