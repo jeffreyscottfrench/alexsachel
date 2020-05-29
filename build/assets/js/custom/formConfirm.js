@@ -21,7 +21,7 @@ const formConfirm = function(alertType, alertText) {
   alertMsg.classList.add('title__alert');
   alert.appendChild(alertMsg);
 
-  let contactForm = document.getElementById('form-contact');
+  let contactForm = document.getElementById('form-newClient');
   contactForm.appendChild(alert);
 
   // make sure you can see it, after its loaded

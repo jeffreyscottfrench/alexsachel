@@ -11,7 +11,7 @@ require '/home/users/web/b2074/pow.lsfrock/secure_scripts/alexsachel_credentials
 
 // validate its from the form
 if ($_POST['info'] !== "") {
-  header('Location: http://alexsachel.com/#form-newClient?contact-failure');
+  header('Location: https://alexsachel.com/#form-newClient?contact-failure');
   die();
 }
 
@@ -34,16 +34,6 @@ $comments = $_POST['comments'];
 $secretinfo = $_POST['info'];
 $welcome_msg = 'Thank you for your reaching out, I will get back to you as soon as possible!';
 
-if (!preg_match("/\S+/",$fname))
-{
-  $message = "Looks like you forgot your name!";
-  echo($message);
-}
-if (!preg_match("/\S+/",$lname))
-{
-  $message = "Looks like you forgot your name!";
-  echo($message);
-}
 if (!preg_match("/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i",$email))
 {
   $message = "Email Address is not in a valid format. Please try again.";
@@ -67,13 +57,13 @@ if ($secretinfo == "")
   $emess.= "<tr>\r\n<td style='padding-top: 15px; padding-bottom: 5px; max-width: 200px; color:#888888'>Zipcode:</td>\r\n<td style='padding-top: 15px; padding-bottom: 5px;'>".$zipcode."</td></tr>\r\n";
   $emess.= "<tr>\r\n<td style='padding-top: 15px; padding-bottom: 5px; max-width: 200px; color:#888888'>Birth Date:</td>\r\n<td style='padding-top: 15px; padding-bottom: 5px;'>".$birthdate."</td></tr>\r\n";
   $emess.= "<tr>\r\n<td style='padding-top: 15px; padding-bottom: 5px; max-width: 200px; color:#888888'>Occupation:</td>\r\n<td style='padding-top: 15px; padding-bottom: 5px;'>".$occupation."</td></tr>\r\n";
-  $emess.= "<tr>\r\n<td colspan='2' style='padding-top: 45px; padding-bottom: 5px; color:#888888'>What kind of problems are you looking for help with?:</td></tr>\r\n";
+  $emess.= "<tr>\r\n<td colspan='2' style='padding-top: 45px; padding-bottom: 5px; color:#888888'>What kind of problems are you looking for help with?</td></tr>\r\n";
   $emess.= "<tr>\r\n<td colspan='2' style=' border-top: 1px solid #dddddd; border-bottom: 1px solid #dddddd;padding-top: 10px; padding-bottom: 60px;'>".$problems."</td></tr>\r\n";
   $emess.= "<tr>\r\n<td colspan='2' style='padding-top: 45px; padding-bottom: 5px; color:#888888'>Describe your style as best as you can:</td></tr>\r\n";
   $emess.= "<tr>\r\n<td colspan='2' style=' border-top: 1px solid #dddddd; border-bottom: 1px solid #dddddd;padding-top: 10px; padding-bottom: 60px;'>".$style."</td></tr>\r\n";
   $emess.= "<tr>\r\n<td colspan='2' style='padding-top: 45px; padding-bottom: 5px; color:#888888'>Tell us some of your favorite stores, labels and/or designers:</td></tr>\r\n";
   $emess.= "<tr>\r\n<td colspan='2' style=' border-top: 1px solid #dddddd; border-bottom: 1px solid #dddddd;padding-top: 10px; padding-bottom: 60px;'>".$favorites."</td></tr>\r\n";
-  $emess.= "<tr>\r\n<td colspan='2' style='padding-top: 45px; padding-bottom: 5px; color:#888888'>How did you hear about ACS Style Consulting?:</td></tr>\r\n";
+  $emess.= "<tr>\r\n<td colspan='2' style='padding-top: 45px; padding-bottom: 5px; color:#888888'>How did you hear about ACS Style Consulting?</td></tr>\r\n";
   $emess.= "<tr>\r\n<td colspan='2' style=' border-top: 1px solid #dddddd; border-bottom: 1px solid #dddddd;padding-top: 10px; padding-bottom: 60px;'>".$referredby."</td></tr>\r\n";
   $emess.= "<tr>\r\n<td colspan='2' style='padding-top: 45px; padding-bottom: 5px; color:#888888'>Anything else you'd like us to know:</td></tr>\r\n";
   $emess.= "<tr>\r\n<td colspan='2' style=' border-top: 1px solid #dddddd; border-bottom: 1px solid #dddddd;padding-top: 10px; padding-bottom: 60px;'>".$comments."</td></tr>\r\n";
@@ -102,7 +92,7 @@ if ($secretinfo == "")
   $eAltMess.= "Message:\r\n";
   $eAltMess.= $comments."\r\n";
 
-  $esubj = $name." - via New Client Form from AlexSachel.com";
+  $esubj = $fname." ".$lname." - via New Client Form from AlexSachel.com";
 
   // uncomment below to use default PHP mail() function
   // $ehead = "MIME-Version: 1.0\r\n";
@@ -127,8 +117,7 @@ if ($secretinfo == "")
   $mail->Username = $Username;
   $mail->Password = $Password;
   $mail->setFrom('contact@alexsachel.com', 'Contact Form');
-  // $mail->addAddress('alex@alexsachel.com', 'Alex Sachel'); // where to
-  $mail->addAddress('jeffreyscottfrench@gmail.com', ''); // where to
+  $mail->addAddress('alex@alexsachel.com', 'Alex Sachel'); // where to
   $mail->addReplyTo("$email", "$name"); // form email field
 
   // uncomment to cc the person submitting the form
@@ -142,9 +131,9 @@ if ($secretinfo == "")
   if(!$mail->send()) {
     error_log('Contact Form Error: ' . $mail->ErrorInfo, 0);
     error_log('Contact Form Error: ' . $mail->ErrorInfo, 1, 'jeffreyscottfrench@gmail.com');
-    header("Location: http://alexsachel.com/preview/#form-newClient?contact-failure");
+    header("Location: https://alexsachel.com/#form-newClient?contact-failure");
   } else {
-    header("Location: http://alexsachel.com/preview/#form-newClient?contact-success");
+    header("Location: https://alexsachel.com/#form-newClient?contact-success");
   }
 }
 ?>
