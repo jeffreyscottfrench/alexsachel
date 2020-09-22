@@ -13,14 +13,11 @@
         </h4>
       </header>
       <p>
-        If you're ready to get started, click <a href="#new-client-questionnaire" class="js__toggleDisplayLink" data-targetEl="new-client-questionnaire">here</a> to fill out a brief questionnaire and we'll reach out to setup your first consultation.
+        If you're ready to get started, click the button to fill out a brief questionnaire and we'll reach out to setup your first consultation.
       </p>
-    </article>
-    <article class="article__form js__toggleDisplay--none" id="new-client-questionnaire">
-      <header class="header__form">
-        <h4 class="title__article">Let's Start Right Here</h4>
-      </header>
-      {% include "partials/form_newClient.njk" %}
+      <button class="call-to-action">
+        <a id="new-client-link-contact" href="#section-overlay" class="js__toggleDisplayLink" data-targetEl="section-overlay">Get Started</a>
+      </button>
     </article>
   </main>
 

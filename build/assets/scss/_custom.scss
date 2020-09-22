@@ -958,48 +958,6 @@ section.contact {
 
   }
 
-  & div.container__contactForm {
-    position: relative;
-    width: 100%;
-    background-color: $white;
-    margin-left: auto;
-    margin-right: auto;
-
-    & form {
-      & div.fieldset {
-        & input,
-        & select,
-        & textarea,
-        & button,
-        & span.form__input--error {
-          border-radius: 0;
-        }
-      }
-    }
-
-    @media screen and (min-width: $tablet_landscape_and_up) {
-      max-width: $max_width-content;
-      & form {
-        padding: $space4x;
-      }
-      & form,
-      & .alert {
-        border-radius: $space;
-        border: $border-secondary;
-
-        & div.fieldset {
-          & input,
-          & select,
-          & textarea,
-          & button,
-          & span.form__input--error {
-            border-radius: $space-half;
-          }
-        }
-      }
-    }
-  }
-
   & footer.footer__section {
     align-items: flex-start;
     padding: $space4x 0;
@@ -1028,5 +986,99 @@ section.contact {
       }
     }
   }
+}
 
+section.overlay {
+  position: fixed;
+  overflow-y: scroll;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: $white;
+  z-index: 9000;
+  padding: $space4x * 2 $space4x;
+
+  & .overlay--close {
+    display: block;
+    position: absolute;
+    right: $space4x;
+    top: $space4x;
+    padding: $space;
+
+    & button.circle {
+      width: $space4x;
+      height: $space4x;
+      padding: 0;
+      margin: 0;
+      border: $border-inputs;
+      border-color: currentColor;
+      border-radius: $space2x;
+      font-family: $font-secondary;
+      font-size: $font-size * 1.25;
+      line-height: normal;
+      @include BanglaMN-text-crop();
+      font-weight: 400;
+      text-transform: uppercase;
+      color: $coral;
+      text-align: center;
+      &:hover {
+        background-color: $coral;
+        color: $white;
+        border-color: $coral;
+        & > a:hover {
+          color: inherit;
+        }
+      }
+    }
+  }
+
+  & article {
+
+    & > header {
+      margin-bottom: $space2x;
+    }
+  }
+}
+
+div.container__contactForm {
+  position: relative;
+  width: 100%;
+  background-color: $white;
+  margin-left: auto;
+  margin-right: auto;
+
+  & form {
+    & div.fieldset {
+      & input,
+      & select,
+      & textarea,
+      & button,
+      & span.form__input--error {
+        border-radius: 0;
+      }
+    }
+  }
+
+  @media screen and (min-width: $tablet_landscape_and_up) {
+    max-width: $max_width-content;
+    & form {
+      padding: $space4x;
+    }
+    & form,
+    & .alert {
+      border-radius: $space;
+      border: $border-secondary;
+
+      & div.fieldset {
+        & input,
+        & select,
+        & textarea,
+        & button,
+        & span.form__input--error {
+          border-radius: $space-half;
+        }
+      }
+    }
+  }
 }

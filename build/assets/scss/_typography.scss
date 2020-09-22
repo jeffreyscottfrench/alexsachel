@@ -444,7 +444,7 @@ h1 {
   }
 }
 
-section.contact {
+body {
   & form,
   & label,
   & button,
@@ -455,6 +455,7 @@ section.contact {
     @include BanglaMN-text-crop();
     font-weight: 400;
     text-transform: uppercase;
+    letter-spacing: inherit;
     color: $gray-med;
   }
   & button {
