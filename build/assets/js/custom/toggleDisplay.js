@@ -8,10 +8,14 @@ const toggleDisplay = function(){
     let link = e.target;
     let target = link.getAttribute('data-targetel');
     let targetEl = document.getElementById(target);
+    let body = document.getElementsByTagName('body')[0];
 
     if (targetEl.classList.contains('js__toggleDisplay--none')) {
       referrerPosY = window.scrollY;
       window.localStorage.setItem('referrerPosY', referrerPosY);
+      if ( targetEl.getAttribute('data-fullscreenoverlay') === 'true' ) {
+        body.classList.add('js__overlayBody--noScroll');
+      }
       targetEl.classList.remove('js__toggleDisplay--none');
       // make sure you can see it, after its loaded
       setTimeout(function() {
@@ -26,6 +30,9 @@ const toggleDisplay = function(){
     } else {
       referrerPosY = window.localStorage.getItem('referrerPosY');
       targetEl.classList.add('js__toggleDisplay--none');
+      if ( body.classList.contains( 'js__overlayBody--noScroll' ) ) {
+        body.classList.remove('js__overlayBody--noScroll');
+      }
       window.scrollTo( 0, referrerPosY);
     }
   }
