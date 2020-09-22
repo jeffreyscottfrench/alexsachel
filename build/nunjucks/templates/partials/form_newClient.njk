@@ -3,6 +3,8 @@
     <form id="form-newClient" action="/secure_scripts/newClient-phpmailer.php" method="post">
       <div class="fieldset">
 
+        <h4 class="header__form">Contact</h4>
+
         {# first name #}
         <p class="form__field form__field--half">
           <label class="form__label" for="fname">First Name
@@ -213,7 +215,7 @@
           >
         </p>
 
-        <p class="form__field form__field--new-line"></p>
+        <h4 class="header__form">Personal Info</h4>
 
         {# birth date #}
         <p class="form__field form__field--half">
@@ -246,11 +248,45 @@
           >
         </p>
 
-        <p class="form__field form__field--new-line"></p>
+        {# Gender #}
+        <p class="form__field form__field--half">
+          <label class="form__label" for="sizing">Gender
+          </label>
+          <input
+              id="input-gender"
+              name="gender"
+              type="text"
+              title="Gender"
+              pattern="^([- \w\d\u00c0-\u024f]+)$"
+              size="30"
+              spellcheck="true"
+              aria-required="true"
+              required
+              value
+          >
+        </p>
+
+        {# Sizing #}
+        <p class="form__field form__field--half">
+          <label class="form__label" for="sizing">Clothing Size
+          </label>
+          <input
+              id="input-sizing"
+              name="sizing"
+              type="text"
+              title="Typical Size"
+              pattern="^([- \w\d\u00c0-\u024f]+)$"
+              size="30"
+              spellcheck="true"
+              value
+          >
+        </p>
+
+        <h4 class="header__form">Styling Info</h4>
 
         {# Problems #}
         <p class="form__field form__textarea">
-          <label class="form__label" for="problems">What kind of problems are you looking for help with?
+          <label class="form__label" for="problems">What are you looking for help with?
           </label>
           <textarea
               id="input-problems"
@@ -263,7 +299,18 @@
         </p>
 
         {# When #}
-        {# Budget #}
+        <p class="form__field form__textarea">
+          <label class="form__label" for="timeline">When would you like to start, or what date do you need to be ready by?
+          </label>
+          <textarea
+              id="input-timeline"
+              name="timeline"
+              title="I need help before..."
+              cols="40"
+              rows="10"
+              spellcheck="true"
+          ></textarea>
+        </p>
 
         {# Style #}
         <p class="form__field form__textarea">
@@ -293,18 +340,38 @@
           ></textarea>
         </p>
 
-        {# how hear #}
-        <p class="form__field form__textarea">
+        {# Referral #}
+        <p class="form__field form__field--half">
           <label class="form__label" for="referredby">How did you hear about ACS Style Consulting?
           </label>
-          <textarea
+          <input
               id="input-referredby"
               name="referredby"
-              title="How you heard about ACS"
-              cols="40"
-              rows="10"
+              type="text"
+              title="How you heard about ACS?"
+              pattern="^([- \w\d\u00c0-\u024f]+)$"
+              size="30"
               spellcheck="true"
-          ></textarea>
+              value
+          >
+        </p>
+
+        {# Budget #}
+        <p class="form__field form__field--half">
+          <label class="form__label" for="budget">What is your overall target budget<br>(service + clothing combined)
+          </label>
+          <select
+              id="input-budget"
+              name="budget"
+              aria-required="true"
+              required
+          >
+            <option value="default">Select range...</option>
+            <option value="Under 1000">Under $1000</option>
+            <option value="$1000 - $5000">$1000 - $5000</option>
+            <option value="$5000 - $10000">$5000 - $10000</option>
+            <option value="$10,000+">$10,000+</option>
+          </select>
         </p>
 
         {# Anything else #}
