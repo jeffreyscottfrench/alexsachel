@@ -968,6 +968,7 @@ section.contact {
     & form {
       & div.fieldset {
         & input,
+        & select,
         & textarea,
         & button,
         & span.form__input--error {
@@ -988,6 +989,7 @@ section.contact {
 
         & div.fieldset {
           & input,
+          & select,
           & textarea,
           & button,
           & span.form__input--error {

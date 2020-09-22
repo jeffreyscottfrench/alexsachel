@@ -24,6 +24,7 @@ form {
       align-items: flex-start;
     }
 
+    & > .header__form,
     & > legend,
     & > p {
       width: 100%;
@@ -59,6 +60,7 @@ form {
     }
 
     & input,
+    & select,
     & textarea {
       display: block;
       box-sizing: border-box;
@@ -73,7 +75,20 @@ form {
       }
     }
 
+    & select {
+      max-height: 40px; // matches input height
+      padding: .4em $space2x;
+      background-color: $white;
+      color: inherit;
+      font-family: inherit;
+      font-size: $font-size;
+      line-height: $font-size;
+      letter-spacing: inherit;
+      text-transform: inherit;
+    }
+
     & p > label,
+    & p > select,
     & p > input {
       align-self: center;
     }
