@@ -1,11 +1,17 @@
+
 const toggleDisplay = function(){
 
-  const toggleTargetDisplay = function ( e ){
+  let referrerPosY;
+
+  const toggleTargetDisplay = function ( e, referrerPosY ){
+    e.preventDefault();
     let link = e.target;
     let target = link.getAttribute('data-targetel');
     let targetEl = document.getElementById(target);
 
     if (targetEl.classList.contains('js__toggleDisplay--none')) {
+      referrerPosY = window.scrollY;
+      window.localStorage.setItem('referrerPosY', referrerPosY);
       targetEl.classList.remove('js__toggleDisplay--none');
       // make sure you can see it, after its loaded
       setTimeout(function() {
@@ -18,7 +24,9 @@ const toggleDisplay = function(){
         }
       }, 250);
     } else {
+      referrerPosY = window.localStorage.getItem('referrerPosY');
       targetEl.classList.add('js__toggleDisplay--none');
+      window.scrollTo( 0, referrerPosY);
     }
   }
 
