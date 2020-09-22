@@ -4,7 +4,7 @@ const letterSpacing = function() {
   let lastChar = {};
 
   els.forEach((el) => {
-    let allChars = Array.from(el.innerHTML);
+    let allChars = Array.from(el.textContent);
 
     let i;
     for (i = 0; i < allChars.length; i++) {

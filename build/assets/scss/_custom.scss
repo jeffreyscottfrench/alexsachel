@@ -926,6 +926,16 @@ section.contact {
 
   & .header__section {
     margin-bottom: 0;
+
+    & .title__section {
+      & span.no__break {
+        @media screen and (max-width: $phone_landscape_and_down) {
+          white-space: normal;
+          line-height: normal;
+          padding-bottom: $font-size;
+        }
+      }
+    }
   }
 
   & .main__section {
