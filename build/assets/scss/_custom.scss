@@ -223,8 +223,11 @@ section.bio {
     margin-bottom: 0;
   }
 
-  .container__bio-first,
-  .container__bio-second {
+  & .footer__section {
+    padding: 0;
+  }
+
+  .container__bio {
     position: relative;
     @media screen and (max-width: $phone_landscape_and_down) {
       display: flex;
@@ -239,8 +242,7 @@ section.bio {
       margin-right: auto;
     }
   }
-  .container__bio-first,
-  .container__bio-second {
+  .container__bio {
     @media screen and (min-width: $tablet_landscape_and_up) {
       display: flex;
       flex-flow: row wrap;
@@ -264,45 +266,20 @@ section.bio {
       width: 50%;
     }
 
-    &.image__bottom-right {
-      @media screen and (max-width: $phone_landscape_and_down) {
-        order: 2;
-        align-self: flex-end;
-      }
-
-      @media screen and (min-width: $phone_landscape_and_up) {
-        float: right;
-        clear: right;
-        margin-right: 0;
-        margin-left: 30px;
-        padding-left: 30px;
-        padding-top: 7px; // match top of text
-      }
-
-      @media screen and (min-width: $tablet_landscape_and_up) {
-        flex: 1;
-        align-self: flex-end;
-        float: none;
-        margin: 0;
-        margin-left: $space3x;
-        padding: 0;
-        order: 1;
-      }
-    }
-
     &.image__top-left {
       @media screen and (min-width: $phone_landscape_and_up) {
         float: left;
         margin-left: 0;
-        padding-right: 30px;
         margin-right: 30px;
+        padding-right: 0;
+        padding-bottom: $space;
       }
 
       @media screen and (min-width: $tablet_landscape_and_up) {
         flex: 0 1 calc(50% - 30px);
         float: none;
         margin: 0;
-        padding: 0;
+        padding: 0 0 $space3x;
         & img {
           display: inline;
         }
@@ -313,91 +290,28 @@ section.bio {
   & p {
     padding: $space3x;
 
-    @media screen and (max-width: $phone_landscape_and_down) {
-      & .fake__break {
-        padding-top: $space4x;
-      }
+    &:nth-of-type(1n+2) {
+      padding-top: 0;
     }
-    @media screen and (min-width: $phone_landscape_and_up) {
-      box-sizing: border-box;
+
+    @media screen and (min-width: $tablet_landscape_and_up) {
+      padding-left: 0;
+      padding-right: 0;
     }
 
     &.paragraph__first {
       @media screen and (min-width: $phone_landscape_and_up) {
-        margin-top: 15%;
+        margin-top: $space3x;
+      }
+      @media screen and (min-width: $tablet_and_up) {
+        margin-top: 10%;
       }
 
       @media screen and (min-width: $tablet_landscape_and_up) {
         flex: 0 1 calc(50% - 30px);
         margin: auto 0 0 0;
         padding-left: 0;
-        padding-bottom: 0px;
         max-width: $max_width-content * .5;
-      }
-    }
-
-    &.paragraph__left {
-      @media screen and (min-width: $phone_landscape_and_up) {
-        margin-left: auto;
-        margin-right: 0;
-        padding-top: 0;
-        padding-bottom: 0;
-        padding-right: $space3x;
-      }
-      @media screen and (min-width: $tablet_landscape_and_up) {
-        flex: 1;
-        margin: 0;
-        order: 0;
-        align-self: center;
-        & .fake__break {
-          padding-top: $space;
-        }
-      }
-      @media screen and (min-width: 1024px) {
-        & .fake__break {
-          padding-top: $space3x;
-        }
-      }
-      @media screen and (min-width: $desktop_and_up) {
-        & .fake__break {
-          padding-top: $space4x;
-        }
-      }
-    }
-
-    &.width__full {
-      width: 100%;
-      @media screen and (min-width: $phone_landscape_and_up) {
-        margin: $space4x 0;
-        & .fake__break {
-          padding-top: $space2x;
-        }
-      }
-      @media screen and (min-width: $tablet_and_up) {
-        columns: 2 auto;
-        column-gap: $space3x * 2;
-        column-fill: balance;
-        column-rule: 1px solid $gray-lt;
-        margin: $space4x * 2 0;
-        & .fake__break {
-          display: inline;
-          padding-top: 0;
-        }
-      }
-    }
-
-    &.ending__text {
-      padding: $space2x;
-
-      @media screen and (min-width: $phone_landscape_and_up) {
-        max-width: $max_width-content * .5;
-        margin-left: auto;
-        margin-right: auto;
-      }
-
-      @media screen and (min-width: $tablet_landscape_and_up) {
-        padding: $space4x $space;
-        order: 2;
       }
     }
 
