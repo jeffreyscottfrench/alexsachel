@@ -42,7 +42,7 @@
   </article>
 
   <header class="header__section--sub-section">
-    <h3 class="title__section letter-spacing">
+    <h3 class="title__section title__section--sub-section letter-spacing">
       Additional Services
     </h3>
   </header>
@@ -54,9 +54,19 @@
       </h4>
     </header>
 
-    <p class="service">
+    <p class="service service__overview">
       A hands on assessment of your current clothing options. After outlining your needs in our consultation, we can get down to executing a plan consisting of purging and organizing...
     </p>
+
+    <figure class="about__closetmgmt">
+      <picture>
+        {% set image_path %}/images/Service-Alex-Sachel-Closet-Management{% endset %}
+        <img
+          alt="An image of Alex Sachel, a Style Consultant based out of Chattanooga, TN as she heads to a closet management session."
+          {% include "partials/ri-med-width.njk" %}
+          >
+      </picture>
+    </figure>
 
     <p class="sub-service service__purging">
       <span class="title__sub-service"><em>Purging:​</em></span> Closet purging is a necessary step that I see all too often for clients who have difficulty getting dressed. This step can sometimes be difficult to accomplish on your own, simply because we all have sentimental connections to items which can limit our ability to let go. Together we will go through and establish which pieces are no longer serving a purpose for you and then decide whether to donate, consign, or alter.
@@ -74,7 +84,10 @@
       </h4>
     </header>
     <p class="service">
-      We all have difficulty packing, and most women (as well as more than a few men!) are chronic over-packers. I will help you determine the pieces that will allow for maximum versatility on any trip while eliminating the time and stress of packing and organizing your suitcase so that you can focus your pre-trip time on more important things. <span class="fake__break">Whether it’s a business trip or a beach vacation, your wardrobe will be personalized according to destination, weather forecast, and any planned events on your itinerary. Your included outfits will be pictured and outlined in order to take all of the deliberation and stress out of getting dressed, and keep your attention where it matters most.</span>
+      We all have difficulty packing, and most women (as well as more than a few men!) are chronic over-packers. I will help you determine the pieces that will allow for maximum versatility on any trip while eliminating the time and stress of packing and organizing your suitcase so that you can focus your pre-trip time on more important things.
+    </p>
+    <p class="service">
+      Whether it’s a business trip or a beach vacation, your wardrobe will be personalized according to destination, weather forecast, and any planned events on your itinerary. Your included outfits will be pictured and outlined in order to take all of the deliberation and stress out of getting dressed, and keep your attention where it matters most.
     </p>
   </article>
 
@@ -106,13 +119,23 @@
       </h4>
     </header>
 
-    <p class="service">
+    <p class="service__overview">
       I can assist you, near or far! The beauty of technology is that it can connect us from anywhere across the world. The desire to feel confident and assured is universal, so why limit ourselves to local influence?
     </p>
 
     <p class="sub-service service__virtual-consultation">
       <span class="title__sub-service"><em>New Client Consultation:​</em></span> A one hour FaceTime call to get to know you and your lifestyle. We will “walk through” your closet together to assess needs, wants, and items that are ready to purge! This is really a time for me to get to know you so that I can thoughtfully and intentionally build your wardrobe. We will get clear on the process and outline a game plan including budget and schedule.
     </p>
+
+    <figure class="about__virtual" id="Alex-Sachel-Earing">
+      <picture>
+        {% set image_path %}/images/Service-Alex-Sachel-Virtual-Styling{% endset %}
+        <img
+          alt="An image of Alex Sachel, a Style Consultant based out of Chattanooga, TN."
+          {% include "partials/ri-med-width.njk" %}
+          >
+      </picture>
+    </figure>
 
     <p class="sub-service service__mood-board">
       <span class="title__sub-service"><em>Custom Mood Board:</em></span>​ I will send a customized mood/styling board that will include outfit examples, proportion updates, and styling advice. I love to work collaboratively to provide the best outcome, so I will explain my thought process while you provide specific feedback to ensure we are on the same page. I will make any necessary edits before we begin shopping; the fun part!
@@ -121,6 +144,16 @@
     <p class="sub-service service__shopping-list">
       <span class="title__sub-service"><em>Shopping:</em></span> I will send you a personalized shop list of items for you to order at your own pace. Once items are ordered, we will jump on a FaceTime call to discuss fit along with styling and outfitting options to ensure that each item integrates seamlessly into your existing wardrobe.
     </p>
+
+    <figure class="about__virtual" id="Alex-Sachel-Blue-Door">
+      <picture>
+        {% set image_path %}/images/Service-Alex-Sachel-Virtual-Styling-2{% endset %}
+        <img
+          alt="An image of Alex Sachel, a Style Consultant based out of Chattanooga, TN."
+          {% include "partials/ri-med-width.njk" %}
+          >
+      </picture>
+    </figure>
 
     <p class="sub-service service__availability">
       <span class="title__sub-service"><em>Constant Communication:</em></span>​ You can text, FaceTime, or call when styling help is needed in a pinch! Whether you’re getting dressed in the morning, or in the evening for date night, or need an interview outfit, I’ll make myself available to get you where you need to go looking and feeling your best!
