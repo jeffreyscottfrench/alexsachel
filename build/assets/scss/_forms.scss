@@ -140,7 +140,7 @@ form {
       padding: 0 0 $space;
     }
 
-    & input,
+    & input:not( .button ),
     & select,
     & textarea {
       display: block;
