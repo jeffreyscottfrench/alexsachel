@@ -24,10 +24,10 @@ body {
     line-height: 1.4;
   }
   @media screen and (min-width: $tablet_and_up) {
-    font-size: $font-size * 1.625;
+    font-size: $font-size * 1.5;
   }
   @media screen and (min-width: $desktop_and_up) {
-    font-size: $font-size * 1.875;
+    font-size: $font-size * 1.625;
   }
 
   // TODO put all inside here
@@ -53,33 +53,33 @@ body {
 .copyright__icon-year,
 .title__name--logo {
   font-family: $font-secondary;
-  font-weight: 400;
+  font-weight: normal;
   text-transform: uppercase;
 }
 
 .title__section,
 .title__section span.letter-spacing {
   @include BanglaMN-text-crop($line-height: 1.3);
-  font-size: $font-size * 1.875;
+  font-size: $font-size * 1.75;
   @media screen and (min-width: 375px) {
     @include BanglaMN-text-crop($line-height: 1.3);
-    font-size: $font-size * 2.125;
+    font-size: $font-size * 2;
   }
   @media screen and (min-width: 410px) {
     @include BanglaMN-text-crop($line-height: 1.3);
-    font-size: $font-size * 2.25;
+    font-size: $font-size * 2.125;
   }
   @media screen and (min-width: $phone_landscape_and_up) {
     @include BanglaMN-text-crop($line-height: 1.3);
-    font-size: $font-size * 2.5;
+    font-size: $font-size * 2.25;
   }
   @media screen and (min-width: $tablet_and_up) {
     @include BanglaMN-text-crop($line-height: 1.3);
-    font-size: $font-size * 3;
+    font-size: $font-size * 2.875;
   }
   @media screen and (min-width: $desktop_and_up) {
     @include BanglaMN-text-crop($line-height: 1.3);
-    font-size: $font-size * 4;
+    font-size: $font-size * 3.75;
   }
 }
 
@@ -89,6 +89,7 @@ body {
 }
 
 .title__service,
+.title__section--sub-section,
 .title__article,
 .title__brand-quote,
 .title__calltoaction,
@@ -105,7 +106,7 @@ body {
   }
   @media screen and (min-width: $desktop_and_up) {
     @include BanglaMN-text-crop;
-    font-size: $font-size * 2.125;
+    font-size: $font-size * 2.0;
   }
 }
 
@@ -148,30 +149,31 @@ figcaption .title__testimonial {
   .title__section & {
     letter-spacing: .66ch;
     @media screen and (min-width: $phone_landscape_and_up) {
-      letter-spacing: .75ch;
+      letter-spacing: .625ch;
     }
     @media screen and (min-width: $tablet_and_up) {
-      letter-spacing: $space * 1.5;
+      letter-spacing: $space * 1.25;
     }
   }
   &.title__solution {
     letter-spacing: 0.5ch;
   }
   &.title__service,
+  .title__service &,
   &.title__brand-quote,
   &.title__caption,
   &.title__calltoaction,
   &.copyright__icon-year {
-    letter-spacing: 0.25ch;
+    letter-spacing: 0.375ch;
     @media screen and (min-width: $tablet_and_up) {
-      letter-spacing: 0.125ch;
+      letter-spacing: 0.25ch;
     }
   }
 
   &.title__calltoaction,
   &.title__brand-quote {
     @media screen and (min-width: $tablet_and_up) {
-      letter-spacing: 0.25ch;
+      letter-spacing: 0.18ch;
     }
   }
 }
@@ -307,7 +309,7 @@ p.paragraph__lead {
     font-size: $font-size * 2.25;
   }
   @media screen and (min-width: $desktop_and_up) {
-    font-size: $font-size * 3.5;
+    font-size: $font-size * 3.125;
   }
 }
 p.paragraph__accent {
