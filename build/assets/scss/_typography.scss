@@ -266,26 +266,17 @@ section.bio {
   & p {
 
     & span.first-letter {
-      font-size: $font-size * 2;
+      font-size: $font-size * 1.75;
       line-height: $font-size * 1.25;
-      display: inline-block;
-      margin-right: -$space * .25;
-      margin-left: -$space * 1.5;
 
       @media screen and (min-width: $phone_landscape_and_up) {
-        font-size: $font-size * 2.25;
-        margin-right: -$space * .125;
-        margin-left: -$space4x;
+        font-size: $font-size * 2.125;
       }
       @media screen and (min-width: $tablet_and_up) {
-        font-size: $font-size * 4;
-        margin-right: -$space * .5;
-        margin-left: -$space3x;
+        font-size: $font-size * 2.75;
       }
       @media screen and (min-width: $desktop_and_up) {
-        font-size: $font-size * 8;
-        margin-right: -$space;
-        margin-left: -$space3x;
+        font-size: $font-size * 3.5;
       }
 
     }
