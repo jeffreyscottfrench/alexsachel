@@ -102,11 +102,11 @@ body {
   }
   @media screen and (min-width: $tablet_and_up) {
     @include BanglaMN-text-crop;
-    font-size: $font-size * 1.75;
+    font-size: $font-size * 1.625;
   }
   @media screen and (min-width: $desktop_and_up) {
     @include BanglaMN-text-crop;
-    font-size: $font-size * 2.0;
+    font-size: $font-size * 1.75;
   }
 }
 
@@ -160,13 +160,15 @@ figcaption .title__testimonial {
   }
   &.title__service,
   .title__service &,
+  &.title__article,
+  .title__article &,
   &.title__brand-quote,
   &.title__caption,
   &.title__calltoaction,
   &.copyright__icon-year {
     letter-spacing: 0.375ch;
     @media screen and (min-width: $tablet_and_up) {
-      letter-spacing: 0.25ch;
+      letter-spacing: 0.18ch;
     }
   }
 
