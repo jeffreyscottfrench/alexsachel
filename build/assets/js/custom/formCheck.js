@@ -4,7 +4,7 @@ const formCheck = function(){
 
   let email = document.getElementsByName('email')[0];
   let phone = document.getElementsByName('main_phone')[0];
-  let required = document.querySelectorAll('[required="true"]');
+  let required = document.querySelectorAll('[required]');
   let submit = document.getElementById('submit');
   let reset = document.getElementById('reset');
 
@@ -29,14 +29,15 @@ const formCheck = function(){
   // check inputs against regexp tests
   const checkRequired = function( e ) {
     let reqEl = e.target;
+    let reqLbl = reqEl.parentNode.getElementsByTagName('label')[0].textContent;
     errElName = reqEl.name + '-required-error';
-    errorMessage = 'This information is required!';
+    errorMessage = reqLbl + ' is required!';
 
     if (document.getElementsByName(errElName)[0]) {
       this.parentNode.removeChild(document.getElementsByName(errElName)[0]);
     }
 
-    if (!reqEl.value) {
+    if (!reqEl.value || reqEl.value==='default') {
       displayMessage(reqEl, errElName, errorMessage);
       requiredContent = false;
     } else {
@@ -51,7 +52,7 @@ const formCheck = function(){
     }
 
     let re = /^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-    if (!email.value.match(re)) {
+    if (email.value && !email.value.match(re)) {
       errorMessage = 'Email address is not in a valid format. Please try again.';
       errElName = 'email-error';
       displayMessage(email, errElName, errorMessage);
@@ -67,7 +68,7 @@ const formCheck = function(){
     }
 
     let re = /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im;
-    if (!phone.value.match(re)) {
+    if (phone.value && !phone.value.match(re)) {
       errorMessage = 'A phone number with area code is required, but you can let me know to only contact you via email in the last field below.';
       errElName = 'phone-error';
       displayMessage(phone, errElName, errorMessage);

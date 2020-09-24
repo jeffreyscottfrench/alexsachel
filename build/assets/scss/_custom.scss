@@ -924,6 +924,12 @@ section.contact {
       padding: $space3x;
       margin-bottom: 0;
     }
+
+    & .article__contact {
+      @media screen and (min-width: $tablet_landscape_and_up) {
+        max-width: $max_width-content * .75;
+      }
+    }
   }
 
   & .article__contact {
@@ -955,6 +961,7 @@ section.contact {
     }
 
     & .article__contact {
+      // flex: 1 1 auto;
       &:last-child {
         margin-bottom: 0;
       }
@@ -984,14 +991,23 @@ section.overlay {
   bottom: 0;
   background-color: $white;
   z-index: 9000;
-  padding: $space4x * 2 $space4x;
+  padding: $space4x $space2x;
+
+  @media screen and (min-width: $tablet_landscape_and_up) {
+    padding: $space4x * 2 $space4x;
+  }
 
   & .overlay--close {
     display: block;
     position: absolute;
-    right: $space4x;
-    top: $space4x;
-    padding: $space;
+    right: $space;
+    top: $space;
+    // padding: $space 0;
+
+    @media screen and (min-width: $tablet_landscape_and_up) {
+      right: $space4x;
+      top: $space4x;
+    }
 
     & button.circle {
       width: $space4x;
@@ -1021,9 +1037,10 @@ section.overlay {
   }
 
   & article {
+    padding: 0;
 
     & > header {
-      margin-bottom: $space2x;
+      margin-bottom: $space4x;
     }
   }
 }
@@ -1042,7 +1059,7 @@ div.container__contactForm {
       & textarea,
       & button,
       & span.form__input--error {
-        border-radius: 0;
+        border-radius: $space-half;
       }
     }
   }
@@ -1056,16 +1073,6 @@ div.container__contactForm {
     & .alert {
       border-radius: $space;
       border: $border-secondary;
-
-      & div.fieldset {
-        & input,
-        & select,
-        & textarea,
-        & button,
-        & span.form__input--error {
-          border-radius: $space-half;
-        }
-      }
     }
   }
 }
