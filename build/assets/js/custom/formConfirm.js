@@ -43,6 +43,10 @@ const formConfirm = function(alertType, alertText) {
   // timeout to remove
   setTimeout(function() {
     contactForm.removeChild(alert);
+    // close the overlay if everything went well
+    if ( alertType === 'alert__success' ) {
+      document.getElementsByClassName( 'overlay' )[0].classList.add( 'js__toggleDisplay--none' );
+    }
   }, 5000);
 }
 const checkURL = function() {
