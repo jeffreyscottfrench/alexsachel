@@ -191,7 +191,7 @@ const browserSyncTask = function (done) {
     port: 3000,
 
     // Use a specific browser or multiple browsers ("google chrome" or multiple ["firefox", "safari technology preview"] ).
-    browser: ["google chrome", "firefox developer edition"]
+    browser: ["google chrome"]
     // browser: "google chrome"
 
   });
@@ -224,7 +224,7 @@ const browserSyncProofTask = function (done) {
     port: 8888,
 
     // Use a specific browser or multiple browsers ("google chrome" or multiple ["firefox", "safari technology preview"] ).
-    browser: ["google chrome", "firefox developer edition"]
+    browser: ["google chrome"]
 
   });
   done();
