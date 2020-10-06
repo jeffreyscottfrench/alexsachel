@@ -1,42 +1,45 @@
 window.addEventListener( "load", function () {
-  function sendData() {
+
+  function sendData( ncForm ) {
     const XHR = new XMLHttpRequest();
 
     // Bind the FormData object and the form element
-    const FD = new FormData( form );
+    const FD = new FormData( ncForm );
 
     // Define what happens on successful data submission
-    XHR.addEventListener( "load", function() {
-      let res = JSON.parse(this.response);
+    XHR.addEventListener( "load", function( event ) {
+      let res = JSON.parse( event.target.responseText );
 
-      if (res.status) {
+      if (  res.success === true ) {
         // SUCCESS!
         formConfirm('alert__success', 'Thank you for reaching out! I will get back to you as soon as possible.');
       } else {
         // ERROR!
-        formConfirm('alert__failure', 'Hmmm looks like something went wrong, try that again please!');
+        formConfirm('alert__failure', `Hmmm looks like something went wrong trying to send your info, try that again please! <br><br> ${res.error}`);
       }
     });
 
     // Define what happens in case of error
     XHR.addEventListener( "error", function( event ) {
-      formConfirm('alert__failure', 'Hmmm looks like something went wrong, try that again please!');
+      let res = JSON.parse( event.target.responseText );
+
+      formConfirm('alert__failure', `Hmmm looks like something went wrong on our end, try that again please! <br><br> ${res.error}`);
     } );
 
     // Set up our request
     XHR.open( "POST", "/secure_scripts/newClient-phpmailerAJAX.php" );
 
-    // The data sent is what the user provided in the form
+    // Send our FormData object; HTTP headers are set automatically
     XHR.send( FD );
+    formConfirm('alert__progress', 'Sending your info...');
   }
 
   // Access the form element...
-  const form = document.getElementById( "form-newClient" );
+  const ncForm = document.getElementById( "form-newClient" );
 
   // ...and take over its submit event.
-  form.addEventListener( "submit", function ( event ) {
+  ncForm.addEventListener( "submit", function ( event ) {
     event.preventDefault();
-
-    sendData();
+    sendData( ncForm );
   } );
 } );

@@ -11,9 +11,11 @@ require '/home/users/web/b2074/pow.lsfrock/secure_scripts/alexsachel_credentials
 
 // validate its from the form
 if ($_POST['info'] !== "") {
-  $error = "Naughty bot."
-  echo json_encode( "error" => $error );
-  die();
+  $error = "Naughty bot.";
+  header('Content-Type: application/json');
+  echo json_encode([
+    "error" => $error
+  ]);
 }
 
 // get values from form
@@ -42,7 +44,10 @@ $welcome_msg = 'Thank you for your reaching out, I will get back to you as soon 
 if (!preg_match("/^(([^<>()\[\]\.,;:\s@\"]+(\.[^<>()\[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i",$email))
 {
   $error = "Email Address is not in a valid format. Please try again.";
-  echo json_encode("error" => $error);
+  header('Content-Type: application/json');
+  echo json_encode([
+    "error" => $error
+  ]);
 }
 
 if ($secretinfo == "")
@@ -126,7 +131,7 @@ if ($secretinfo == "")
 
   $mail = new PHPMailer;
   $mail->isSMTP();
-  $mail->SMTPDebug = 2;
+  $mail->SMTPDebug = 0;
   $mail->Host = 'smtp.gmail.com';
   $mail->Port = 587;
   $mail->SMTPSecure = 'tls';
@@ -135,6 +140,7 @@ if ($secretinfo == "")
   $mail->Password = $Password;
   $mail->setFrom('contact@alexsachel.com', 'Contact Form');
   $mail->addAddress('alex@alexsachel.com', 'Alex Sachel'); // where to
+  // $mail->addAddress('jeffreyscottfrench@gmail.com', 'JSF Test Form'); // where to
   $mail->addReplyTo("$email", "$name"); // form email field
 
   // uncomment to cc the person submitting the form
@@ -149,13 +155,15 @@ if ($secretinfo == "")
     error_log('Contact Form Error: ' . $mail->ErrorInfo, 0);
     error_log('Contact Form Error: ' . $mail->ErrorInfo, 1, 'jeffreyscottfrench@gmail.com');
     echo json_encode([
-      "status" => count($error)==0 ? 1 : 0,
-      "error" => $error
+      "success" => false,
+      "error" => $mail->ErrorInfo
     ]);
   } else {
+    header('Content-Type: application/json');
     echo json_encode([
-      "status" => count($error)==0 ? 1 : 0,
+      "success" => true
     ]);
+    exit;
   }
 }
 ?>
