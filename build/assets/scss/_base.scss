@@ -83,6 +83,10 @@ section {
   }
 }
 
+*:focus {
+  outline-color: currentColor;
+}
+
 a {
   &:link,
   &:visited,
