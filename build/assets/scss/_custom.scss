@@ -414,7 +414,7 @@ section.about {
         flex: 0 0 100%;
         display: grid;
         grid-gap: 0 $space3x;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 50% 50%;
         grid-template-rows: auto;
         grid-template-areas:
           "header header"
@@ -452,17 +452,27 @@ section.about {
           &.service__mood-board {
             grid-area: right2;
           }
-          &.service__shopping-list {
+          &.service__shopping-list,
+          &.service__shoppingConcierge {
+            grid-area: left2;
+          }
+          &.service__stylingConcierge {
             grid-area: left3;
           }
           &.service__availability {
-            grid-area: left4;
+            grid-area: footer;
           }
           &.service__conditions {
             grid-area: footer;
           }
         }
 
+        & figure#Alex-Sachel-Balcony {
+          grid-area: right1 / right3 / right3 / right3;
+          margin: 0;
+          align-self: center;
+          padding: $space3x 0;
+        }
         & figure.about__closetmgmt {
           grid-area: right1 / right2 / right2 / right2;
           margin: 0;
@@ -598,6 +608,10 @@ section.about {
       margin-bottom: $space4x * 2;
     }
 
+  }
+
+  &#section-concierge figure.about__assisting {
+    width: 100%;
   }
 
 }
