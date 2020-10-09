@@ -51,6 +51,11 @@ button.call-to-action {
       }
     }
   }
+
+  .pullquote__concierge & {
+    margin-top: 0;
+    padding-bottom: 0;
+  }
 }
 
 .button--disabled {
