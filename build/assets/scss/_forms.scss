@@ -173,6 +173,9 @@ form {
     & p > input {
       align-self: center;
     }
+    & p > label {
+      text-align: left;
+    }
 
     & p.form__textarea {
       margin-top: $space;
