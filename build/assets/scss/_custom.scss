@@ -462,7 +462,8 @@ section.about {
           &.service__availability {
             grid-area: left4;
           }
-          &.service__conditions {
+          &.service__conditions,
+          &.service__availabilityConcierge {
             grid-area: footer;
           }
         }
