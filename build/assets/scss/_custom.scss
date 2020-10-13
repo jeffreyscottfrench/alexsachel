@@ -661,28 +661,7 @@ section.testimonial {
         justify-content: flex-start;
         align-items: flex-end;
         background: linear-gradient(90deg, $black 20%, transparent 100%);
-
-        // option 1
-        // border-image-source: linear-gradient(90deg, $coral 20%, rgba(0,0,0,0) 100%);
-        // border-image-slice: 10%;
-        // border-width: 3px;
-        // border-right-width: 0;
-
-        // option 2
         border-left: $space2x solid $coral;
-
-        // option 3
-        // border-left: $space2x solid $coral;
-        // &:before {
-        //   display: block;
-        //   position: absolute;
-        //   top: 0;
-        //   left: 0;
-        //   content: ' ';
-        //   border-left: 2px solid $gray-lt;
-        //   height: 100%;
-        // }
-
 
         & .title__testimonial {
           margin-left: 0;
