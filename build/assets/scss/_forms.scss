@@ -42,7 +42,10 @@ button.call-to-action {
     flex: 100%;
     background-color: inherit;
     color: $gray-lt;
+    padding: 1em 0 .5em;
     border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid currentColor;
     &:focus,
     &:hover {
       color: $coral;
@@ -52,10 +55,6 @@ button.call-to-action {
     }
   }
 
-  .pullquote__concierge & {
-    margin-top: 0;
-    padding-bottom: 0;
-  }
 }
 
 .button--disabled {
