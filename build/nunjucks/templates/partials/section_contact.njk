@@ -1,39 +1,36 @@
 <section class="fullpage contact top-edge" id="section-contact">
   <header class="header__section">
     <h3 class="title__section">
-      <span class="letter-spacing">Say hello</span><span class="letter-spacing"> to better</span><span class="letter-spacing"> style</span>
+      <span class="no__break letter-spacing">Say hello</span> <span class="no__break letter-spacing">to better style</span>
     </h3>
   </header>
 
   <main class="main__section">
     <article class="article__contact">
       <header class="header__article">
-        <h4 class="title__article">
+        <h4 class="title__article letter-spacing">
           Ready to get to work?
         </h4>
       </header>
       <p>
-        If you're ready to get started, click <a href="#new-client-questionnaire" class="js__toggleDisplayLink" data-targetEl="new-client-questionnaire">here</a> to fill out a brief questionnaire and we'll reach out to setup your first consultation.
+        If you're ready to get started, click the button to fill out a brief questionnaire and we'll reach out to setup your first consultation.
       </p>
-    </article>
-    <article class="article__form js__toggleDisplay--none" id="new-client-questionnaire">
-      <header class="header__form">
-        <h4 class="title__article">Let's Start Right Here</h4>
-      </header>
-      {% include "partials/form_newClient.njk" %}
+      <button class="call-to-action">
+        <a id="new-client-link-contact" href="#section-overlay-new-client" class="js__toggleDisplayLink" data-targetEl="section-overlay-new-client">Get Started</a>
+      </button>
     </article>
   </main>
 
   <footer class="footer__section" id="Contact-Footer">
     <article class="article__contact" id="Contact-MailChimp">
       <header class="header__form">
-        <h4 class="title__article">Subscribe To The Newsletter</h4>
+        <h4 class="title__article letter-spacing">Subscribe To The Newsletter</h4>
       </header>
       {% include "partials/mailChimp_signup.njk" %}
     </article>
     <article class="article__contact" id="Contact-Social">
       <header class="header__social">
-        <h4 class="title__article">Get In Touch</h4>
+        <h4 class="title__article letter-spacing">Get In Touch</h4>
       </header>
       {% include "partials/social_links.njk" %}
     </article>

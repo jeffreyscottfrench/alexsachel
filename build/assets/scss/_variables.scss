@@ -1,6 +1,6 @@
 //variables
 
-$font-size: 16px; // Default size is 16px
+$font-size: 14px; // Default size is 16px
 $line-height: $font-size * 1.25; // Default multiplier is 1.25
 $letter-spacing: 1px; // Default is 1px
 
@@ -15,6 +15,7 @@ $black: #0F0F0F;
 $gray-dk: #2E2E33;
 $gray-med: #888888;
 $gray-lt: #EAEAEA;
+$white-trans: rgba(255,255,255,.8);
 $white: #FFFFFF;
 // $coral: hsl(7%, 96%, 47%); // EB2005 in hsl
 $coral: #EB2005;
@@ -43,7 +44,7 @@ $desktop_and_up: 1200px;
 $break-giant: 1500px;  // Excludes most laptops
 $break-max: 1800px;  // Ultra-large displays
 
-$max_width-content: 1200px;
+$max_width-content: 900px;
 
 $spacing-base: 10px;  // Use an even number
 

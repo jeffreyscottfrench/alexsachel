@@ -1,3 +1,77 @@
+button,
+.button {
+  display: block;
+  width: auto;
+  padding: $space $space2x;
+  background-color: $white;
+  border: $border-inputs;
+  cursor: pointer;
+  &:hover {
+    border-color: $coral;
+  }
+  &:focus {
+    border: 1px solid $coral;
+    outline: none;
+  }
+}
+button,
+.button {
+  color: $gray-med;
+  &:focus,
+  &:hover {
+    color: $coral;
+  }
+}
+button.call-to-action {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 2em;
+  padding: 1em;
+  border-radius: $space-half;
+  border-color: $coral;
+  color: $coral;
+  &:hover {
+    background-color: $coral;
+    color: $white;
+    & > a:hover {
+      color: $white;
+    }
+  }
+
+  .pullquote__brand & {
+    flex: 100%;
+    background-color: inherit;
+    color: $gray-lt;
+    padding: 1em 0 .5em;
+    border: 0;
+    border-radius: 0;
+    border-bottom: 1px solid currentColor;
+    &:focus,
+    &:hover {
+      color: $coral;
+      & > a:hover {
+        color: $coral;
+      }
+    }
+  }
+
+}
+
+.button--disabled {
+  opacity: .3;
+  &:hover {
+    cursor: default;
+    cursor: not-allowed;
+    color: $gray-med;
+    border: $border-inputs;
+  }
+  &:focus {
+    color: $gray-med;
+    border: $border-inputs;
+    outline: none;
+  }
+}
+
 form {
   display: flex;
   flex-flow: row wrap;
@@ -24,6 +98,7 @@ form {
       align-items: flex-start;
     }
 
+    & > .header__fieldset,
     & > legend,
     & > p {
       width: 100%;
@@ -43,6 +118,17 @@ form {
       }
     }
 
+    & > .header__fieldset {
+      padding: 0;
+      margin-bottom: $space2x;
+      border-bottom: $border-inputs;
+
+      // after the first one
+      &:nth-of-type(1n+2) {
+        margin-top: $space4x * 2;
+      }
+    }
+
     & > p.form__field--new-line {
       width: 100%;
       height: 0;
@@ -58,7 +144,8 @@ form {
       padding: 0 0 $space;
     }
 
-    & input,
+    & input:not( .button ),
+    & select,
     & textarea {
       display: block;
       box-sizing: border-box;
@@ -73,13 +160,31 @@ form {
       }
     }
 
+    & select {
+      max-height: 40px; // matches input height
+      padding: .6em $space2x;
+      background-color: $white;
+      color: inherit;
+      font-family: inherit;
+      font-size: $font-size;
+      line-height: $font-size;
+      letter-spacing: inherit;
+      text-transform: inherit;
+    }
+
     & p > label,
+    & p > select,
     & p > input {
       align-self: center;
     }
+    & p > label {
+      text-align: left;
+    }
 
     & p.form__textarea {
-      margin-top: $space4x;
+      margin-top: $space;
+      margin-bottom: $space4x;
+
       & > textarea {
         padding: $space;
       }
@@ -88,46 +193,6 @@ form {
     & p.form__textarea > textarea {
       @media screen and (min-width: $tablet_and_up) {
         align-self: flex-start;
-      }
-    }
-
-    & button,
-    & .button {
-      display: block;
-      width: auto;
-      padding: $space $space2x;
-      background-color: $white;
-      border: $border-inputs;
-      cursor: pointer;
-      &:hover {
-        border-color: $coral;
-      }
-      &:focus {
-        border: 1px solid $coral;
-        outline: none;
-      }
-    }
-    & button,
-    & .button {
-      color: $gray-med;
-      &:focus,
-      &:hover {
-        color: $coral;
-      }
-    }
-
-    & .button--disabled {
-      opacity: .3;
-      &:hover {
-        cursor: default;
-        cursor: not-allowed;
-        color: $gray-med;
-        border: $border-inputs;
-      }
-      &:focus {
-        color: $gray-med;
-        border: $border-inputs;
-        outline: none;
       }
     }
   }

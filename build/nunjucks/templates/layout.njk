@@ -55,12 +55,14 @@
 
   {% include "partials/nav_main.njk" %}
 
-  <main class="content {{ content_special_class }} wrapper">
+  <main class="main__site content {{ content_special_class }} wrapper">
 {% block content %}{% endblock %}
   <div class="background__logo--sunflowers">
     {% include "partials/logo_sunflowers.njk" %}
   </div>
   </main><!-- end content -->
+
+  {% block overlay %}{% endblock %}
 
 
   <footer class="footer__site wrapper clearfix">
