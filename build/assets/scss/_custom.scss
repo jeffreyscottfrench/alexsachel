@@ -722,9 +722,8 @@ section.testimonial {
       padding: $space2x $space3x;
       margin-bottom: 0;
       width: 100%;
-      background-color: rgba(243, 239, 237, .4);
+      background-color: rgba(240, 238, 237, 1);
       border-top: 1px solid $gray-med;
-      border-bottom: 1px solid $gray-med;
 
       & .title__testimonial {
         text-align: justify;
@@ -736,51 +735,48 @@ section.testimonial {
         }
       }
 
-      @media screen and (min-width: $phone_landscape_and_up) {
-        margin-bottom: -15%;
-        border: 0;
-        background: linear-gradient(
-          rgb(243, 239, 237) 70%,
-          rgba(243, 239, 237, .6) 90%,
-          rgba(243, 239, 237, 0) 100%);
-      }
-
       @media screen and (min-width: $tablet_and_up) {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 75%;
+        border: 0;
         border-left: $space2x solid $coral;
-        border-right: $space2x solid $transparent;
         padding-left: $space4x;
-        padding-right: $space4x;
-        background: linear-gradient(
-          rgb(243, 239, 237) 55%,
-          rgba(243, 239, 237, .75) 70%,
-          rgba(243, 239, 237, .45) 80%,
-          rgba(243, 239, 237, .2) 95%,
-          rgba(243, 239, 237, 0));
+        padding-right: $space4x * 2;
+        background-color: none;
+        background:
+          linear-gradient(90deg,
+          rgb(240, 238, 237) 55%,
+          rgba(240, 238, 237, .75) 70%,
+          rgba(240, 238, 237, .45) 85%,
+          rgba(240, 238, 237, .25) 90%,
+          rgba(240, 238, 237, 0));
         & .title__testimonial {
           align-self: flex-start;
           max-width: $max_width-content;
         }
       }
 
-      @media screen and (min-width: $tablet_landscape_and_up) {
-        margin-bottom: -12%;
+      @media screen and (min-width: $break-giant) {
+        width: 80%;
 
         & .title__testimonial {
-          align-self: flex-start;
-          text-align: justify;
           display: flex;
           flex-flow: row nowrap;
           justify-content: space-between;
           align-content: center;
           align-items: center;
+          text-align: justify;
+          max-width: none;
 
           & .pullquote__beginning {
             display: block;
-            flex: 0 1 55%;
+            flex: 0 1 60%;
           }
           & .pullquote__ending {
             display: block;
-            flex: 0 1 45%;
+            flex: 0 1 40%;
             padding-top: 0;
             &:before {
               display: none;
